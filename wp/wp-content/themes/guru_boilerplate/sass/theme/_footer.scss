@@ -1,0 +1,21 @@
+//
+// CSS for the specific theme footer
+//
+#footer{
+	
+	& .foot-left{
+		@include float-left;
+	}
+	& .foot-right{
+		@include float-right;
+	}
+	& a{
+		color: lighten( $base-color, 30% );
+	}
+}
+
+a#guruLink{
+	&:hover{
+		color: $guru-color; //from _base
+	}
+}

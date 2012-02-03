@@ -1,0 +1,190 @@
+//
+// CSS for the specific theme banner bars (in header and footer)
+//
+
+/** OCR specific Banner **/
+
+.barButtons{
+	//this is in the #header
+	@include bowlby;
+	@include adjust-font-size-to(46px);
+	//letter-spacing: -1px;
+	
+	& a{
+		color: #fff;
+			&:hover{ @include opacity( $base-hover-opacity ); }
+			&:active{ @include opacity( $base-hover-opacity / 2 ); }
+	}
+}
+#header .barButtons{
+	@include float-right;
+	margin-top:34px;
+	& a{
+		@include single-text-shadow( $box-bg, 1px, 1px, 1px);
+		
+		&.donate{
+			color: $base-header-color;
+			&:hover{ color: darken( $base-header-color, 10% ); }
+			&:active{ color: lighten( $base-header-color, 10% ); }
+		}
+		&.volunteer{
+			color: $base-button-color;
+			&:hover{ color: darken( $base-button-color, 10% ); }
+			&:active{ color: lighten( $base-button-color, 10% ); }
+		}
+	}
+}
+
+
+	/** Those crazy curves **/
+	
+$curve-right: 70px;
+$curve-border-width: 1px;
+	
+	//.lte8 #curvesCont > div{ display:none; }
+	
+	#curvesCont{
+		//background:#bad;
+		width:100%;
+		position:absolute;
+		top:0;
+		right:0;
+		z-index:1;
+		overflow:hidden;
+		
+		& > div{
+			
+			position: absolute;
+			height:100%;
+			width:100%;
+			display:block;
+			top:0;
+			overflow:hidden;
+			border-right: $curve-border-width solid #fff;
+			
+			& > div{
+				//@include pie;
+	
+				position:absolute !important;
+				top:0;
+				height:400%;
+				display:block;
+				width:200%;
+				@include border-radius( 10000px );
+			}
+			
+			&.cOne{ 
+				right: 0;
+				
+				& > div{
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endColorstr=#4CFFFFFF)"; /* IE8 */
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CFFFFFF,endColorstr=#4CFFFFFF);   /* IE6 & 7 */
+					zoom: 1;
+					background: rgba(255,255,255,0.3);
+				}
+			}
+			&.cTwo{
+				right: $curve-right;
+				
+				& > div{
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF,endColorstr=#33FFFFFF)"; /* IE8 */
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF,endColorstr=#33FFFFFF);   /* IE6 & 7 */
+					zoom: 1;
+					background: rgba(255,255,255,0.2);
+				}
+			}
+			&.cThree {
+				right: $curve-right * 2;
+				
+				& > div{
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#3FFFFFFF,endColorstr=#3FFFFFFF)"; /* IE8 */
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3FFFFFFF,endColorstr=#3FFFFFFF);   /* IE6 & 7 */
+					zoom: 1;
+					background: rgba(255,255,255,0.25);
+				}
+			}
+		}
+	}
+	
+	/** End Those crazy curves **/
+
+$bar-height: 40px;
+
+#barBottom{
+	position: relative;
+	z-index: 3;
+	background: $base-button-color;
+	display:block;
+	
+	& .barButtons{
+		position:relative;
+		z-index:5;
+		@include adjust-font-size-to( 34px, 2 );
+		line-height: $bar-height;
+		& a{
+			&:hover{ color: darken( #fff, 5% ); }
+			&:active{ color: darken( #fff, 10% ); }
+			
+			&.volunteer{
+				margin-right: $bar-height;
+				padding-right: $bar-height / 4;
+			}
+		}
+	}
+	
+	& .bBlock{
+		position:absolute;
+		z-index:2;
+		display:block;
+		height:100%;
+		width: $curve-right;
+		
+		&.second{
+			background: darken( $base-button-color, 8% );
+		}
+		
+		&.left{
+			&.first{
+				left:0;
+				background: $base-button-color;
+			}
+			&.second{
+				left: $curve-right;
+			}
+		}
+		&.right{
+			&.first{
+				right: 0;
+				background: darken( $base-button-color, 15% );
+			}
+			&.second{
+				right: $curve-right;				
+			}
+		}
+	}
+	
+	& .bbLeft{
+		display:none;
+		position:absolute;
+		height: 100%;
+		display:block;
+		left:0;
+		
+		z-index: 1;
+		background: darken( $base-button-color, 15% );
+		
+		& .triRight{
+			display:block;
+			height:0;
+			width:0;
+			position:absolute;
+			right: -$bar-height;
+			border: $bar-height/2 solid darken( $base-button-color, 15% );
+			border-bottom: $bar-height/2 solid transparent;
+			border-right: $bar-height/2 solid transparent;
+		}	
+	}
+}
+
+
+/** END OCR specific Banner **/

@@ -1,0 +1,50 @@
+//
+// CSS for the specific theme footer navigation
+//
+
+$foot-nav-columns: 7;
+
+#foot-nav{
+	@include padding-leader;
+	@include padding-trailer(2);
+	position:relative;
+	z-index:6;
+	
+	& a{}
+	
+	& .menu{
+		@include inline-block-list;
+		//@include inline-block-list-container;
+		
+		& > li{
+			//@include inline-block-list-item;
+			vertical-align: top;
+			width: floor( 100% / $foot-nav-columns ) - 0.1;
+			
+			& > a{
+				color: $base-header-color;
+				@include adjust-font-size-to( 16px, 1 );
+				@include single-text-shadow( #fff, 1px, 1px, 1px );
+				
+				&:hover{
+					color: lighten( $base-header-color, 10% );
+				}
+			}
+			
+			& ul.sub-menu{
+				display:block;
+				padding-right: 0.5em;
+				
+				& li{
+					display:block;
+					
+					& a{
+						&:hover{
+							color: lighten( $base-color, 10% );
+						}
+					}
+				}
+			}
+		}
+	}
+}

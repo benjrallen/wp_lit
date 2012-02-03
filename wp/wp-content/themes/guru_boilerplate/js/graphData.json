@@ -1,0 +1,10 @@
+[
+  { "year": "2004", "branding": 100, "marketing": 200, "webDesign": 300 },
+  { "year": "2005", "branding": 200, "marketing": 300, "webDesign": 400 },
+  { "year": "2006", "branding": 300, "marketing": 400, "webDesign": 500 },
+  { "year": "2007", "branding": 26, "marketing": 70, "webDesign": 107 },
+  { "year": "2008", "branding": 200, "marketing": 550, "webDesign": 380 },
+  { "year": "2009", "branding": 15, "marketing": 400, "webDesign": 280 },
+  { "year": "2010", "branding": 80, "marketing": 300, "webDesign": 180 },
+  { "year": "2011", "branding": 5, "marketing": 10, "webDesign": 8 }
+]

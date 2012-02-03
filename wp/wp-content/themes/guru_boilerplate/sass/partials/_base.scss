@@ -1,0 +1,113 @@
+// This file must be imported before loading html5-boilerplate
+
+$base-font-family: unquote('sans-serif');  // default font-family
+
+$base-font-size: 13px;  // default font-size for YUI fonts
+
+$base-line-height: 1.231;  // default line-height for YUI fonts
+
+$font-color: #444;
+
+$link-color: #607890;
+
+$link-hover-color: #036;
+
+$link-active-color: #607890;
+
+$link-visited-color: #607890;
+
+$selected-font-color: #fff;  // color for selected text
+
+$selected-background-color: lighten( #0761E2, 20% );;  // bg-color for selected text
+
+
+//typography
+@import "compass/typography";
+
+
+
+//utilities
+@import "compass/utilities";
+
+//and css3
+@import "compass/css3/pie";
+@import "compass/css3";
+
+
+
+//and guru plugins styles
+
+$guru-color: #0761E2;
+
+$base-color: #454545;
+$base-header-color: #bad;
+$base-button-color: #bada55;
+
+$base-grey: #999;
+
+$base-bg: #fff;
+
+$base-hover-opacity: 0.7;
+
+$base-width: 960px;
+
+$base-transition-time: 0.1s;
+
+$box-bg: lighten($base-bg, 100%);
+
+$base-font-size: 12px;
+$base-line-height: 18px;
+
+
+//radial gradients in ie9 & opera
+$experimental-support-for-svg: true;
+
+
+@include establish-baseline(12px);
+
+
+
+//$pie-behavior: url("/PIE.htc");
+$pie-behavior: url("/PIE.php");
+//$pie-behavior: url("/~ben/owasso/PIE.php"); //CHANGE THIS ON LAUNCH!!!
+$pie-base-class: pie;
+.pie{
+	@include pie-element(relative);
+}
+
+@mixin pie-png-fix{
+	-pie-png-fix: true;	
+}
+
+//to use:
+//#someEl{
+//	@include pie;
+//	@include background-image(linear-gradient(top center, white, $base-color));
+//	-pie-background: linear-gradient(top center, white, $base-color); //cause background images require that key in pie.
+//}
+
+
+@import "partials/_mixins";
+
+// Then we'll import the compass extension
+@import "html5-boilerplate";
+
+// Now, you can simply include everything
+// (except media) by uncommeting this line
+@include html5-boilerplate;
+
+// Or, you can pick and choose only the sections
+// you want by using the these includes
+//@include html5-boilerplate-reset;
+//@include html5-boilerplate-fonts;
+//@include html5-boilerplate-styles;
+//@include html5-boilerplate-helpers;
+
+// Or, you can import the "overrides" partial if
+// you want more control over individual mixins
+//@import "partials/overrides";
+
+// Finally, put your own styles in these partials
+// and add more as needed (i.e. forms, tables, nav)
+@import "partials/fonts";
+@import "partials/page";

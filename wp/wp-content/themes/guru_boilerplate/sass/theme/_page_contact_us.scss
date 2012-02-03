@@ -1,0 +1,110 @@
+//
+// CSS for the specific theme contact-page-template
+//
+
+$map-width: 460px;
+
+/** Contact Us Page Template **/
+
+.guruContactPage{
+	@include margin-trailer;
+}
+#guruMap{
+	display:inline-block;
+	width: $map-width;
+
+	@include margin-leader(0.5);
+
+	& .mapp-directions-div{
+		@include margin-leader;
+	}
+
+}
+#guruAddy{
+	display:inline-block;
+	vertical-align:top;
+	margin-left:10px;
+	
+	@include adjust-font-size-to( 16px, 1.5 );
+
+	
+	& #mappUserAddy{ width: 150px }
+	
+	& strong{
+		color: $base-header-color;
+		font-weight:normal;
+		
+		width:150px;
+	}
+	
+}
+
+#guruAddy #saddr{width: 130px}
+
+.ie #guruMap{
+	@include float-left;
+}
+.ie #guruAddy{
+	@include float-right;
+}
+
+a.directions-link{
+	
+}
+
+#guruAddy em, .cbox section em{
+	font-style:normal;
+	padding-left:13px;
+	display:block;
+	font-size:14px;
+	color:#7d7d7d;
+	line-height:18px;
+}
+
+/*
+a.directions-link{
+	background:url('images/main-sprite-8.png') no-repeat -795px -106px;	
+	display:block;
+	line-height:30px;
+	font-size:12px;
+	padding-left:42px;
+	font-size:11px;
+	font-weight:bold;
+	color:#7d7d7d;
+}
+a.directions-link:hover{
+	text-decoration:none;
+	color:#666;
+}
+#guruAddy strong, .cbox section strong{
+    border: 1px solid #EAEAEA;
+    font-weight:normal;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 6px 12px;
+	display:block;
+	color:#fba12d;
+	
+	background:rgba(255, 255, 255, 0.5);
+	
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	position:relative;
+	behavior:url(/PIE.php);
+}
+
+#guruAddy em{
+	
+}
+#guruAddy em, .cbox section em{
+	font-style:normal;
+	padding-left:13px;
+	display:block;
+	font-size:14px;
+	color:#7d7d7d;
+	line-height:18px;
+}
+*/
+
+/** End Contact Us Page Template **/

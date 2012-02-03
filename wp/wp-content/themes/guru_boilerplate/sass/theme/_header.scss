@@ -1,0 +1,19 @@
+//
+// CSS for the specific theme header
+//
+
+#header{
+		
+	& a#logo{
+
+		@include single-transition( opacity, $base-transition-time, ease-in-out );
+		
+		&:hover{
+			@include opacity($base-hover-opacity);
+		}
+	}
+	
+}
+
+
+

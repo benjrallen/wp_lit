@@ -1,0 +1,62 @@
+//
+// CSS for the specific theme page / post styles
+//
+
+
+/** Default Page Template **/
+
+article.hentry{
+	
+	& header.parent-title{
+		
+		& h3, & h4{
+		}
+		& h3{
+			
+			& a{
+			}
+		}
+		& h4{
+
+		}
+	}
+	
+	.entry-content{
+		
+		.pic{
+			//display:inline;
+			@include float-right;
+			@include margin-leader(0.5);
+			margin-left: 1em;
+			margin-bottom: 0.5em;
+			
+			& img{
+				display:block;
+				@include pie;
+				@include border-radius(2px);
+				//padding: 3px;
+				//background: $box-bg;
+				@include single-box-shadow( darken( $box-bg, 50% ), 0, 8px,6px, -5px );
+			}
+		}
+
+		& h1, & h2, & h3, & h4, & h5, & h6{
+		}
+
+		& h1.entry-title, h2.entry-title{
+
+		}
+		
+	}
+	
+}
+
+
+
+/** End Default Page Template **/
+
+
+/** 404 Page Template **/
+a.home-link{ display:block; @include float-right; color: $base-color; }
+/** End 404 Page Template **/
+

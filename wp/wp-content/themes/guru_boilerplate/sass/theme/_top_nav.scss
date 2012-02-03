@@ -1,0 +1,38 @@
+
+nav#access{
+	display:block;
+	cursor: default;
+	
+	& .menu{
+		
+		& li{
+			@include single-transition( all, $base-transition-time, ease-in-out );
+										
+			&.menu-item-last{
+
+			}
+			
+			&:hover{
+				
+			}
+			
+			& a{
+				text-decoration:none;
+
+				
+				&:hover{
+				}
+			}
+			
+			&.current_page_item{
+				
+				& a{
+					
+				}
+			}
+
+		}
+	}
+	
+
+}

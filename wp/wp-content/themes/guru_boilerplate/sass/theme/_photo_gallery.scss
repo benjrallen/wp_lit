@@ -1,0 +1,120 @@
+//
+// CSS for the specific theme photo gallery styles
+//
+
+/** Guru Photo Gallery **/
+.guru-photo-gallery{
+	text-align:center;
+	
+	& .guru-img-link{
+		//margin:8px 16px;
+		@include margin-leader( 0.5 );
+		@include margin-trailer( 0.5 );
+		margin-left: 0.4em;
+		margin-right: 0.4em;
+		display:inline-block;
+		
+		background: #fff;
+		padding:4px;
+		
+		@include pie;
+		@include border-radius( 3px );
+		@include single-box-shadow( darken( $base-bg, 20% ), 0, 0, 4px );
+		
+		& img{
+			display: block;
+		}
+	}
+}
+/** End Guru Photo Gallery **/
+
+/** Custom Lightbox **/
+#guruPopup{
+	z-index:1001;
+	display:inline-block;
+	position:absolute;
+	border:5px solid $box-bg;
+	background: $box-bg;
+	@include adjust-font-size-to( 16px );
+	@include single-box-shadow( darken( $box-bg, 70% ), 0, 4px, 20px, 0px );
+	
+	
+	& img{
+		margin: 0;
+		display:block;
+	}
+	
+	& #pNext, & #pPrev, & #pClose{
+		display:inline-block;
+		cursor:hand;
+		cursor:pointer;
+		z-index:2;
+		position:absolute !important;
+	}
+	
+	& #pNext, & #pPrev{
+		font-variant:small-caps;
+		@include adjust-font-size-to( 14px, 1.5 );
+		padding-left: 0.75em;
+		padding-right: 0.75em;
+		
+		top:50%;
+		color:#fff;
+	}
+	
+	& #pNext{
+		background: $base-header-color;
+		right: 0;
+		
+		&:hover{ background: lighten( $base-header-color, 15% ) }
+	}
+	
+	& #pPrev{
+		background: $base-button-color;
+		left: 0;
+		&:hover{ background: lighten( $base-button-color, 15% ) }
+	}
+	
+	& #pClose{
+		background: $box-bg;
+		border:3px solid $base-button-color;
+		color: $base-button-color;
+		text-align:center;
+		line-height:18px;
+		height:20px;
+		font-size:14px;
+		width:20px;
+		top:-15px;
+		right:-15px;
+	
+		@include pie;
+		@include border-radius( 20px );
+		
+		&:hover{
+			background: darken( $box-bg, 15% );
+		}
+	}
+	
+	& #pDesc, #pTitle{
+		position: absolute !important;
+		left: 0;
+		background: rgba( 0,0,0, 0.5 );
+		color: #fff;
+		@include pie;
+		
+		//@include adjust-font-size-to( 14px );
+		@include padding-leader( 0.25 );
+		@include padding-trailer( 0.25 );
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		z-index: 1;
+	}
+	& #pDesc{
+		bottom: 0;
+	}
+	& #pTitle{
+		top: 0;
+	}
+}
+
+/** End Custom Lightbox **/

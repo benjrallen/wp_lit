@@ -1,0 +1,357 @@
+// Here's where we define some default constants
+@import "partials/base";
+
+//look in base for other variables
+$inner-content-padding: 20px;
+
+body{
+	height:100%;
+	width:100%;
+	display:block;
+	//background: $base-bg url('../images/bg-diag.png');
+	background: $base-bg;
+	//background: #bad;
+	@include open-sans; //font stack
+	color:$base-color;
+
+	//position:relative;	
+	//@include min-height( 2000px );
+}
+
+h1, h2, h3, h4, h5, h6{
+	//@include bowlby;
+}
+
+h1{ @include adjust-font-size-to( 18px ); }
+h2{ @include adjust-font-size-to( 16px ); }
+h3{ @include adjust-font-size-to( 14px ); }
+h4{ @include adjust-font-size-to( 12px ); }
+//h5{ @include adjust-font-size-to( 10px ); }
+//h6{ @include adjust-font-size-to( 8px ); }
+
+
+a{
+	text-decoration:none;
+	color: $base-color;
+	&:hover{ color: $guru-color; }
+	&:visited{
+		color: $base-color;
+	}
+	@include single-transition( all, $base-transition-time, ease-in-out );
+}
+
+b,strong{
+	color: $guru-color;
+	font-weight: 300;	
+}
+
+p{
+	@include margin-leader(0.5);
+	@include margin-trailer(0.5);
+	@include adjust-font-size-to(14px);
+}
+
+input, textarea{
+	
+	&:focus{
+		background: lighten( $base-button-color, 55% );
+	}
+}
+
+
+/* Parts */
+
+$sidebar-width: 180px;
+
+@import "theme/header";
+	//@import "theme/banner_bars";
+@import "theme/top_nav";
+@import "theme/body";
+@import "theme/front_page";
+@import "theme/sidebar";
+	//@import "theme/rotator";
+	//@import "theme/footer_nav";
+@import "theme/footer";
+@import "theme/page_post";
+	//@import "theme/page_contact_us";
+	//@import "theme/contact_form";
+	//@import "theme/mailchimp_subscribe";
+	//@import "theme/photo_gallery";
+
+
+/* End Parts */
+
+
+.wrap{
+	width:$base-width;
+	margin:0 auto;
+}
+
+
+.clearfix{
+	@include pie-clearfix;
+}
+.alignleft{
+	@include float-left;
+	margin-right: 1em;
+}
+.alignright{
+	@include float-right;
+	margin-left: 1em;
+}
+.alignnone{}
+.aligncenter{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+$mobile-menu-height: 4em;
+$mobile-menu-color: #E7E9EF;
+
+/* --- less than main size --- */
+@media screen and (max-width: 979px) {
+	.wrap{
+		width:90%;
+		padding:0 5%;
+	}
+	
+	#header{
+		margin-top: $mobile-menu-height;
+		text-align: center;
+		@include padding-leader(1.5);
+		@include padding-trailer(1.5);
+		margin-bottom: 0;
+		
+		& a#logo, & #logo-right{
+			display:block;
+			float: none;
+		}
+		
+		& a#logo{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		& #logo-right{}
+	}
+	
+	nav#access{
+		@include pie;
+		position: absolute !important;
+		border-bottom: 1px solid $base-color;
+		top: 0;
+		padding-left:0;
+		padding-right:0;
+		width:100%;
+		@include min-height( $mobile-menu-height );
+		background: $guru-color;
+		@include background(
+			linear-gradient(
+				top,
+				lighten( $guru-color, 30% ) 0%,
+				$guru-color 4%,
+				darken( $guru-color, 20% ) 100%
+			)
+		);
+		
+		& > div{
+			
+			& .menu {
+				display: none;
+				background: #fff;
+				position: absolute;
+				top: $mobile-menu-height;
+				width: 100%;
+				margin-top: 1px;
+				@include padding-leader(0.5);
+				z-index: 30;
+				
+				//&.showing{
+				//	//display: inline-block;
+				//	display: block;
+				//}
+				
+				& li{
+					display: block;
+					margin-right: 1em !important;
+					margin-left: 1em !important;
+					@include margin-leader( 0.25 );
+					
+					//&.menu-item-last{}
+					
+					&.current_page_item a{
+					}
+					
+					&.current_page_item, &:active, &:hover{
+						& a{
+							color: $mobile-menu-color;
+							background: darken( $guru-color, 10% );
+						}
+					}
+				}
+				
+				& a{
+					@include adjust-font-size-to( 18px, 2 );
+					display: block;
+					padding-left: 1em;
+					background: lighten( $guru-color, 50% );
+					border: 1px solid darken( $guru-color, 30% );
+					@include border-radius( 3px );
+				}
+			}
+
+		}
+		
+		& #guruMenuBtn{
+			display: block;
+			padding-right: 2em;
+			border-right: 1px solid darken($mobile-menu-color, 20% );
+			position: absolute;
+			top: 0;
+			left: 0;
+			//@include background( rgba( 255,255,255, 0.3 ) );
+			
+			& > span{
+				@include background( url("../images/nav-menu-icon.png") no-repeat left center );
+				display:block;
+				height:100%;
+				margin-left: 22px;
+				padding-left:32px;
+				font-weight: bold;
+				color: $mobile-menu-color;
+				@include adjust-font-size-to( 18px, 2.7 );
+			}
+			
+			&:hover{
+				//background-color: darken( $guru-color, 10% );
+			}
+			&:active, &.pressed{
+				background-color: darken( $guru-color, 20% );
+				@include background( 
+					linear-gradient(
+						top,
+						lighten( $guru-color, 10% ) 0%,
+						darken( $guru-color, 20% ) 4%,
+						$guru-color 100%
+					)		
+				);
+			}
+		}
+	}
+	
+	#content{
+		margin-top:0;
+	}
+
+	.project-year{
+		width: 100% !important;
+	}
+
+	.projects.thead{		
+		width: 100% !important;
+	}
+	
+	article.hentry{
+		width: 100%;
+		display:block;
+		float: none;
+		
+		&#front-page-entry{
+			text-align:center;
+			width: 100%;
+		}
+		
+		& header{
+			@include padding-leader(1);
+			& .entry-title{
+				@include margin-trailer(0.5);
+			}
+		}
+		
+		& .entry-content {
+			& .pic{
+				//max-width: 45% !important;
+				display: block;
+				float: none;
+				@include margin-trailer;
+				
+				& img{
+					margin-left: auto;
+					margin-right: auto;
+					max-width: 100% !important;
+					height: auto !important;
+				}
+			}			
+		}
+	}
+	
+	
+	#sidebar{
+		display:block;
+		position:relative;
+		height:auto;
+		width: 100%;
+		float:none;
+		@include margin-leader(2);
+	
+		& #guru-addy{
+			position:relative;
+			display:block;
+			@include margin-leader(3);
+			margin-left: auto;
+			margin-right: auto;
+			text-align:center;
+		}
+	}
+	
+	#guruGraph{
+		display:block;
+		width:100%;
+		@include margin-leader(2);
+		margin-left: 0;
+	}
+	
+	#fallbackGraph{
+		@include margin-leader(2);
+		@include margin-trailer(2);
+		display:block;
+		width: 100%;
+		margin-left: 0;
+	}
+
+
+	#footer{
+		text-align:center;
+		& span.foot-left, & span.foot-right{
+			display:block;
+			float:none;
+		}
+		& span.foot-left{
+			@include adjust-font-size-to(12px);
+			& span{
+				display:block;
+				&.hyph{
+					display:none;
+				}
+			}
+		}
+		& span.foot-right{
+			@include margin-leader;
+			& a{
+				color: $guru-color;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+/* --- iPad Portrait --- */
+@media screen and (max-width: 880px) {
+}
+
+/* --- Smartphones and small Tablet PCs --- */
+@media screen and (max-width : 620px) {
+
+}

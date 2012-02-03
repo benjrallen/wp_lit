@@ -1,0 +1,99 @@
+//
+// CSS for the contact form 7 inputs
+//
+
+$textarea-height: 180px;
+
+/** Contact Form 7 Markup and Style **/
+.guruForm{
+	display:block;
+	color: $base-color;
+	@include adjust-font-size-to( 14px );
+	
+	& input[type="text"], & [type="email"], & textarea{
+		border: 1px solid darken( $base-bg, 20% );
+		@include adjust-font-size-to( 12px, 1.5 );
+		//@include padding-leader(0.5);
+		//@include padding-trailer(0.5);
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		font-style: normal;	
+	}
+	
+	& input[type="text"], & [type="email"], & input[type="file"], & textarea{
+		width: 90%;
+
+	}
+	
+	& input[type="checkbox"]{
+		vertical-align:text-top;
+		display:inline-block;
+	}
+	
+	& textarea{
+		//@include pie;
+		//@include border-radius( 3px );
+		
+		height: $textarea-height;
+		@include adjust-font-size-to( 12px, 1 );
+		margin-top: -3px;
+	}
+	
+	& label{
+		display: block;
+		color: $base-button-color;
+		@include adjust-font-size-to( 12px );
+		@include margin-trailer( -1 );
+	}
+	
+	& .wpcf7-checkbox{
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		border: 1px solid darken( $base-bg, 20% );
+		width:90%;
+		display:block;
+	}
+	
+	& .wpcf7-list-item{
+		display:block;
+	}
+	
+	
+}
+
+.guruLeft, .guruRight{
+	display: inline-block;
+	width: 45.5%;
+	margin: 0 2%;
+	vertical-align: top;
+}
+
+.ie .guruLeft{
+	@include float-left;
+}
+
+.ie .guruRight{
+	@include float-right;
+}
+
+.guruRight{
+	
+	&.inputs{
+		margin-right: 1em;
+	}
+	&.files{
+		margin-right: 0.5em;
+	}
+}
+
+.guruBlock{
+	display:block;
+	width: 100%;
+}
+
+.guruSubmit{
+	@include float-right;
+	display:block;
+}
+
+/** End Contact Form 7 Markup and Style **/

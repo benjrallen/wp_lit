@@ -1,0 +1,53 @@
+//
+// CSS for the specific theme sidebar
+//
+
+
+#sidebar{
+	
+	@include float-right;
+	height: 100%;
+	position:absolute;
+	top:0;
+	right:0;
+	width: $sidebar-width;
+	
+	& .side-box{
+		@include pie;
+		display: block;
+		height: 120px;
+		width: $sidebar-width;
+		//background: $base-grey;
+		@include margin-trailer(1.5);
+		margin-left: auto;
+		margin-right: auto;
+		
+		& img{
+			display: block;
+			@include single-box-shadow( $base-color, 0px, 6px, 8px, -4px );
+			@include border-radius( 2px );
+			@include single-transition( opacity, $base-transition-time, ease-in-out );
+			
+			&:hover{
+				@include opacity($base-hover-opacity);
+			}
+		}
+	}
+	
+	& #guru-addy{
+		width: $sidebar-width;
+		position:absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+#guru-addy{
+	text-align: right;
+	@include margin-trailer(0.5);
+	
+	& strong{
+		color: $base-color;
+		font-weight: bold;
+	}
+}

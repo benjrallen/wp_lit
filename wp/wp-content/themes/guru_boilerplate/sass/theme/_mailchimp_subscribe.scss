@@ -1,0 +1,82 @@
+//
+// CSS for the newsletter subscription… this one is for mailchimp
+//
+
+$mc-error-color: #f44;
+$mc-success-color: #39924E;
+
+/** Newsletter subscription alerts **/
+
+.mcError{
+	display: block;
+	@include adjust-font-size-to( 12px, 1.5 );
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	@include margin-trailer( 0.25 );
+	color: $mc-error-color;
+	border: 1px solid $mc-error-color;
+	background: lighten( $mc-error-color, 30% );
+	
+	text-align: center;
+	
+	&.success{
+		color: $mc-success-color;
+		border: 1px solid $mc-success-color;
+		background: lighten( $mc-success-color, 30% );
+	}
+}
+
+/*
+#subscribe{
+	margin-top:12px;
+	margin-left:12px;
+	width:280px;
+	text-align:center;
+}
+#subscribe header, .post-content.recipe-page header{
+	height:52px;
+	border-bottom:1px solid #c03d00;
+	margin-bottom:14px;
+}
+#subscribe header h2,  .post-content.recipe-page header h2{
+	font-size:20px;
+	font-style:italic;
+	font-weight:normal;
+	line-height:52px;
+	color:#c03d00;
+}
+#subscribe form{}
+#subs-email{
+	border:1px solid #ccc;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:14px;
+	padding:11px 6px;
+}
+#subs-email.hasPlaceholder{
+	color:#ccc;
+	font-style:normal;
+}
+#subs-email, #subs-subm{
+	vertical-align:top;
+}
+#subs-subm{
+	text-transform:none;
+}
+#subscribe .mcError{
+	color:#f44;
+	background: #fcc;
+	border:1px solid #f44;
+	display:block;
+	width:202px;
+	margin:0 auto 6px;
+	padding:6px 5%;
+	line-height:20px;
+}
+#subscribe .mcError.success{
+	color: #39924E;
+	background: #B2DFB5;
+	border: 1px solid #39924E;
+}
+*/
+
+/** End Newsletter subscription alerts **/
