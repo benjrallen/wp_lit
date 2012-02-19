@@ -261,6 +261,9 @@ class MetaBoxTemplate{
 			// get current post meta data
 			$meta = get_post_meta($post->ID, $field['id'], true);
 			
+			if( !isset($field['desc']) )
+				$field['desc'] = '';
+			
 			//echo '<tr>',
 			//		'<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
 			//		'<td>';
@@ -337,6 +340,9 @@ class MetaBoxTemplate{
 	
 	function save($post_id){
 		global $post;
+				
+		if( !isset($_POST['guru_meta_box_nonce']) )
+			return $post_id;
 		
 		// verify nonce
 		if (!wp_verify_nonce($_POST['guru_meta_box_nonce'], basename(__FILE__))) {
@@ -678,6 +684,11 @@ class PostTypeTemplate{
 	}
 	
 	public function update_messages( $messages ){
+		
+		//print_r ( $messages );
+		
+		global $post;
+		$post_ID = $post->ID;
 		
 		$this->messages[ $this->post_type ] = wp_parse_args( $this->messages, array(
 			0 => '', // Unused. Messages start at index 1.

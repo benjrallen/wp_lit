@@ -32,20 +32,38 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 		<script type="text/javascript">
-			Guru = new Object();
-			Guru.Url = '<?php bloginfo( 'url' ); ?>';
-			Guru.TemplateUrl = '<?php bloginfo('template_directory'); ?>';
-			Guru.isFrontPage = <?php if(is_front_page()) { echo 'true'; }else{ echo 'false'; } ?>;
-			Guru.wpVersion = '<?php echo trim(get_bloginfo("version")); ?>';
-			Guru.postID = '<?php echo get_the_ID(); ?>';
+			Ease = new Object();
+			Ease.Url = '<?php bloginfo( 'url' ); ?>';
+			Ease.TemplateUrl = '<?php bloginfo('template_directory'); ?>';
+			Ease.isFrontPage = <?php if(is_front_page()) { echo 'true'; }else{ echo 'false'; } ?>;
+			Ease.wpVersion = '<?php echo trim(get_bloginfo("version")); ?>';
+			Ease.postID = '<?php echo get_the_ID(); ?>';
 		</script>
+
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script>
+
+		<script type="text/javascript">
+			Modernizr.load([
+				{ load : ['//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'] },
+				{ test: window.JSON, nope: Ease.TemplateUrl+'/js/json2.js' },
+				{ test: Modernizr.input.placeholder,
+				  nope: Ease.TemplateUrl+'/js/placeholder.jquery.js'
+				},
+				/* plugins.js & common.js fordevelopment */
+				{ load : Ease.TemplateUrl+'/js/plugins.js' },
+				{ load : Ease.TemplateUrl+'/js/common.js' }
+				/* concatenate and optimize seperate script files for deployment using google closure compiler (compiler.jar) in js folder */
+				//{ load : Ease.TemplateUrl+'/js/theme.js' }
+			]);
+		</script>
+
 		
 <?php
 		/* We add some JavaScript to pages with the comment form
 		 * to support sites with threaded comments (when in use).
 		 */
-		if ( is_singular() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
+		//if ( is_singular() && get_option( 'thread_comments' ) )
+		//	wp_enqueue_script( 'comment-reply' );
 
 		/* Always have wp_head() just before the closing </head>
 		 * tag of your theme, or you will break many plugins, which
@@ -54,17 +72,6 @@
 		 */
 		wp_head();		
 ?>
-		<script type="text/javascript">
-			Modernizr.load([
-				{ load : ['//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'] },
-				{ test: window.JSON, nope: Guru.TemplateUrl+'/js/json2.js' },
-				/* plugins.js & common.js fordevelopment */
-				{ load : Guru.TemplateUrl+'/js/plugins.js' },
-				{ load : Guru.TemplateUrl+'/js/common.js' }
-				/* concatenate and optimize seperate script files for deployment using google closure compiler (compiler.jar) in js folder */
-				//{ load : Guru.TemplateUrl+'/js/theme.js' }
-			]);
-		</script>
 	</head>
 	<body <?php body_class(); ?>>
 		<header id="header" class="wrap" role="banner">

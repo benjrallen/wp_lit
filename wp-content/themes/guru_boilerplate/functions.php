@@ -560,7 +560,7 @@ add_image_size( 'banner', 707, 371, true );
 
 
 //add page excerpts if necessary
-//add_post_type_support( 'page', 'excerpt' );
+add_post_type_support( 'page', 'excerpt' );
 
 //to fix wp-nav-menu seperators
 function nav_menu_first_last( $items ) {
@@ -571,6 +571,18 @@ function nav_menu_first_last( $items ) {
 	return $items;
 }
 add_filter( 'wp_nav_menu_items', 'nav_menu_first_last' );
+
+//to add slug of item to classes for each nav menu item
+function slug_nav_class( $classes, $item ){
+	//$slug = get_page( $item->object_id )->post_name;
+		
+	$classes[] = get_page( $item->object_id )->post_name;
+	
+	//$slug = null;
+	
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'slug_nav_class', 10, 2 ); // 10 is priority, 2 is the accepted number of args to pass to the function.  opens up $item in this case.
 
 
 function content($limit = 55) {
