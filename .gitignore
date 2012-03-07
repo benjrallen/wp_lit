@@ -4,7 +4,7 @@
 # Wordpress
 #
 
-#.htaccess
+.htaccess
 wp-config.php
 wp-content/backup-db/*
 wp-content/cache/*
