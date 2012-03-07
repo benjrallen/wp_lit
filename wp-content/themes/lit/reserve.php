@@ -6,7 +6,7 @@ require_once 'lib/general.php';
 //require_once 'lib/seo.php';
 
 //var_dump($_SERVER);die;
-if (strpos($_SERVER["SERVER_NAME"], "localhost") !== false) {
+if (strpos($_SERVER["SERVER_NAME"], "localhost") !== false || strpos($_SERVER["SERVER_NAME"], "dev.benjrallen.com") !== false) {
 	define("DB_HOST", "localhost");
 	define("DB_NAME", "litmotors");
 	define("DB_USER", "root");
