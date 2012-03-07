@@ -30,10 +30,10 @@ get_header(); ?>
 	      <?php get_template_part('shirt', 'form'); ?>
 	    </div>
 	    
-      <div class="clearfix"</div>
+      <div class="clearfix"></div>
 	  </article>
 	</div>
 
 <?php endwhile; endif; ?>
-<div class="clearfix"</div>
+<div class="clearfix"></div>
 <?php get_footer(); ?>

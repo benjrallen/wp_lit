@@ -38,10 +38,10 @@ get_header(); ?>
 	        <?php the_content(); ?>
 	      </div>
 	    </div>
-      <div class="clearfix"</div>
+      <div class="clearfix"></div>
 	  </article>
 	</div>
 
 <?php endwhile; endif; ?>
-<div class="clearfix"</div>
+<div class="clearfix"></div>
 <?php get_footer(); ?>

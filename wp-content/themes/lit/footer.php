@@ -25,8 +25,8 @@
 					  
 					</span>
 					<span class="foot-right">
-					  <div class="fb">
-					    <fb:like href="http://www.facebook.com/pages/Lit-Motors-Inc/134698133268554" send="true" layout="button_count" width="90" show_faces="false"></fb:like>
+					  <div id="fbLike" class="fb">
+              <div class="fb-like" data-href="http://www.facebook.com/pages/Lit-Motors-Inc/134698133268554" data-send="true" data-layout="button_count" data-width="90" data-show-faces="false"></div>
 					  </div>
 					  <div class="tw">
 					    <a href="http://twitter.com/LitMotors" class="twitter-follow-button" data-show-count="false">@LitMotors</a>

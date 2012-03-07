@@ -21,5 +21,5 @@ get_header(); ?>
 </script>
 
 <?php endwhile; endif; ?>
-<div class="clearfix"</div>
+<div class="clearfix"></div>
 <?php get_footer(); ?>

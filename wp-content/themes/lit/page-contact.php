@@ -32,12 +32,12 @@ get_header(); ?>
         	<?php echo do_shortcode('[contact-form-7 id="400" title="Contact form 1"]'); ?>
 	      </div>
 	    </div>
-      <div class="clearfix"</div>
+      <div class="clearfix"></div>
 	  </article>
 	</div>
 
 <?php endwhile; endif; ?>
-<div class="clearfix"</div>
+<div class="clearfix"></div>
 <?php get_footer(); ?>
 <?php 
 /*  HERE IS THE FORM CODE MARKUP IN CASE IT GETS LOST FROM DB ON LAUNCH

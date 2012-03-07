@@ -68,9 +68,8 @@ get_header(); ?>
     </video>
 
   </div>
+  <div class="clearfix"></div>
 
 </article>
-
-<div class="clearfix"></div>
 
 <?php get_footer(); ?>

@@ -50,6 +50,10 @@ article.hentry{
 		background-position: center bottom;
 		text-align: center;
 		
+		&.error404{
+			min-height: 0;
+		}
+		
 		& .entry-content{
 			padding: 0;
 			margin: 0;
@@ -97,7 +101,11 @@ article.hentry{
 			@include margin-trailer(0.25);
 		}
 		& input{
-			@include adjust-font-size-to(12px, 1.5);			
+			//@include adjust-font-size-to(12px, 1.5);
+			//height: 2em;
+			font-size: 12px;
+			padding-top: 8px;
+			padding-bottom: 8px;
 		}
 		& textarea{
 			@include padding-leader(1);
@@ -109,7 +117,7 @@ article.hentry{
 			color: #fff;
 			font-weight: bold;
 			@include theme-button();
-			@include margin-leader(0.5);
+			@include margin-leader(0.25);
 			width: 10em;
 			margin-right: 40px;
 			@include float-right;
@@ -124,8 +132,8 @@ article.hentry{
 			font-size: 12px;
 			padding-left: 6px;
 			padding-right: 6px;
-			height: 24px;
-			line-height: 24px;
+			height: 26px;
+			line-height: 26px;
 			top: 0;
 			left: 0;
 			background: #fcc;
@@ -234,11 +242,11 @@ article.hentry{
 		list-style: none outside;
 		//margin-left: 0;
 		margin-left: $logo-margin;
-		
+		@include padding-trailer(0.5);
 		& li{
 			display: block;
 			background: #555;
-			@include border-radius(18px);
+			@include border-radius(20px);
 			@include pie;
 			@include box-shadow( darken($base-grey, 50%) 1px 1px 12px -2px );
 			& a{
@@ -378,6 +386,20 @@ article.hentry{
 	
 }
 
+.ie article.hentry{
+	&#contactPage{
+		& input[type="submit"]{
+			margin-right: 0;
+		}
+
+		& span.wpcf7-not-valid-tip{
+			width: 388px;
+			*height: 30px;
+			*line-height: 30px;
+		}
+	}
+}
+
 #carousel{
 	position: relative;
 	z-index: 10;
@@ -386,6 +408,11 @@ article.hentry{
 	
 	$pad: 16px;
 	$thumbH: 97px;	
+
+	$pTriW: 33px;
+	$pTop: floor( ($thumbH - $pTriW * 2) / 2 + $pad );
+	$pColor: $base-bg;
+
 	& #outer{
 		position: relative;
 		width: 100%;
@@ -398,7 +425,7 @@ article.hentry{
 	& #inner{
 		width: 9999em;
 		position: absolute;
-		left: 0;
+		left: $pTriW + 3;
 		top: 0;
 		padding: $pad 0;
 		//height: $thumbH;
@@ -434,9 +461,6 @@ article.hentry{
 	}
 	
 	
-	$pTriW: 20px;
-	$pTop: floor( ($thumbH - $pTriW * 2) / 2 + $pad );
-	$pColor: $base-bg;
 	& .nav{
 		position: absolute;
 		z-index: 3;
@@ -480,23 +504,43 @@ article.hentry{
 		
 		&.left{
 			left: 0;
-			@include background(
-				linear-gradient(
-					left,
-					$bak 0%,
-					rgba(153,153,153,0) 100%
-				)
+			background: transparent;
+			background-image: linear-gradient(left , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -o-linear-gradient(left , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -moz-linear-gradient(left , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -webkit-linear-gradient(left , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -ms-linear-gradient(left , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+
+			background-image: -webkit-gradient(
+				linear,
+				left top,
+				right top,
+				color-stop(0, rgb(153,153,153)),
+				color-stop(1, rgba(153,153,153,0))
 			);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#FF999999,endColorstr=#00999999)"; /* IE8 */
+			    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#FF999999,endColorstr=#00999999);   /* IE6 & 7 */
+			      zoom: 1;
 		}
 		&.right{
 			right: 0;
-			@include background(
-				linear-gradient(
-					right,
-					$bak 0%,
-					rgba(153,153,153,0) 100%
-				)
+			background: transparent;
+			background-image: linear-gradient(right , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -o-linear-gradient(right , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -moz-linear-gradient(right , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -webkit-linear-gradient(right , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+			background-image: -ms-linear-gradient(right , rgb(153,153,153) 0%, rgba(153,153,153,0) 100%);
+
+			background-image: -webkit-gradient(
+				linear,
+				right top,
+				left top,
+				color-stop(0, rgb(153,153,153)),
+				color-stop(1, rgba(153,153,153,0))
 			);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#00999999,endColorstr=#FF999999)"; /* IE8 */
+			    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr=#00999999,endColorstr=#FF999999);   /* IE6 & 7 */
+			      zoom: 1;
 		}
 	}
 }
@@ -818,10 +862,10 @@ $rad: 80px;
 #tooltip{
 	max-width: 300px;
 }
-.lte7 #reservePopup, .lte7 #tooltip, .ie9 #reservePopup, .ie9 #tooltip{
+.lte7 #reservePopup, .lte7 #tooltip, .lte7 #forumPopup, .ie9 #reservePopup, .ie9 #tooltip, .ie9 #forumPopup{
 	@include pie;
 }
-.ie8 #reservePopup, .ie8 #tooltip{
+.ie8 #reservePopup, .ie8 #tooltip, .ie8 #forumPopup{
 	border: 1px solid lighten( $base-color, 30% );
 }
 

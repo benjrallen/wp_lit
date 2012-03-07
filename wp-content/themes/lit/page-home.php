@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php endwhile; ?>
 <?php //get_sidebar(); ?>
-<div class="clearfix"</div>
+<div class="clearfix"></div>
 		</section><!-- #main -->
 		
 <?php
