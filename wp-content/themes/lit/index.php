@@ -14,7 +14,7 @@
  */
 
 get_header(); ?>
-
+<div id="grad"></div>
 			<?php
 			/* Run the loop to output the posts.
 			 * If you want to overload this in a child theme then include a file

@@ -2,14 +2,47 @@
 // CSS for the specific theme header
 //
 
-#header{
-		
-	& a#logo{
+$logo-margin: -16px;
 
+#header{
+	background: $box-bg;
+	height: 100px;
+	position: relative;
+	z-index: 3;
+	
+	& h1, & h2{	
+		@include float-left;
+		
+	}
+	
+	& h1, & h2, & #access, & .rekindle{
+		//@include inline-block;
+		//vertical-align: top;
+		display: block;
+	}
+	
+	& .rekindle{
+		text-transform: uppercase;
+		@include padding-leader( 4.5 );
+		letter-spacing: 1px;
+	}
+	
+	& a#logo{
+		
+		//margin-left: $logo-margin;
+		display: block;
+		height: 129px;
+		margin-bottom: -29px;
+		width: 99px;
+		@include main-sprite;
+		background-position: 0 0;
+		text-indent: -9999em;
+		margin-right: 1em;
+		
 		@include single-transition( opacity, $base-transition-time, ease-in-out );
 		
 		&:hover{
-			@include opacity($base-hover-opacity);
+			@include opacity(0.9);
 		}
 	}
 	

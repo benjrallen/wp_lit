@@ -8,14 +8,13 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
-?><!DOCTYPE html>
+?><!DOCTYPE html xmlns:fb="https://www.facebook.com/2008/fbml">
 <!--[if lt IE 7 ]><html <?php language_attributes(); ?> class="no-js ie ie6 lte7 lte8 lte9"><![endif]-->
 <!--[if IE 7 ]><html <?php language_attributes(); ?> class="no-js ie ie7 lte7 lte8 lte9"><![endif]-->
 <!--[if IE 8 ]><html <?php language_attributes(); ?> class="no-js ie ie8 lte8 lte9"><![endif]-->
 <!--[if IE 9 ]><html <?php language_attributes(); ?> class="no-js ie ie9 lte9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300,700' rel='stylesheet' type='text/css'>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<title><?php
 			/*
@@ -25,8 +24,13 @@
 			 */
 			wp_title( '|', true, 'right' );
 		?></title>
+
+    <meta name="author" content="Lit Motors, Inc.">
+    <meta property="fb:app_id" content="156045794485389"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <?php /* ?>
 		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" /> 
+    <?php */ ?>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/application.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -43,17 +47,25 @@
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script>
 
 		<script type="text/javascript">
+      window._gaq = [['_setAccount','UA-25720006-1'],['_trackPageview'],['_trackPageLoadTime']];
+
 			Modernizr.load([
 				{ load : ['//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'] },
 				{ test: window.JSON, nope: Ease.TemplateUrl+'/js/json2.js' },
 				{ test: Modernizr.input.placeholder,
 				  nope: Ease.TemplateUrl+'/js/placeholder.jquery.js'
 				},
-				/* plugins.js & common.js fordevelopment */
+				/* plugins.js & common.js for development */
+				//{ load : Ease.TemplateUrl+'/js/closure/base.js' },
+				//{ load : Ease.TemplateUrl+'/js/closure/string.js' },
+				//{ load : Ease.TemplateUrl+'/js/closure/emailAddress.js' },
 				{ load : Ease.TemplateUrl+'/js/plugins.js' },
-				{ load : Ease.TemplateUrl+'/js/common.js' }
+				{ load : Ease.TemplateUrl+'/js/common.js' },
 				/* concatenate and optimize seperate script files for deployment using google closure compiler (compiler.jar) in js folder */
-				//{ load : Ease.TemplateUrl+'/js/theme.js' }
+				//{ load : Ease.TemplateUrl+'/js/theme.js' },
+        { load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' },
+        { load: 'http://platform.twitter.com/widgets.js' },
+        { load: "//connect.facebook.net/en_US/all.js#appId=266138276740381&xfbml=1" }
 			]);
 		</script>
 
@@ -74,12 +86,27 @@
 ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<header id="header" class="wrap" role="banner">
-			<?php if (is_front_page()) { echo '<h1>'; } else { echo '<h2>'; } ?>
-			<a id="logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<?php if (is_front_page()) { echo '</h1>'; } else { echo '</h2>'; } ?>
+		<?php 
+		  if (is_front_page())
+		    echo '<a id="homeLink" href="'.home_url( '/home/' ).'"></a>'
+		?>
+		
+		<header id="header"role="banner">
+		  <div class="wrap">
+  			<?php 
+  			  if (is_front_page()) {
+  			    echo '<h1>';
+  			  } else { 
+  			    echo '<h2>'; 
+  			  }
+  			?>
+  			<a id="logo" href="<?php echo home_url( '/home/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+  			<?php if (is_front_page()) { echo '</h1>'; } else { echo '</h2>'; } ?>
+
+    		<?php get_template_part('nav','primary'); ?>
+
+		  </div>
 		</header>
 		
-		<?php get_template_part('nav','primary'); ?>
 		
-		<section id="content" class="wrap" role="main">
+		<section id="content" role="main">

@@ -28,16 +28,48 @@ get_header(); ?>
 
 <article id="front-page-entry" <?php post_class(); ?>>
 
-<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
+<?php //if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-<?php the_content(); ?>
+<?php //the_content(); ?>
 
-<?php endwhile; endif; ?>
+<?php //endwhile; endif; ?>
+
+  <div class="wrap">
+
+		<source src="<?php echo site_url("/vid/2_turntable-web.mp4"); ?>" type="video/mp4"  /> 
+		<source src="<?php echo site_url("/vid/2_turntable-web.webm"); ?>" type="video/webm" /> 
+		<source src="<?php echo site_url("/vid/2_turntable-web.ogv"); ?>" type="video/ogv" /> 
+
+
+   <video id="splash" width="960" height="500" loop="loop" autoplay="autoplay">
+      <source src="<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.mp4" type="video/mp4"></source>
+      <source src="<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.webm" type="video/webm"></source>
+      <source src="<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.ogv" type="video/ogg"></source>
+			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='960' height='500' id='single1' name='single1'>
+				<param name='movie' value="<?php bloginfo('template_directory'); ?>/turntable/player.swf">
+				<param name='allowfullscreen' value='true'>
+				<param name='allowscriptaccess' value='always'>
+				<param name='wmode' value='transparent'>
+				<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.mp4&controlbar=none&dock=false&autostart=true&icons=false&quality=false&repeat=always'>
+				<embed
+					type='application/x-shockwave-flash'
+					id='single2'
+					name='single2'
+					src="<?php bloginfo('template_directory'); ?>/turntable/player.swf"
+					width='960'
+					height='500'
+					bgcolor='undefined'
+					allowscriptaccess='always'
+					allowfullscreen='true'
+					wmode='transparent'
+					flashvars="file=<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.mp4&controlbar=none&dock=false&autostart=true&icons=false&quality=false&repeat=always"
+				/>
+			</object>
+    </video>
+
+  </div>
 
 </article>
-
-<?php get_sidebar(); ?>
-
 
 <div class="clearfix"></div>
 

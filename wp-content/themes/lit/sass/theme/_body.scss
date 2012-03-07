@@ -6,11 +6,40 @@
 #content{
 	//@include pie;
 	
+	min-height: 400px;
+	background: $base-grey;
+	position: relative;
+	z-index: 2;
 	
-		
 	//@include box-shadow( 
 	//	darken( $base-bg, 50% ) 0 20px 25px -20px, 
 	//	darken( $base-bg, 50% ) -10px 0 35px -30px,
 	//	darken( $base-bg, 50% ) 10px 0 35px -30px
 	//);
+	
+	
+	& .wrap{
+		position: relative;
+		z-index: 1;
+	}
+}
+
+#grad{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	height: 100%;
+	width: 100%;
+	display: block;
+	@include pie;
+	@include background(
+		linear-gradient( top, #cacaca 0%, #e1e1e1 100% )
+	);
+
+	&.dark{
+		@include background(
+			linear-gradient( top, $base-color 0%, lighten($base-color, 15%) 100% )
+		);
+	}
 }

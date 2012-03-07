@@ -16,10 +16,6 @@ $link-active-color: #607890;
 
 $link-visited-color: #607890;
 
-$selected-font-color: #fff;  // color for selected text
-
-$selected-background-color: lighten( #0761E2, 20% );;  // bg-color for selected text
-
 
 //typography
 @import "compass/typography";
@@ -39,24 +35,50 @@ $selected-background-color: lighten( #0761E2, 20% );;  // bg-color for selected 
 
 $guru-color: #0761E2;
 
-$base-color: #454545;
-$base-header-color: #bad;
-$base-button-color: #bada55;
+$base-color: #333;
+
+$base-orange: #EC7625;
+$base-green: #9EE072;
+//$base-green: #B6DF91;
+$base-green-light: #CBFBA1;
+$base-green-dark: #999D43;
+
+$base-header-color: #BF8300;
+
+$base-button-color: #FF6400;
 
 $base-grey: #999;
 
-$base-bg: #fff;
 
 $base-hover-opacity: 0.7;
 
-$base-width: 960px;
+$base-width: 980px;
 
 $base-transition-time: 0.1s;
 
-$box-bg: lighten($base-bg, 100%);
+
+$base-bg: #fff;
+
+$box-bg: #fff;
+
+$boxRad: 4px;
 
 $base-font-size: 12px;
-$base-line-height: 18px;
+$base-line-height: 16px;
+
+
+
+$link-color: $base-color;
+
+$link-hover-color: lighten( $base-color, 10% );
+
+$link-active-color: lighten( $base-color, 5% );
+
+$link-visited-color: $base-color;
+
+$selected-font-color: #fff;  // color for selected text
+
+$selected-background-color: lighten( $base-button-color, 20% );;  // bg-color for selected text
 
 
 //radial gradients in ie9 & opera

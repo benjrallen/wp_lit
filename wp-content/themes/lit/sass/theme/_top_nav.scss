@@ -1,36 +1,61 @@
 
 nav#access{
-	display:block;
+	//display:block;
 	cursor: default;
-	
+	@include padding-leader( 4 );
+	text-transform: uppercase;
+	letter-spacing: 1px;
 	& .menu{
-		
+
+		@include inline-block-list;
+
 		& li{
 			@include single-transition( all, $base-transition-time, ease-in-out );
-										
+			
+			vertical-align: bottom;
+			margin-left: 1.75em;
+				
+			&.menu-item-first{
+				margin-left: 1em;
+			}	
+			
 			&.menu-item-last{
 
 			}
-			
+		
 			&:hover{
-				
-			}
 			
+			}
+		
 			& a{
 				text-decoration:none;
-
-				
+				color: $base-grey;
+				display: block;
 				&:hover{
+					color: $base-button-color;
 				}
 			}
-			
+		
 			&.current_page_item{
-				
+			
 				& a{
-					
+					color: $base-button-color;
 				}
 			}
 
+			&.home{
+				& a{
+					@include main-sprite;
+					height: 22px;
+					width: 50px;
+					background-position: 0 -257px;
+					text-indent: -9999em;
+					
+					&:hover{
+						@include opacity(0.7);
+					}
+				}
+			}
 		}
 	}
 	

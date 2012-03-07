@@ -512,8 +512,8 @@ endif;
 	        $classes[] = $category->category_nicename;
 	        return $classes;
 	}
-	add_filter('post_class', 'boilerplate_category_id_class');
-	add_filter('body_class', 'boilerplate_category_id_class');
+	//add_filter('post_class', 'boilerplate_category_id_class');
+	//add_filter('body_class', 'boilerplate_category_id_class');
 
 // change Search Form input type from "text" to "search" and add placeholder text
 	function boilerplate_search_form ( $form ) {
@@ -527,13 +527,8 @@ endif;
 	}
 	add_filter( 'get_search_form', 'boilerplate_search_form' );
 
-// added per WP upload process request
-if ( function_exists( 'add_theme_support' ) ) {
-	add_theme_support( 'post-thumbnails' );
-}
 
-
-/** BEGIN GuRu Theme Specific Functions **/
+/** BEGIN Ease Theme Specific Functions **/
 
 /*
 function flag_content_more_link($link) { 
@@ -543,21 +538,29 @@ function flag_content_more_link($link) {
 add_filter('the_content_more_link', 'flag_content_more_link');
 */
 
-//register secondary thumbnail image, using multiple-post-thumbnail plugin
-if (class_exists('MultiPostThumbnails')) {
-	new MultiPostThumbnails(array(
-		'label' => 'Front Page Banner',
-		'id' => 'fp-banner',
-		'post_type' => 'page'
-		)
-	);
+global $current_lit_video;
+  $current_lit_video = 0;
+
+add_action('after_setup_theme', 'add_ease_theme_support');
+function add_ease_theme_support(){
+  
+  // added per WP upload process request
+  if ( function_exists( 'add_theme_support' ) ) {
+  	add_theme_support( 'post-thumbnails' );
+    add_theme_support('post-formats', array('video') );
+  }
+  
 }
-
+  
 //add image sizes
-add_image_size( 'page-thumb', 314, 314, false );
-add_image_size( 'project-thumb', 180, 120, true );
-add_image_size( 'banner', 707, 371, true );
-
+add_image_size( 'page-thumb', 360, 300, false );
+add_image_size( 'person', 154, 154, true );
+add_image_size( 'gallery', 1200, 1200, false );
+add_image_size( 'page-nav-thumb', 99, 154, false );
+add_image_size( 'product-nav-thumb', 135, 135, false );
+add_image_size( 'video-thumb', 172, 97, false );
+add_image_size( 'banner', 1655, 625, true );
+add_image_size( 'banner-thumb', 200, 50, true );
 
 //add page excerpts if necessary
 add_post_type_support( 'page', 'excerpt' );
@@ -603,28 +606,67 @@ function content($limit = 55) {
 //	Meta Box (Class included in new post type plugin)
 //
 if( class_exists( 'MetaBoxTemplate' )){
-	$pageMeta = new MetaBoxTemplate(array(
-					'page' => 'page',
-					'id' => 'page-subtitle',
-					'title' => 'Page Subtitle',
-					'context' => 'normal',
-					'priority' => 'core',
-					'fields' => array(
-						array(
-							'name' => 'Subtitle: ',
-							'id' => 'tcf_page_subtitle',
-							'type' => 'text',
-							'std' => ''
-						)
-					)
-				));
+  // $pageMeta = new MetaBoxTemplate(array(
+  //        'page' => 'page',
+  //        'id' => 'page-subtitle',
+  //        'title' => 'Page Subtitle',
+  //        'context' => 'normal',
+  //        'priority' => 'core',
+  //        'fields' => array(
+  //          array(
+  //            'name' => 'Subtitle: ',
+  //            'id' => 'tcf_page_subtitle',
+  //            'type' => 'text',
+  //            'std' => ''
+  //          )
+  //        )
+  //      ));
 				
 }
 
 // only install post type if class present
+if( class_exists( 'NewPostType' )){
+
+  $prefix = 'lit_';
+
+  NewPostType::instance()->add(array(
+    'post_type' => $prefix.'banner',
+    'post_type_name' => 'Banner',
+    'args' => array(
+      'rewrite' => array( 'slug' => 'banners' ),
+      'public' => false,
+      'has_archive' => false,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
+    )
+  ));
+  NewPostType::instance()->add(array(
+    'post_type' => $prefix.'person',
+    'post_type_name' => 'Person',
+    'args' => array(
+      'rewrite' => array( 'slug' => 'people' ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
+    )
+  ))->add_meta_box(array(
+    'id' => 'position title',
+    'title' => 'Person Info:',
+    'context' => 'side',
+    'priority' => 'default',
+    'fields' => array(
+      array(
+        'name' => 'Position Title: ',
+        'id' => $prefix . 'position',
+        'type' => 'text',
+        'std' => ''
+      )
+    ) 
+  ));
+}
+
 //if( class_exists( 'NewPostType' )){
 //
-//	$prefix = 'guru_';
+//	$prefix = 'ease_';
 //
 //	NewPostType::instance()->add(array(
 //		'post_type' => $prefix.'quotes',
@@ -649,10 +691,164 @@ if( class_exists( 'MetaBoxTemplate' )){
 //	));
 //}
 
+//register secondary thumbnail image, using multiple-post-thumbnail plugin
+if (class_exists('MultiPostThumbnails')) {
+	new MultiPostThumbnails(array(
+		'label' => 'Home Banner',
+		'id' => 'fp-banner',
+		'post_type' => 'lit_banner'
+		)
+	);
+  new MultiPostThumbnails(array(
+  	'label' => 'Home Thumb',
+  	'id' => 'fp-thumb',
+  	'post_type' => 'lit_banner'
+  	)
+  );
+  new MultiPostThumbnails(array(
+  	'label' => 'Page Thumb',
+  	'id' => 'page-thumb',
+  	'post_type' => 'page'
+  	)
+  );
+}
 
 
+//returns an html block string
+//parentID to get the right children,
+//levels to tell how deep to go
+//top to tell it if it should print out the parent link
+function ease_make_subpage_list( $parent = null, $levels = 0, $top = false, $img_size = 'page-nav-thumb'){
+	global $post;
+	$current = $post->ID;
+	$class = ' no_current';
+
+	if( !$parent ){
+		if ($post->post_parent)	{
+			$ancestors=get_post_ancestors($post->ID);
+			$root=count($ancestors)-1;
+			$parent = $ancestors[$root];
+		} else {
+			$parent = $current;
+			$class = ' current_page_item';
+		}
+	}
+
+	//list the child or sibling pages
+	$children = ease_get_subpages( $parent );
+
+	//print_r( $children );
+
+	$menuBlock = '';
+	if ( !empty($children) ) {
+		$menuBlock .= '<ul class="pageNav">';
+		
+		$thumb=false;
+		
+		if( $top ) {
+			$parentPage = get_page( $parent );
+			$parentTitle = apply_filters('the_title', $parentPage->post_title );
+			$parentSlug = $parentPage->post_name;
+			$parentURL = get_permalink( $parent );
+			if (  class_exists('MultiPostThumbnails') 
+			      && MultiPostThumbnails::has_post_thumbnail('page', 'page-thumb', $parent) ){
+			  
+			  $thumbID  = MultiPostThumbnails::get_post_thumbnail_id( 'page', 'page-thumb', $parent );
+			  $src      =	wp_get_attachment_image_src($thumbID, $img_size);     
+			  $thumb    = ' style="background-image:url(\''.$src[0].'\');height:'.$src[2].'px;width:'.$src[1].'px;"';
+			}
+
+			//print out the parent page link
+      $menuBlock .= '<li class="page_item'.$class.' '.$parentSlug.'"><a href="'.$parentURL.'" title="'.$parentTitle.'"'.$thumb.'>'.$parentTitle.'</a></li>';
+      
+      $parentPage = null;
+		}
+		
+		foreach( $children as $c ){
+      if (is_null($current) && $c->post_parent != 0)
+        continue;
+            
+      //check if current page item    
+			$class = ( $c->ID == $current ? ' current_page_item' : ' no_current' );
+      
+      $thumb = '';
+			if (  class_exists('MultiPostThumbnails') 
+			      && MultiPostThumbnails::has_post_thumbnail('page', 'page-thumb', $c->ID) ){
+			  
+			  $thumbID  = MultiPostThumbnails::get_post_thumbnail_id( 'page', 'page-thumb', $c->ID );
+			  $src      =	wp_get_attachment_image_src($thumbID, $img_size);     
+			  $thumb    = ' style="background-image:url(\''.$src[0].'\');height:'.$src[2].'px;width:'.$src[1].'px;"';
+			}
+			
+			//if( $top ){
+			//	$menuBlock .= '<li class="page_item'.$class.'">'.ease_make_flag( get_permalink($c->ID), $c->post_title, $c->post_title, '', true );
+			//} else {				
+				$menuBlock .= ''.
+				  '<li class="page_item'.$class.' '.$c->post_name.'">'.
+			      //'<a href="'.get_permalink($c->ID).'" title="'.apply_filters('the_title', $c->post_title).'"'.$thumb.'>'.
+			      '<a href="'.get_permalink($c->ID).'" title="'.apply_filters('the_title', $c->post_title).'">'.
+				      '<div class="img"'.$thumb.'></div>'.
+				      '<span class="title">'.
+				        '<span class="ico"></span>'.
+				        '<span class="text">'.$c->post_title.'</span>'.
+				      '</span>'.
+				    '</a>'.
+				  '</li>';
+			//}
+			
+			if( $levels > 0 )
+				$menuBlock .= ease_make_subpage_list( $c->ID, $levels-1, false, $img_size );
+			
+			$menuBlock .= '</li>';
+		}
+
+		$menuBlock .= '</ul>';
+	}
+	
+	return $menuBlock;
+}
+
+function ease_make_subpage_menu($img_size = 'page-nav-thumb'){
+
+	return ease_make_subpage_list( null, $levels = 1, true, $img_size );
+
+}
 
 
-/** END GuRu Theme Specific Functions **/
+//kind of a copy from the make_subpage_list above
+function ease_get_parent_page_id(){
+	global $post;
+	$current = $post->ID;
+
+	if ($post->post_parent)	{
+		$ancestors=get_post_ancestors($post->ID);
+		$root=count($ancestors)-1;
+		$parent = $ancestors[$root];
+	} else {
+		$parent = $current;
+	}
+	
+	return $parent;
+}
+
+function ease_is_subpage(){
+	global $post;
+	
+	return ( $post->post_parent ? 1 : 0 );
+}
+
+function ease_get_subpages( $parent ){
+	
+	if( !$parent )
+		return false;
+	
+	return get_pages(array(
+					'child_of' => $parent,
+					'parent' => $parent,
+					'sort_column' => 'menu_order, post_title'
+				));
+}
+
+/** END Ease Theme Specific Functions **/
 
 ?>

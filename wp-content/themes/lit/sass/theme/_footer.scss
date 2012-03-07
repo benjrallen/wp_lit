@@ -2,20 +2,114 @@
 // CSS for the specific theme footer
 //
 #footer{
+	background: $box-bg;
+	@include padding-leader(0.5);
+	@include padding-trailer();
+
+	& .wrap{
+		position: relative;		
+	}
 	
 	& .foot-left{
 		@include float-left;
+		position: relative;
+		z-index: 2;
+		//@include padding-trailer();
+		
 	}
 	& .foot-right{
-		@include float-right;
+		//@include float-right;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		@include padding-leader(0.5);
+		
+		& div{
+			@include inline-block;
+			vertical-align: middle;
+		}
 	}
-	& a{
-		color: lighten( $base-color, 30% );
+	& .foot-home{
+		text-align: center;
+		display: block;
+		color: $base-grey;
+		text-transform: uppercase;
+		@include adjust-font-size-to( 11px );
+		@include padding-leader;
+		@include padding-trailer;
+		
+		& .logo{
+			@include main-sprite;
+			background-position: -72px -143px;
+			display: block;
+			height: 33px;
+			width: 62px;
+			margin-left: auto;
+			margin-right: auto;
+			@include margin-trailer;
+		}
 	}
-}
 
-a#guruLink{
-	&:hover{
-		color: $guru-color; //from _base
+	& #footer-form{
+		//text-align: left;
+		
+		& span, & input, & button{
+			@include inline-block;
+			vertical-align: middle;
+			margin-right: 0.25em;
+		}
+		& span{
+			color: darken( $base-grey, 20% );
+			font-weight: bold;
+
+			$errorColor: #f44;
+			$successColor: $base-button-color;
+			&.mcError{
+				font-weight: normal;
+				background: lighten( $errorColor, 20% );
+				border: 1px solid $errorColor;
+				color: $base-color;
+				@include inline-block;
+				margin-left: 0.25em;
+
+				@include adjust-font-size-to( 12px, 1.75 );
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+
+				&.success{
+					background: lighten( $successColor, 30% );
+					border: 1px solid $successColor;
+					color: $base-color;
+				}
+			}
+
+		}
+		& input{
+			@include adjust-font-size-to(12px, 1.75);			
+			border: 1px solid lighten( $base-grey, 10% );
+			outline: none;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+		& button{
+			@include adjust-font-size-to(13px, 1.7);			
+			color: #fff;
+			font-weight: bold;
+			//background: $base-button-color;
+			//border: none;
+			padding-left: 0.75em;
+			padding-right: 0.75em;
+			//@include pie;
+			@include theme-button();
+			//@include border-radius( 3px );
+		}
+
+	}
+
+
+	
+	& a{
+		//color: lighten( $base-color, 30% );
 	}
 }

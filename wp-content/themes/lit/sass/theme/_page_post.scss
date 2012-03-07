@@ -5,7 +5,214 @@
 
 /** Default Page Template **/
 
+
 article.hentry{
+	
+	min-height: 400px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+	&#newsPost{
+		text-align: center;
+		@include padding-leader(2);
+		@include padding-trailer(2);
+		
+		& div{
+			margin: 0 auto;
+		}
+	}
+
+	&#aboutPage{
+		margin-left: $logo-margin * -1;
+	}
+	
+	&#productPage, &#contactPage, &#construction{
+		
+		min-height: 560px;
+
+		& .entry-content{
+			@include adjust-font-size-to( 14px, 1.25 );
+			color: $base-color;
+			behavior: none;
+			background: none;
+			padding: 0;
+		}
+
+		& h1, & h2, & h3, & h4, & h5, & h6{
+			//text-transform: capitalize;
+			//font-weight: 400;
+			@include text-shadow( $base-grey 1px 1px 1px );
+		}
+
+	}
+
+	&#construction{
+		background-position: center bottom;
+		text-align: center;
+		
+		& .entry-content{
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			@include padding-leader(2);
+		}
+	}
+
+	&#productPage{
+		background-position: right bottom;
+	}
+
+	&#contactPage{
+		background-position: right center;
+		//min-height: 600px;
+		
+		& .entry-content{
+			@include adjust-font-size-to( 13px, 1.25 );
+			width: 400px;
+			margin-left: 100px;
+			@include padding-leader(1);
+		}
+		
+		& .field{
+			display: block;
+			
+			& label{
+				display: block;
+				@include margin-trailer(0.25);
+			}
+				
+			& span{
+				display: block;
+				position: relative;
+			}
+		}
+		& input, & textarea{
+			display: block;
+			margin: 0;
+			width: 90%;
+			padding-right: 5%;
+			padding-left: 5%;
+			border: 1px solid lighten( $base-grey, 10% );
+			outline: none;
+			@include margin-trailer(0.25);
+		}
+		& input{
+			@include adjust-font-size-to(12px, 1.5);			
+		}
+		& textarea{
+			@include padding-leader(1);
+			@include padding-trailer(1);
+			@include margin-trailer(0.5);
+		}
+		& input[type="submit"]{
+			@include adjust-font-size-to(13px, 1.5);			
+			color: #fff;
+			font-weight: bold;
+			@include theme-button();
+			@include margin-leader(0.5);
+			width: 10em;
+			margin-right: 40px;
+			@include float-right;
+			display: block;
+		}
+
+		& span.wpcf7-form-control-wrap{
+		}
+		& span.wpcf7-not-valid-tip{
+			position: absolute;
+			width: 346px;
+			font-size: 12px;
+			padding-left: 6px;
+			padding-right: 6px;
+			height: 24px;
+			line-height: 24px;
+			top: 0;
+			left: 0;
+			background: #fcc;
+		}
+		//& div.wpcf7{
+			& img.ajax-loader{
+				position: absolute;
+				top: 8px;
+				left: 0px;
+			}
+		//}
+		& div.wpcf7-response-output{
+			margin: 0;
+			padding: 3px 6px;
+			width: 200px;
+			font-size: 10px;
+			@include margin-trailer(0.5);
+		}
+		& div.wpcf7-validation-errors{
+			background: lighten(#F7E700, 30%);
+		}
+		
+		$successColor: $base-green;
+		div.wpcf7-mail-sent-ok{
+			//background: lighten(#398F14, 60%);
+			background: lighten( $successColor, 30% );
+			border: 2px solid $successColor;
+			color: $base-color;
+		}
+
+	}
+
+	&#communityPage{
+		min-height: 0;
+		text-align: center;
+		@include padding-leader(5);
+		@include padding-trailer(3);
+				
+		& .pageNav{
+			float: none;
+			//@include inline-block;
+			@include inline-block-list;
+			
+			& li{
+				behavior: none;
+				@include border-radius(0);
+				@include background(none);
+				@include box-shadow(none);
+				
+				&.t-shirt{
+					margin-right: 5em;
+				}
+				margin-right: 1em;
+
+				& a{
+					color: #6D6E70;
+					@include adjust-font-size-to(40px);
+					font-weight: bold;
+					text-transform: uppercase;
+					@include opacity(0.8);
+					
+					&:hover{
+						@include opacity(1);
+						@include single-transition(opacity, $base-transition-time, ease-in-out);
+					}
+					
+					& span{
+						display: block;
+						
+						& span{
+							@include inline-block;
+							vertical-align: middle;
+							
+							&.ico{
+								@include main-sprite;
+								background-position: -72px -143px;
+								width: 62px;
+								height: 33px;
+								margin-right: 0.25em;
+							}
+							&.text{}
+						}
+					}
+				}
+			}
+		}
+	}
 	
 	& header.parent-title{
 		
@@ -21,38 +228,671 @@ article.hentry{
 		}
 	}
 	
-	.entry-content{
+	& .pageNav{
+		@include float-left;
+		padding-top: 29px;
+		list-style: none outside;
+		//margin-left: 0;
+		margin-left: $logo-margin;
 		
-		.pic{
-			//display:inline;
-			@include float-right;
-			@include margin-leader(0.5);
-			margin-left: 1em;
-			margin-bottom: 0.5em;
+		& li{
+			display: block;
+			background: #555;
+			@include border-radius(18px);
+			@include pie;
+			@include box-shadow( darken($base-grey, 50%) 1px 1px 12px -2px );
+			& a{
+				display: block;
+				@include opacity(0.65);			
+			}
+			&.current_page_item{
+				& a, & a:hover{
+					@include opacity(1);
+				}
+			}
 			
-			& img{
-				display:block;
-				@include pie;
-				@include border-radius(2px);
-				//padding: 3px;
-				//background: $box-bg;
-				@include single-box-shadow( darken( $box-bg, 50% ), 0, 8px,6px, -5px );
+			&:hover{
+				& a{
+				@include opacity(0.9);
+				}
 			}
 		}
+	}
+	
+	& #aboutNav, & #productNav{
+		position: relative;
+		z-index: 2;
+		& .pageNav{
+			& li{
+				margin-top: 20px;
+				& a{
+					text-indent: -9999em;
+					
+					& span{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	& #productNav{
+		& .pageNav{
+			//@include float-left;
+			padding-top: 49px;
+			//list-style: none outside;
+			//margin-left: 0;
+			margin-left: $logo-margin;
 
+			& li{
+				//display: block;
+				margin-top: 0px;
+				background: transparent;
+				@include border-radius(0);
+				behavior: none;
+				@include box-shadow( none );
+				& a{
+					//display: block;
+					@include opacity(0.5);			
+				}
+				&.current_page_item{
+					& a, & a:hover{
+						@include opacity(1);
+					}
+				}
+
+				&:hover{
+					& a{
+					@include opacity(0.9);
+					}
+				}
+			}
+		}
+	}
+	
+	
+	&#aboutPage{
+		& .entry-content{
+			@include adjust-font-size-to( 16px, 1.25 );
+
+			@include pie;
+			@include border-radius(60px);
+			background: rgba(0,0,0,0.5);
+			-pie-background: rgba(0,0,0,0.5);
+
+			
+			& h1, & h2{
+				text-align: center;
+			}
+		}
+	}
+	
+	.entry-content{
+		color: $box-bg;
+		@include float-left;
+		margin-left: 48px;
+		width: 700px;
+		//min-height: 200px;
+		min-height: 400px;
+		@include margin-leader(1.5);
+		@include padding-leader(1.5);
+		@include padding-trailer(0.5);
+		@include margin-trailer(0.5);
+		padding-left: 48px;
+		padding-right: 48px;
+		
 		& h1, & h2, & h3, & h4, & h5, & h6{
+			text-transform: capitalize;
+			//font-weight: 400;
+			@include text-shadow( darken($base-grey, 90%) 1px 1px 1px );
 		}
 
-		& h1.entry-title, h2.entry-title{
-
+		& h1, h2{
+			@include adjust-font-size-to(14px);
+			text-transform: uppercase;
 		}
 		
+	}
+
+	&#person{
+		width: 400px;
+		@include inline-block;
+		margin-top: 29px;
+		@include padding-leader(1);
+		@include padding-trailer(2);
+		
+		& h1{
+			@include adjust-font-size-to(16px);
+		}
+
+		& .entry-content{
+			width: auto;
+			margin:0;
+			padding:0;
+			color: $base-color;
+			@include border-radius(0);
+			background: none;
+			behavior: none;
+		}
 	}
 	
 }
 
+#carousel{
+	position: relative;
+	z-index: 10;
+	$bak: $base-grey;
+	background: $bak;
+	
+	$pad: 16px;
+	$thumbH: 97px;	
+	& #outer{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		height: $thumbH;
+		padding: $pad 0;
+		z-index: 1;
+	}
+	
+	& #inner{
+		width: 9999em;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: $pad 0;
+		//height: $thumbH;
+		
+		$rad: 20px;
+		& a{
+			@include inline-block;
+			padding-right: 12px;
+			
+			& img{
+				display: block;
+				background: $bak;
+				@include pie;
+				@include border-radius($rad);
+				@include box-shadow(
+					darken( $bak, 40%) 1px 1px 6px 0px
+				);
+				
+				@include opacity(0.6);
+			}
+			
+			&:hover{
+				& img{
+					@include opacity(0.9);
+				}
+			}
+			&.active{
+				& img{
+					@include opacity(1);
+				}
+			}
+		}
+	}
+	
+	
+	$pTriW: 20px;
+	$pTop: floor( ($thumbH - $pTriW * 2) / 2 + $pad );
+	$pColor: $base-bg;
+	& .nav{
+		position: absolute;
+		z-index: 3;
+		bottom: 1em;
+		border: $pTriW solid transparent;
+		height: 0;
+		width: 0;
+		top: $pTop;
+		display: block;
+		text-indent: -9999em;
+		@include opacity(0.75);
+		cursor: pointer;
+		cursor: hand;
+		
+		&:hover{
+			@include opacity(1);
+		}
+		&:active{
+			top: $pTop + 2px;
+		}
+		
+		&.back{
+			border-right: $pTriW solid $pColor;
+			left: -$pTriW;
+		}
+		&.forward{
+			border-left: $pTriW solid $pColor;
+			right: -$pTriW;
+		}
+	}
+	
+	
+	& .mask{
+		@include pie;
+		display: block;
+		height: 100%;
+		width: $pTriW * 1;
+		position: absolute;
+		top: 0;
+		z-index: 2;
+		
+		&.left{
+			left: 0;
+			@include background(
+				linear-gradient(
+					left,
+					$bak 0%,
+					rgba(153,153,153,0) 100%
+				)
+			);
+		}
+		&.right{
+			right: 0;
+			@include background(
+				linear-gradient(
+					right,
+					$bak 0%,
+					rgba(153,153,153,0) 100%
+				)
+			);
+		}
+	}
+}
+
+.land{
+	& #team{
+		& .member{
+			& img{
+				@include opacity(0.9);
+			}
+		}
+	}
+}
+
+#team{
+	padding-top: 29px;
+	width: 540px;
+	@include float-left;
+	@include padding-trailer(2);
+	
+	& .member{
+		@include inline-block;
+		@include margin-leader(1);
+		height: 154px;
+		width: 154px;
+		overflow: hidden;
+		background: $box-bg;
+		@include border-radius( 26px );
+		@include box-shadow( darken($base-grey, 70%) 4px 4px 8px -2px );
+		@include pie;
+		margin-right: 1.5em;
+		
+		& img{
+			display: block;
+			width: 100% !important;
+			height: auto !important;
+			@include opacity(0.6);
+		}
+		
+		&:hover, &.active{
+			& img{
+				@include single-transition( opacity, 0.1s, ease-in-out );
+				@include opacity(1);
+			}
+		}
+	}
+}
 
 
+.wrap.reserve{
+	width: 1120px;
+}
+#reservePage{
+	clear: both;
+	width: 1120px;
+	margin-left:auto;
+	margin-right:auto;
+	//height: 100%;
+	background-position: center center;
+}
+
+$light-grey: #cfcfcf;
+$dark-grey: #b2b2b2;
+$rad: 80px;
+
+.litForm{
+	
+	@include float-right;
+	display: block;
+	margin-right: 1em;
+	@include margin-leader(0.25);
+	@include margin-trailer(0.25);
+	width: 425px;
+
+	@include border-radius( $rad );
+	@include pie;
+	@include box-shadow( $base-color 4px 4px 12px 4px );
+	
+	color: #6c6c6c;
+
+
+	&#shirtForm{
+		text-align: left;
+		float: none;
+
+		& #reserveSlide1{
+			@include padding-trailer(0.5);
+
+			& h4{
+				@include margin-trailer(1);
+			}
+		}
+	}
+
+	
+	& .formBlock{
+		display: block;
+	}
+	
+	
+	& #reserve-top, & #formSubmit{
+		background: $dark-grey;
+		@include box-shadow(
+			inset lighten($light-grey, 15%) 4px 4px 4px 0px,
+			inset darken($dark-grey, 25%) -4px -4px 4px 0px
+		);
+		
+		min-height: 79px;	
+	}
+	
+	& #reserve-top{		
+		
+		@include border-radius( $rad $rad 0 0 );
+		
+		@include background(
+			linear-gradient(
+				top,
+				$light-grey 0%,
+				$dark-grey 100%
+			)
+		);
+		
+		text-align: center;
+		
+		& h1, & h2{
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		& h1{
+			color: #fff;
+			border-bottom: 1px solid #fff;
+			@include adjust-font-size-to(24px);
+			@include inline-block;
+			@include padding-leader( 0.25 );
+		}
+		& h2{
+			color: #e3e3e3;
+			@include adjust-font-size-to(16px);
+		}
+	}
+	
+	& #formSubmit{
+		display: block;
+		width: 100%;
+		border: none;
+		
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: bold;
+		letter-spacing: 2px;
+
+		@include border-radius( 0 0 $rad $rad );
+		
+		@include adjust-font-size-to(34px);
+		
+		@include background(
+			linear-gradient(
+				bottom,
+				$light-grey 0%,
+				$dark-grey 100%
+			)
+		);
+		
+		&:active, &.pressed{
+			outline: none;
+			
+			@include background(
+				linear-gradient(
+					top,
+					$light-grey 0%,
+					$dark-grey 100%
+				)
+			);
+
+			@include box-shadow(
+				inset darken($dark-grey, 25%) 4px 4px 4px 0px,
+				inset lighten($light-grey, 15%) -4px -4px 4px 0px
+			);
+			
+		}
+		
+		& span{
+			@include inline-block;
+			vertical-align: middle;
+			
+			&.ico{
+				@include main-sprite;
+				height: 33px;
+				width: 62px;
+				background-position: 0 -143px;
+				margin-right: 0.25em;
+				margin-bottom: 3px;
+			}
+		}
+	}
+
+	& #reserveSlide1{
+		background: $base-bg;
+		background: rgba(255,255,255,0.9);
+		
+		padding-left: 2em;
+		padding-right: 1em;
+		
+		@include padding-leader(0.5);
+		
+		& h3, & h5{
+			font-weight: normal;
+			@include adjust-font-size-to(16px, 1.5);
+		}
+		& h3{
+			@include padding-trailer(0.25);
+		}
+		& h5{
+			@include padding-leader(0.25);
+			@include padding-trailer(0.5);
+		}
+		& h4{
+			font-weight: normal;
+			@include adjust-font-size-to( 12px );
+		}
+		
+		& .form-block{
+			@include margin-trailer(0.5);
+			& label, & input, & select{
+				@include inline-block;
+				vertical-align: middle;
+			}
+			& label{
+				width: 30%;
+				text-align: right;
+			}
+			& input, & select{
+				width: 60%;
+				margin-left: 5%;
+				@include adjust-font-size-to(14px, 1.25);
+			
+			}
+			& input{
+				border: 1px solid lighten( $base-color, 40% );
+				&:focus{
+					background: lighten( $base-header-color, 55% );
+				}
+			}
+			& select{
+				border: 1px solid lighten( $base-color, 40% );
+				@include adjust-font-size-to(14px, 1.5);
+			}
+			
+			&.error{
+				& label{
+					color: #f00;
+				}
+				& input{
+					background: lighten(#f00, 40%);
+					border: 1px solid #f00;
+					color: #222;
+				}
+				& select{
+					background: lighten(#f00, 40%);
+					border: 1px solid #f00;
+				}
+			}
+		}
+		
+		& #faq{
+			@include padding-leader(0.25);
+			@include padding-trailer(0.5);
+			
+			& ul{
+				list-style: none outside;
+				margin: 0;
+				padding: 0;
+				
+				& li{
+					
+					& .plus, & a{
+						@include inline-block;
+						vertical-align: middle;
+					}
+					& .plus{
+						margin-right: 0.5em;
+					}
+					& a{
+						cursor: pointer;
+						cursor: hand;
+					}
+					& .tip{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+#reservePopup, #tooltip, #shirtPopup, #forumPopup{
+	display: none;
+	z-index: 2000;
+}
+
+#forumPopup{
+	max-height: 85%;
+	width: 720px;
+	overflow-y: scroll;
+	top: 5% !important;
+}
+
+#reservePopup, #tooltip, #forumPopup{
+	background: $base-bg;
+	//@include pie;
+	//position: fixed;
+	@include box-shadow( $base-color 2px 2px 8px 4px );
+	padding-left: 2em;
+	padding-right: 2em;
+	@include padding-leader(1);
+	@include padding-trailer(1);
+}
+
+#tooltip{
+	max-width: 300px;
+}
+.lte7 #reservePopup, .lte7 #tooltip, .ie9 #reservePopup, .ie9 #tooltip{
+	@include pie;
+}
+.ie8 #reservePopup, .ie8 #tooltip{
+	border: 1px solid lighten( $base-color, 30% );
+}
+
+/*
+.lte7 #reservePopup{
+	position: absolute;
+}
+*/
+#actionReturn{
+	display: none;
+}
+
+#step2{
+	width: 465px;
+	
+	& h2{
+		font-weight: normal;
+		text-align: center;
+		@include margin-trailer(0.5);
+		@include adjust-font-size-to(14px, 1.25);
+	}
+	& #google, & #paypal{
+		@include inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+		cursor: hand;
+		@include main-sprite;
+		height: 73px;
+		@include hover-opacity();
+	}
+	& #google{
+		width: 251px;
+		background-position: -300px 0;
+	}
+	& #paypal{
+		width: 211px;
+		background-position: -300px -73px;
+	}
+}
+
+.lte8 .litForm{
+
+	& #reserve-top, & #formSubmit{
+
+		//@include background(none);
+		//@include box-shadow(none);
+		background: transparent;
+		@include reserve-sprite;
+		height: 79px;
+	}
+	
+	& #reserve-top{
+		
+		background-position: 0 0;
+	}
+	
+	& #formSubmit{
+		background-position: 0 -79px;
+		
+		&:active, &.pressed{
+			background-position: 0 -160px;
+		}
+		
+		& span{
+			&.ico{
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+}
 /** End Default Page Template **/
 
 

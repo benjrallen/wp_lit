@@ -1,9 +1,10 @@
 article#front-page-entry.hentry{
-	width: $sidebar-width;
 	
+	background: #D9D8DA;
+	
+	min-height: 100px;
 	
 	margin:0;
-	@include adjust-font-size-to( 20px, 2.5 );
 	font-weight: 300;	
 
 	& p{
@@ -12,23 +13,4 @@ article#front-page-entry.hentry{
 		line-height: inherit;
 	}
 	
-}
-
-#guruGraph{
-	display: inline-block;
-	vertical-align: top;
-	width: 540px;
-	height: 540px;
-	margin-left:2em;	
-}
-
-#fallbackGraph{
-	display:inline-block;
-	width: 540px;
-	margin-left: 2em;
-	& img{
-		display: none;
-		width: 100%;
-		height: auto;
-	}
 }

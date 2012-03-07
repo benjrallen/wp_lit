@@ -13,18 +13,42 @@
 		</section><!-- #main -->
 						
 		<footer id="footer" role="contentinfo">
-				<div class="wrap">
-					<?php
-						$fDate = '&copy; 2011';
-						if ( date('Y') != '2011' ) $fDate = $fDate.' - '.date('Y');
-					?>
-					<span class="foot-left"><span>Copyright <?php echo $fDate; ?></span><span class="hyph"> - </span><span><?php bloginfo('name'); ?>. </span><span>All Rights Reserved.</span></span>
-					<span class="foot-right">Site by <a href="http://www.gurustugroup.com" id="guruLink" title="GuRuStu. Branding, Marketing & Web Design." target="_blank">GuRuStu Group</a></span>
-					<div class="clearfix"></div>
-				</div>
-		</footer><!-- footer -->
+			<div class="wrap">
+  			<div id="fb-root"></div>
 
-		<?php get_template_part('nav','footer'); ?>
+				<?php	
+					if( !is_front_page() ){
+				?>
+					<span class="foot-left">
+					  
+					  <?php get_template_part('newsletter', 'signup'); ?>
+					  
+					</span>
+					<span class="foot-right">
+					  <div class="fb">
+					    <fb:like href="http://www.facebook.com/pages/Lit-Motors-Inc/134698133268554" send="true" layout="button_count" width="90" show_faces="false"></fb:like>
+					  </div>
+					  <div class="tw">
+					    <a href="http://twitter.com/LitMotors" class="twitter-follow-button" data-show-count="false">@LitMotors</a>
+					  </div>
+					</span>
+				<?php
+				  } else {
+				?>
+			    <span class="foot-home">
+			      <div class="logo"></div>
+  					<?php
+  						$fDate = '2011';
+  						if ( date('Y') != '2011' ) $fDate = $fDate.' - '.date('Y');
+  					?>
+  					<span class="foot-copy">&copy; Lit Motors <?php echo $fDate; ?></span>
+			    </span>
+				<?php
+			    }
+				?>
+				<div class="clearfix"></div>
+			</div>
+		</footer><!-- footer -->
 
 <?php
 	/* Always have wp_footer() just before the closing </body>
