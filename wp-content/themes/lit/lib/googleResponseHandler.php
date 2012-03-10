@@ -41,9 +41,6 @@
   define('RESPONSE_HANDLER_ERROR_LOG_FILE', 'googleerror.log');
   define('RESPONSE_HANDLER_LOG_FILE', 'googlemessage.log');
 
-  //set the serial number that google sends
-  $serial = $_REQUEST['serial-number'];
-
   //set merchant id
   $merchant_id = GW_SANDBOX ? "458313186045229" : "704111282563175";  // Your Merchant ID
   $merchant_key = GW_SANDBOX ? "3uKsybve1yjRYeHRZANfPA" : "chqag_0OYwwmPdGquUQCaw";  // Your Merchant Key
@@ -99,9 +96,6 @@
 
   //Parse XML to array
   list($root, $data) = $Gresponse->GetParsedXML($raw_xml);
-  
-  error_log( print_r($root, true) );
-  error_log( print_r($data, true) );
   
   /* Commands to send the various order processing APIs
    * Send charge order : $Grequest->SendChargeOrder($data[$root]

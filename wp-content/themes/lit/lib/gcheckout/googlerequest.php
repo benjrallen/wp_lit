@@ -720,6 +720,7 @@
         }
       } catch (Exception $e) {
         //$body = htmlentities($b_x);
+        error_log( 'that thing that went wrong: '.print_r($e, true) );
       }
 //      // Get HTTP Status code from the response
       $status_code = array();
