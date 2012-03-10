@@ -174,12 +174,12 @@
 		
   	//Save it to the db.
     $updateQuery = "UPDATE `lit_orders` SET ".
-                      "status='{$order_status}', ".
-                      "gateway_ref_id='{$order_number}', ".
-                      "gateway_ipn_info='{$serial_number}', ".
-                      "date_ordered='{$purchase_date}', ".
-                      "date_updated='{$timestamp}', ".
-                      " WHERE token='{$token}'";
+                      "status='{$order_status}'".
+                      ", gateway_ref_id='{$order_number}'".
+                      ", gateway_ipn_info='{$serial_number}'".
+                      ", date_ordered='{$purchase_date}'".
+                      ", date_updated='{$timestamp}'".
+                      "  WHERE token='{$token}'";
 
     if( $db->query_bool(	$updateQuery ) ){
       error_log("'Supposedly it worked: '".$updateQuery);
