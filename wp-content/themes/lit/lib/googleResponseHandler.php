@@ -99,7 +99,10 @@
 
   //Parse XML to array
   list($root, $data) = $Gresponse->GetParsedXML($raw_xml);
-
+  
+  error_log( print_r($root, true) );
+  error_log( print_r($data, true) );
+  
   /* Commands to send the various order processing APIs
    * Send charge order : $Grequest->SendChargeOrder($data[$root]
    *    ['google-order-number']['VALUE'], <amount>);
@@ -123,10 +126,10 @@
       break;
     }
     case "authorization-amount-notification": {
-      $google_order_number = $data[$root]['google-order-number']['VALUE'];
-      $tracking_data = array("Z12345" => "UPS", "Y12345" => "Fedex");
-      $GChargeRequest = new GoogleRequest($merchant_id, $merchant_key, $server_type);
-      $GChargeRequest->SendChargeAndShipOrder($google_order_number, $tracking_data);
+      //$google_order_number = $data[$root]['google-order-number']['VALUE'];
+      //$tracking_data = array("Z12345" => "UPS", "Y12345" => "Fedex");
+      //$GChargeRequest = new GoogleRequest($merchant_id, $merchant_key, $server_type);
+      //$GChargeRequest->SendChargeAndShipOrder($google_order_number, $tracking_data);
       break;
     }
     case "refund-amount-notification": {
