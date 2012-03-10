@@ -1,5 +1,7 @@
 <?php
 
+/* I do not think this file is in use */
+
 /* STEP 1 */
 if (isset($_POST["firstname"])) {
 	$fields = array("firstname", "lastname", "address", "city", "state", "zip", "country", "email", "phone", "salutation", "deposit");

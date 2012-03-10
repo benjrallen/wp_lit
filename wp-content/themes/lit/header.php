@@ -56,10 +56,10 @@
 				  nope: Ease.TemplateUrl+'/js/placeholder.jquery.js'
 				},
 				/* plugins.js & common.js for development */
-				//{ load : Ease.TemplateUrl+'/js/plugins.js' },
-				//{ load : Ease.TemplateUrl+'/js/common.js' },
+				{ load : Ease.TemplateUrl+'/js/plugins.js' },
+				{ load : Ease.TemplateUrl+'/js/common.js' },
 				/* concatenate and optimize seperate script files for deployment using google closure compiler (compiler.jar) in js folder */
-				{ load : Ease.TemplateUrl+'/js/theme.js' },
+				//{ load : Ease.TemplateUrl+'/js/theme.js' },
         { load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' },
         { load: 'http://platform.twitter.com/widgets.js' },
         { load: "//connect.facebook.net/en_US/all.js#appId=266138276740381&xfbml=1" }

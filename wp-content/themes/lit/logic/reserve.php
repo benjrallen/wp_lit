@@ -1,5 +1,11 @@
 <?php
 
+/* STEP 0 */
+/* LOOK TO SEE IF IT IS A NOTIFICATION */
+$action = ( isset($_POST['action']) ? $_POST['action'] : false );
+
+error_log( 'What is my action?  '.$action );
+
 /* STEP 1 */
 if (isset($_POST["firstname"])) {
 	$fields = array("firstname", "lastname", "address", "city", "state", "zip", "country", "email", "phone", "salutation", "deposit");
@@ -144,7 +150,7 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 			"country" => $order["country"],
 			"currency_code" => "USD", //added by BA cause the docs say it is required.
 		  //"notify_url" => site_url("/reserve/?action=confirm&token=".$order["token"]),//Only used with IPN. An internet URL where IPN form posts will be sent
-		  "notify_url" => $lit_form."?action=confirm&token=".$order["token"],//Only used with IPN. An internet URL where IPN form posts will be sent
+		  "notify_url" => $lit_template."/reserve.php?action=notify&token=".$order["token"],//Only used with IPN. An internet URL where IPN form posts will be sent
 			//"return" => site_url("/reserve/?action=return&token=".$order["token"]),
 		  //"return" => site_url("/home/"),
   		"return" => $lit_form."?action=return",
@@ -195,6 +201,13 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 	      
 	      // Request buyer's phone number
 	      $cart->SetRequestBuyerPhone(true);
+		
+		    //set merchant private data to get token back from google
+		    $cart->SetMerchantPrivateItemData(
+                    new MerchantPrivateItemData(
+                      array("token" => $order["token"])
+                    )
+        );
 		
 		$params = array(
 			"cart" => base64_encode($cart->GetXML()),

@@ -11,10 +11,19 @@
     <div class="form-block">
   		<label class="privateReserve">Deposit</label>
   		<select name="deposit" id="deposit">
-  			<option value="0">Deposit Amount*</option>
-  			<option value="250">$250</option>
-  			<option value="500">$500</option>
-  			<option value="1000">$1000</option>
+  		  <option value="null">Deposit Amount*</option>
+  		  <?php
+  		    //$ amounts for normal reserve
+  		    $values = array( 250, 500, 1000 );
+  		  
+  		    if( $post->post_name == 'private' ){
+  		      //$ amounts for private reserves
+  		      $values = array( 0, 50, 100, 250, 1000 );
+  		    }
+          
+          foreach( $values as $v )
+  		      echo '<option value="'.$v.'">$'.$v.'</option>';
+  		  ?>
   		</select>
 		</div>
 		

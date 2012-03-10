@@ -446,7 +446,7 @@
 								
 				for ( var key in selectRequired ){
 					me = form.find('[name='+key+']');
-					if ( !me.val() || me.val() == '0' ){
+					if ( !me.val() || me.val() == 'null' ){
 						alertInvalid( me );
 						messages.push( selectRequired[key] );
 					}
@@ -477,7 +477,7 @@
 				//console.log( form.serializeArray() );
 				//clear the messages
 				messages = [];
-						
+								
 				$.ajax({
 					url: Ease.TemplateUrl+'/reserve.php',
 					data: form.serializeArray(),
