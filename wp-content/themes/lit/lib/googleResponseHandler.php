@@ -34,8 +34,9 @@
 
   require_once('gcheckout/googleresponse.php');
   require_once('gcheckout/googlemerchantcalculations.php');
-  require_once('gcheckout/googleresult.php');
   require_once('gcheckout/googlerequest.php');
+  require_once('gcheckout/googlenotificationhistory.php');
+
 
   define('RESPONSE_HANDLER_ERROR_LOG_FILE', 'googleerror.log');
   define('RESPONSE_HANDLER_LOG_FILE', 'googlemessage.log');
