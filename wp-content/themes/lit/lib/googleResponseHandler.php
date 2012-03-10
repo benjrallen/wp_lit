@@ -88,7 +88,7 @@
   
   
   //$Gresponse->log->LogResponse($root);
-  error_log('What is the root of google\'s response?  '.$root);
+  error_log('What is the root of google\'s response?  '.print_r( $data, true ) );
   
   switch ($root) {
     case "request-received": {
