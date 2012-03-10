@@ -11,7 +11,9 @@
   if( isset($_REQUEST['serial-number'])){
     error_log('i have a serial number and it is: '.$_REQUEST['serial-number']);
     
-    echo 'serial-number='.$_REQUEST['serial-number'];
+    
+    header('HTTP/1.1 200 OK');
+    print 'serial-number='.$_REQUEST['serial-number'];
     die;
   }
   
