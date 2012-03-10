@@ -110,12 +110,24 @@
    *
    */
    
- error_log( print_r($root, true) ) ;
- error_log( print_r($data, true) ) ;
-   
+ //error_log( print_r($root, true) ) ;
+ //error_log( print_r($data, true) ) ;
+
+  //order and token come in both new order notification and authorization amount notification 
+  //$billing = $data[$root]['buyer-billing-address'];
+  //$shipping = $data[$root]['buyer-billing-address'];
+  $token = $order['shopping-cart']['items']['item']['merchant-private-item-data']['token']['VALUE'];
+  $order_number = $data[$root]['google-order-number'];
+  $timestamp = $data[$root]['timestamp']['VALUE'];
+  $purchase_date = $data[$root]['order-summary']['purchase-date']['VALUE'];
+  $order_status = 'awaiting authorization';
+  
+  $processMe = false;
+  
   switch($root){
     case "new-order-notification": {
-      
+        //$address = $data[$root]['buyer-billing-address']; //array()
+        $processMe = true;
       break;
     }
     case "risk-information-notification": {
@@ -129,6 +141,10 @@
       //$tracking_data = array("Z12345" => "UPS", "Y12345" => "Fedex");
       //$GChargeRequest = new GoogleRequest($merchant_id, $merchant_key, $server_type);
       //$GChargeRequest->SendChargeAndShipOrder($google_order_number, $tracking_data);
+
+      $order_status = 'authorized';
+      $processMe = true;
+      
       break;
     }
     case "refund-amount-notification": {
@@ -143,12 +159,35 @@
     case "invalid-order-numbers": {
       break;
     }
-    case "order-state-cahnge-notification": {
+    case "order-state-change-notification": {
       break;
     }
     default: {
       break;
     }
+  }
+
+  if( $processMe ){
+    
+  	//Everything is valid with the form.
+  	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
+		
+  	//Save it to the db.
+    $updateQuery = "UPDATE `lit_orders` SET ".
+                      "status='{$order_status}', ".
+                      "gateway_ref_id='{$order_number}', ".
+                      "gateway_ipn_info='{$serial_number}', ".
+                      "date_ordered='{$purchase_date}', ".
+                      "date_updated='{$timestamp}', ".
+                      " WHERE token='{$token}'";
+
+    if( $db->query(	$updateQuery ) ){
+      die;
+    } else {
+      error_log("'UPDATE QUERY FAILED: '".$updateQuery);
+      die;
+    }
+
   }
 
   /* In case the XML API contains multiple open tags
