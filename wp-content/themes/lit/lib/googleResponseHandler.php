@@ -181,7 +181,8 @@
                       "date_updated='{$timestamp}', ".
                       " WHERE token='{$token}'";
 
-    if( $db->query(	$updateQuery ) ){
+    if( $db->query_bool(	$updateQuery ) ){
+      error_log("'Supposedly it worked: '".$updateQuery);
       die;
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
