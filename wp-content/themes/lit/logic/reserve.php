@@ -2,9 +2,13 @@
 
 /* STEP 0 */
 /* LOOK TO SEE IF IT IS A NOTIFICATION */
-$action = ( isset($_POST['action']) ? $_POST['action'] : false );
+$action = ( isset($_REQUEST['action']) ? $_REQUEST['action'] : false );
 
-error_log( 'What is my action?  '.$action );
+//error_log( 'What is my action?  '.$action );
+if( $action && $action == 'notify' )
+  require_once(ABSPATH.'/logic/notification.php');
+
+//error_log('i am after the require');
 
 /* STEP 1 */
 if (isset($_POST["firstname"])) {
