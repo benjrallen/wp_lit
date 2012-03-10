@@ -109,8 +109,13 @@
    *    ['google-order-number']['VALUE']);
    *
    */
+   
+ error_log( print_r($root, true) ) ;
+ error_log( print_r($data, true) ) ;
+   
   switch($root){
     case "new-order-notification": {
+      
       break;
     }
     case "risk-information-notification": {
