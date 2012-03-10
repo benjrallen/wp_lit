@@ -196,6 +196,15 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 	                               1, // Quantity
 	                               //250); // Unit price
 	                               $order['order_total']); // Unit price
+
+
+        //set merchant private data to get token back from google
+        $item_1->SetMerchantPrivateItemData(
+                    new MerchantPrivateItemData(
+                      array("token" => $order["token"])
+                    )
+        );
+
 	      $cart->AddItem($item_1);
 	      
 	      // Specify "Return to xyz" link
@@ -205,13 +214,6 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 	      
 	      // Request buyer's phone number
 	      $cart->SetRequestBuyerPhone(true);
-		
-		    //set merchant private data to get token back from google
-		    $cart->SetMerchantPrivateItemData(
-                    new MerchantPrivateItemData(
-                      array("token" => $order["token"])
-                    )
-        );
 		
 		$params = array(
 			"cart" => base64_encode($cart->GetXML()),
