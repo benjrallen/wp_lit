@@ -16,6 +16,11 @@
     // header('HTTP/1.1 200 OK');
     // $acknowledgement = 'serial-number='.$_REQUEST['serial-number'];
     // die( $acknowledgement );
+  } else if ( isset($_REQUEST['token'] ) ) {
+    //assume it is paypal
+    
+    require_once('lib/paypalResponseHandler.php');
+    
   }
   
   
