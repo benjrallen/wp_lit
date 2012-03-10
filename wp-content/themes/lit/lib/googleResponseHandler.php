@@ -117,7 +117,7 @@
   //$billing = $data[$root]['buyer-billing-address'];
   $order = $data[$root]['order-summary'];
   $token = $order['shopping-cart']['items']['item']['merchant-private-item-data']['token']['VALUE'];
-  $order_number = $data[$root]['google-order-number'];
+  $order_number = $data[$root]['google-order-number']['VALUE'];
   $timestamp = $data[$root]['timestamp']['VALUE'];
   $purchase_date = $data[$root]['order-summary']['purchase-date']['VALUE'];
   $order_status = 'awaiting authorization';
@@ -182,7 +182,7 @@
                       "  WHERE token='{$token}'";
 
     if( $db->query_bool(	$updateQuery ) ){
-      error_log("'Supposedly it worked: '".$updateQuery);
+      error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
       die;
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
