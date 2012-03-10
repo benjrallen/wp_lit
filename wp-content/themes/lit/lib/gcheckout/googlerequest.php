@@ -720,12 +720,14 @@
         }
       } catch (Exception $e) {
         //$body = htmlentities($b_x);
-        error_log( 'that thing that went wrong: '.print_r($e, true) );
       }
 //      // Get HTTP Status code from the response
       $status_code = array();
       preg_match('/\d\d\d/', $heads[0], $status_code);
      
+      error_log( '$response: '.print_r($response, true) );
+      error_log( '$body_xml: '.print_r($body_xml, true) );
+      error_log( '$body: '.print_r($body, true) );
       
       // Check for errors
       switch( $status_code[0] ) {
