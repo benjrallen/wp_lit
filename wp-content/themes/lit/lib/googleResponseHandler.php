@@ -115,7 +115,7 @@
 
   //order and token come in both new order notification and authorization amount notification 
   //$billing = $data[$root]['buyer-billing-address'];
-  //$shipping = $data[$root]['buyer-billing-address'];
+  $order = $data[$root]['order-summary'];
   $token = $order['shopping-cart']['items']['item']['merchant-private-item-data']['token']['VALUE'];
   $order_number = $data[$root]['google-order-number'];
   $timestamp = $data[$root]['timestamp']['VALUE'];
