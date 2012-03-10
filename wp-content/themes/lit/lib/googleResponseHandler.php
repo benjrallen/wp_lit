@@ -1,37 +1,5 @@
 <?php
 
-/**
- * Copyright (C) 2007 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
- /* This is the response handler code that will be invoked every time
-  * a notification or request is sent by the Google Server
-  *
-  * To allow this code to receive responses, the url for this file
-  * must be set on the seller page under Settings->Integration as the
-  * "API Callback URL'
-  * Order processing commands can be sent automatically by placing these
-  * commands appropriately
-  *
-  * To use this code for merchant-calculated feedback, this url must be
-  * set also as the merchant-calculations-url when the cart is posted
-  * Depending on your calculations for shipping, taxes, coupons and gift
-  * certificates update parts of the code as required
-  *
-  */
-
   require_once('gcheckout/googleresponse.php');
   require_once('gcheckout/googlemerchantcalculations.php');
   require_once('gcheckout/googlerequest.php');
@@ -62,6 +30,7 @@
                     $HTTP_RAW_POST_DATA:file_get_contents("php://input");
 
   //If serial-number-notification pull serial number and request xml
+  //BA - ALWAYS GOING TO BE THIS
   if(strpos($xml_response, "xml") == FALSE){
     //Find serial-number ack notification
     $serial_array = array();
@@ -167,6 +136,7 @@
     }
   }
 
+  //UPDATE THE DATABASE WITH THE STATUS AND THE INFORMATION
   if( $processMe ){
     
   	//Everything is valid with the form.
@@ -183,6 +153,7 @@
 
     if( $db->query_bool(	$updateQuery ) ){
       error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
+      //SEND AN EMAIL
       die;
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
