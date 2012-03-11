@@ -64,11 +64,11 @@ if (isset($_POST["firstname"])) {
 	}
 	
 	//need a case for zero dollar deposit
-	$status = $_POST['deposit'] == 0 ? 'Completed' : 'awaiting gateway choice';
+	$statusText = $_POST['deposit'] == 0 ? 'Completed' : 'awaiting gateway choice';
 	
 	//Save it to the db.
 	$insertQuery = "INSERT INTO `lit_orders` (`orderid`, `status`, `firstname`, `lastname`, `address`, `city`, `state`, `zip`, `country`, `email`, `phone`, `salutation`, `position`, `date_ordered`, `email_log`, `order_total`, `amount_paid`, `order_products`, `gateway_ref_id`, `gateway_used`, `gateway_ipn_info`, `date_created`, `token`) 
-	VALUES (NULL, $status, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', NULL, '', '', '%s', '0', '', NULL, NULL, NULL, NOW(), '%s');";
+	VALUES (NULL, '{$statusText}', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', NULL, '', '', '%s', '0', '', NULL, NULL, NULL, NOW(), '%s');";
 	
 	$token = md5($_POST["firstname"].$_POST["lastname"].$_POST["address"].$_POST["city"].$_POST["state"].$_POST["zip"].$_POST["country"].$_POST["email"].mt_rand().mt_rand().mt_rand());
 	
