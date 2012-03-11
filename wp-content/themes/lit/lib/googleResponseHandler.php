@@ -176,12 +176,11 @@
 
     if( $db->query_bool(	$updateQuery ) ){      
       //update order fields
-      $order['status']            = $payment_status;
-      $order['gateway_ref_id']    = $txn_id;
-      $order['gateway_ipn_info']  = $ipn_track_id;
-      $order['date_ordered']      = $payment_date;
-      $order['amount_paid']       = $order_total;
-      $order['status']            = $payment_status;
+      $order['status']            = $order_status;
+      $order['gateway_ref_id']    = $order_number;
+      $order['gateway_ipn_info']  = $serial_number;
+      $order['date_ordered']      = $purchase_date;
+      $order['amount_paid']       = $unit_price;
       
       //SEND AN EMAIL
       $message = "A new reservation has come in through PayPal!" . "\r\n\r\n";

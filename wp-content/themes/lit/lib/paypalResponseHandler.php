@@ -232,7 +232,6 @@ if ($verified) {
         $order['gateway_ipn_info']  = $ipn_track_id;
         $order['date_ordered']      = $payment_date;
         $order['amount_paid']       = $order_total;
-        $order['status']            = $payment_status;
         
         //SEND AN EMAIL
         $message = "A new reservation has come in through PayPal!" . "\r\n\r\n";

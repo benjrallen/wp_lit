@@ -62,8 +62,8 @@
       $to .= $toArray[$i];
     }
     
-    error_log( $to );
-    error_log( $headers );
+    //error_log( $to );
+    //error_log( $headers );
     
     mail( $to, $subject, $message, $headers );
     
