@@ -3,7 +3,7 @@
   //error_log('i am notification.php');
   
   //log out the request
-  $request = $_REQUEST;
+  //$request = $_REQUEST;
   
   //error_log( print_r($_REQUEST, true) );
 
@@ -12,6 +12,13 @@
     
     error_log( 'SEND LIT ORDER EMAIL: '.print_r( $input, 10 ) );
     
+  }
+  
+  if ( $_REQUEST['send-test'] == 'email' ){
+    
+    mail('benjrallen@gmail.com', 'testing', 'you twat.');
+    
+    echo( 'ok' );
   }
   
   
