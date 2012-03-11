@@ -195,7 +195,8 @@ if ($verified) {
 		$payment_fee =    $_POST['payment_fee'];
 		*/
 		
-		$payment_date =   Paypal2UnixGMT( $_POST['payment_date'] );
+		$payment_date =   $_POST['payment_date'];
+    $payment_date =   date('Y-m-d H:i:s', strtotime($payment_date));
 
     //Get the entry from the database
   	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
