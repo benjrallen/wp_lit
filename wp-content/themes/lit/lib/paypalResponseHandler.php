@@ -121,6 +121,68 @@ if ($verified) {
     error_log( 'VERIFIED:' );    
     error_log( print_r( $_POST, true) );
     
+
+  	//Sanitize the post
+  	foreach ($_POST as $k=>$v) {
+  		$_POST[$k] = mysql_real_escape_string($v);
+  	}
+
+  	//Everything is valid with the form.
+  	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
+		
+		$payment_status = $_POST['payment_status'];
+		$token =          $_POST['token'];
+		$ipn_track_id =   $_POST['ipn_track_id'];
+		$txn_id =         $_POST['txn_id'];
+		
+		$order_total =    intval( $_POST['mc_gross'], 10 );
+		
+		/*
+		//for use later
+		$first_name =     $_POST['first_name'];
+		$last_name =      $_POST['last_name'];
+		$address_street = $_POST['address_street'];
+		$address_state =  $_POST['address_state'];
+		$address_country= $_POST['address_country'];
+		$address_zip =    $_POST['address_zip'];
+		$address_country= $_POST['address_country'];
+		$address_country= $_POST['address_country'];
+		$address_country= $_POST['address_country'];
+		$payment_fee =    $_POST['payment_fee'];
+		*/
+		
+		$payment_date =   $_POST['payment_date'];		
+
+    //Get the entry from the database
+  	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
+
+  	if (!$theQuery->num_rows()) {
+  		die;
+  	}
+
+  	$order = $theQuery->fetch_array();
+  	
+  	//DO CHECKS FOR POSTERITY
+  	if( intval( $order['order_total'], 10 ) != $order_total )
+  	  error_log('Order values don\'t match: db={intval( $order['order_total'], 10 )}, from request={$order_total}');
+  	  die;
+		
+  	//Save it to the db.
+    $updateQuery = "UPDATE `lit_orders` SET ".
+                      "status='{$payment_status}'".
+                      ", gateway_ref_id='{$ipn_track_id}'".
+                      ", gateway_ipn_info='{$txn_id}'".
+                      ", date_ordered='{$payment_date}'".
+                      ", date_updated='NOW()'".
+                      "  WHERE token='{$token}'";
+
+    if( $db->query_bool(	$updateQuery ) ){
+        error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
+        //SEND AN EMAIL
+      } else {
+        error_log("'UPDATE QUERY FAILED: '".$updateQuery);
+      }
+
     //mail('YOUR EMAIL ADDRESS', 'Verified IPN', $listener->getTextReport());
 
 } else {

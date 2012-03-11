@@ -17,7 +17,9 @@
             if(!@mysql_query("USE ".$base, $this->dbc)) 
             { 
                 $error = 'Error <b>'.mysql_error($this->dbc).'</b> in query <b>'.$query.'</b>. In file '.$file.' in line '.$line.'. Date: '.date('Y-m-d H:i:s').'<br />'.CRLF; 
-                die($error); 
+                //die($error); 
+                error_log($error);
+                die;
             } 
             $this->showError = true; 
         } 
@@ -29,7 +31,8 @@
                 $error = 'Error <b>'.mysql_error($this->dbc).'</b> in query <b>'.$query.'</b>. In file '.$file.' in line '.$line.'. Date: '.date('Y-m-d H:i:s').'<br />'.CRLF; 
                 if($this->showError) 
                 { 
-                    echo $error; 
+                    //echo $error;
+                    error_log( $error );
                 } 
             } 
             return new dbcResult($result); 
@@ -42,8 +45,8 @@
                 $error = 'Error <b>'.mysql_error($this->dbc).'</b> in query <b>'.$query.'</b>. In file '.$file.' in line '.$line.'. Date: '.date('Y-m-d H:i:s').'<br />'.CRLF; 
                 if($this->showError) 
                 { 
-                    echo $error;
-                    //error_log( $error );
+                    //echo $error;
+                    error_log( $error );
                 } 
             } 
             return ($result?true:false); 
@@ -75,7 +78,8 @@
                 $error = 'Error <b>'.mysql_error($this->dbc).'</b> in query <b>'.$query.'</b>. In file '.$file.' in line '.$line.'. Date: '.date('Y-m-d H:i:s').'<br />'.CRLF; 
                 if($this->showError) 
                 { 
-                    echo $error; 
+                  //echo $error; 
+                  error_log( $error );
                 } 
             } 
             return ($result?true:false); 

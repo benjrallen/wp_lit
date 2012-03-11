@@ -111,7 +111,7 @@
       //$GChargeRequest = new GoogleRequest($merchant_id, $merchant_key, $server_type);
       //$GChargeRequest->SendChargeAndShipOrder($google_order_number, $tracking_data);
 
-      $order_status = 'authorized';
+      $order_status = 'Completed';
       $processMe = true;
       
       break;
