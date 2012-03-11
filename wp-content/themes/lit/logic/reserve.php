@@ -20,8 +20,11 @@ if (isset($_POST["firstname"])) {
 		}
 		$valid = true;
 		if ($field == "deposit") {
-			$depo = (float) $_POST["deposit"];
-			if ($depo < 50) $valid = false;
+		  if( $_POST[$field] == 'null' )
+		    $valid = false;
+      // $depo = (float) $_POST["deposit"];
+      // if ($depo < 50) $valid = false;
+			
 		} else if ($field == "salutation") {
 			if ($_POST["salutation"] != "") {
 				switch ($_POST["salutation"]) {
