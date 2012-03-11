@@ -174,7 +174,7 @@ if ($verified) {
                       ", gateway_ref_id='{$ipn_track_id}'".
                       ", gateway_ipn_info='{$txn_id}'".
                       ", date_ordered='{$payment_date}'".
-                      ", date_updated='NOW()'".
+                      ", date_updated=NOW()".
                       "  WHERE token='{$token}'";
 
     if( $db->query_bool(	$updateQuery ) ){
