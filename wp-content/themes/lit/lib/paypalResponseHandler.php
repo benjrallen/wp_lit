@@ -218,18 +218,31 @@ if ($verified) {
   	//Save it to the db.
     $updateQuery = "UPDATE `lit_orders` SET ".
                       "status='{$payment_status}'".
-                      ", gateway_ref_id='{$ipn_track_id}'".
-                      ", gateway_ipn_info='{$txn_id}'".
+                      ", gateway_ref_id='{$txn_id}'".
+                      ", gateway_ipn_info='{$ipn_track_id}'".
                       ", date_ordered='{$payment_date}'".
+                      ", amount_paid='{$order_total}'".
                       ", date_updated=NOW()".
                       "  WHERE token='{$token}'";
 
     if( $db->query_bool(	$updateQuery ) ){
-        //error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
-        //SEND AN EMAIL
-        $email_address = $order['email'];
+        //update order fields
+        $order['status']            = $payment_status;
+        $order['gateway_ref_id']    = $txn_id;
+        $order['gateway_ipn_info']  = $ipn_track_id;
+        $order['date_ordered']      = $payment_date;
+        $order['amount_paid']       = $order_total;
+        $order['status']            = $payment_status;
         
-        send_lit_order_email( "'It worked... SEND AN EMAIL!: '".$updateQuery );
+        //SEND AN EMAIL
+        $message = "A new reservation has come in through PayPal!" . "\r\n\r\n";
+        
+        $message .= lit_build_order_text( $order );
+        
+        $message .= $listener->getTextReport();
+        
+        //send email to admins
+        send_lit_order_email( "PayPal Reservation Confirmation", $message );
         
       } else {
         error_log("'UPDATE QUERY FAILED: '".$updateQuery);
@@ -245,9 +258,14 @@ if ($verified) {
     */
     //mail('YOUR EMAIL ADDRESS', 'Invalid IPN', $listener->getTextReport());
 
-    error_log( 'NOT VERIFIED:' );
-    error_log( print_r( $_POST, true) );
+    //error_log( 'NOT VERIFIED:' );
+    //error_log( print_r( $_POST, true) );
     
+    $message = "An Invalid IPN *may* be caused by a fraudulent transaction attempt. It's a good idea to have a developer or sys admin manually investigate any invalid IPN." . "\r\n\r\n";
+    
+    $message .= $listener->getTextReport();
+    
+    send_lit_order_email('Invalid PayPal IPN', $message);
 }
 
 

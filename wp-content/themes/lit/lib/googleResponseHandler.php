@@ -94,6 +94,7 @@
   $unit_price = intval( $order['shopping-cart']['items']['item']['unit-price']['VALUE'], 10 );
   
   $processMe = false;
+  $sendEmail = false;
   
   switch($root){
     case "new-order-notification": {
@@ -115,6 +116,7 @@
 
       $order_status = 'Completed';
       $processMe = true;
+      $sendEmail = true;
       
       break;
     }
@@ -168,20 +170,34 @@
                       ", gateway_ref_id='{$order_number}'".
                       ", gateway_ipn_info='{$serial_number}'".
                       ", date_ordered='{$purchase_date}'".
+                      ", amount_paid='{$unit_price}'".
                       ", date_updated='{$timestamp}'".
                       "  WHERE token='{$token}'";
 
-    if( $db->query_bool(	$updateQuery ) ){
-      //error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
-      //SEND AN EMAIL
-      send_lit_order_email( "'It worked... SEND AN EMAIL!: '".$updateQuery );
+    if( $db->query_bool(	$updateQuery ) ){      
+      //update order fields
+      $order['status']            = $payment_status;
+      $order['gateway_ref_id']    = $txn_id;
+      $order['gateway_ipn_info']  = $ipn_track_id;
+      $order['date_ordered']      = $payment_date;
+      $order['amount_paid']       = $order_total;
+      $order['status']            = $payment_status;
       
-      die;
+      //SEND AN EMAIL
+      $message = "A new reservation has come in through PayPal!" . "\r\n\r\n";
+      
+      $message .= lit_build_order_text( $order );
+      
+      //$message .= $listener->getTextReport();
+      
+      //send email to admins
+      send_lit_order_email( "PayPal Reservation Confirmation", $message );
+      
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
-      die;
     }
-
+    
+    die;
   }
 
   /* In case the XML API contains multiple open tags
