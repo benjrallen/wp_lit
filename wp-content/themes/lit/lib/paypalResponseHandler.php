@@ -120,6 +120,51 @@ if ($verified) {
 
     //error_log( 'VERIFIED:' );    
     //error_log( print_r( $_POST, true) );
+
+
+    function Paypal2UnixGMT ($date){
+      // PAYPAL DATE FORMAT IS HH:mm:ss Jan DD, YYYY PST
+      // We want to convert that to Unixtime stamp, then do the timeshift from PST to EST 
+
+      $hours = substr($date, 0,2);
+      $mins = substr($date, 3,2);
+      $secs = substr($date, 6,2);
+      $monthword = strtoupper(substr($date, 9,3));
+      $monthnames = 
+        array(
+          'JAN' => '01',
+          'FEB' => '02',
+          'MAR' => '03',
+          'APR' => '04',
+          'MAY' => '05',
+          'JUN' => '06',
+          'JUL' => '07',
+          'AUG' => '08',
+          'SEP' => '09',
+          'OCT' => '10',
+          'NOV' => '11',
+          'DEC' => '12'
+        );
+      $monthnum = $monthnames[$monthword];
+
+      $day = substr($date, 13,2);
+      $year = substr($date, 17,4);
+
+      $phpdate = mktime($hours,$mins,$secs,$monthnum,$day,$year);
+
+      // PAYPAL TIMESTAMPS ARE IN PST (or PDT). SO, THE PHPDATE WE JUST CALCULATED IS OFF BY SEVERAL HOURS.
+      // TO FIND THE TIME IN EST(or EDT), WE RECALC THE DATE BY 
+      // 1. ADDING THE UNIX TIMESTAME TO THE EPOCH START
+      // 2.TAKE 5 HOURS OFF FOR GMT
+      // 3. THEN ADD 3 FOR PST-&gt;EST &lt;&lt;&lt;&lt; Change THIS part for your timezone
+    
+      //EDIT - BA - subtract 8 hours to get GMT
+    
+      $phpdate = strtotime ("1 Jan 1970 + $phpdate seconds -8 hours");
+      return $phpdate;
+
+    }
+
     
   	//Everything is valid with the form.
   	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
@@ -150,7 +195,7 @@ if ($verified) {
 		$payment_fee =    $_POST['payment_fee'];
 		*/
 		
-		$payment_date =   $_POST['payment_date'];
+		$payment_date =   Paypal2UnixGMT( $_POST['payment_date'] );
 
     //Get the entry from the database
   	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
