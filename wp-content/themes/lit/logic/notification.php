@@ -43,7 +43,7 @@
   function  send_lit_order_email( $subject, $message ){
     
     $toArray =  ( GW_SANDBOX ? 
-                  array( 'benjrallen@gmail.com', 'bennybones@gmail.com') :
+                  array( 'benjrallen@gmail.com') :
                   array( 'benjrallen@gmail.com', 'nakedincorners@gmail.com')
                 );
     
