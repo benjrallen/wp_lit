@@ -18,7 +18,7 @@
   		  
   		    if( $post->post_name == 'private' ){
   		      //$ amounts for private reserves
-  		      $values = array( 0, 50, 100, 250, 1000 );
+  		      $values = array( 0, 50, 100, 250, 500, 1000 );
   		    }
           
           foreach( $values as $v )
