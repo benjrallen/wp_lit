@@ -131,7 +131,7 @@ if ($verified) {
   	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
 		
 		$payment_status = $_POST['payment_status'];
-		$token =          $_POST['token'];
+		$token =          $_POST['custom']; //this value is the same as the token
 		$ipn_track_id =   $_POST['ipn_track_id'];
 		$txn_id =         $_POST['txn_id'];
 		
