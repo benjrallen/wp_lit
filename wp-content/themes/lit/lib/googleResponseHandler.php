@@ -91,6 +91,8 @@
   $purchase_date = $data[$root]['order-summary']['purchase-date']['VALUE'];
   $order_status = 'awaiting authorization';
   
+  $unit_price = intval( $order['shopping-cart']['items']['item']['unit-price']['VALUE'], 10 );
+  
   $processMe = false;
   
   switch($root){
@@ -141,6 +143,24 @@
     
   	//Everything is valid with the form.
   	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
+
+
+    //Get the entry from the database
+  	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
+
+  	if (!$theQuery->num_rows()) {
+  	  error_log( 'SELECT FAILED: '.$token );
+  		die;
+  	}
+
+  	$order = $theQuery->fetch_array();
+  	
+  	//DO CHECKS FOR POSTERITY
+  	if( intval( $order['order_total'], 10 ) != $unit_price ){
+  	  error_log('Order values don\'t match: db='.print_r(intval( $order['order_total'], 10 ), true).', from request='.print_r($unit_price, true) );
+  	  die;
+		}
+
 		
   	//Save it to the db.
     $updateQuery = "UPDATE `lit_orders` SET ".
@@ -152,8 +172,10 @@
                       "  WHERE token='{$token}'";
 
     if( $db->query_bool(	$updateQuery ) ){
-      error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
+      //error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
       //SEND AN EMAIL
+      send_lit_order_email( "'It worked... SEND AN EMAIL!: '".$updateQuery );
+      
       die;
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);

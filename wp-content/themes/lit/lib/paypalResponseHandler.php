@@ -118,8 +118,8 @@ if ($verified) {
     of the details about the IPN.  
     */
 
-    error_log( 'VERIFIED:' );    
-    error_log( print_r( $_POST, true) );
+    //error_log( 'VERIFIED:' );    
+    //error_log( print_r( $_POST, true) );
     
   	//Everything is valid with the form.
   	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
@@ -150,7 +150,7 @@ if ($verified) {
 		$payment_fee =    $_POST['payment_fee'];
 		*/
 		
-		$payment_date =   $_POST['payment_date'];		
+		$payment_date =   $_POST['payment_date'];
 
     //Get the entry from the database
   	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
@@ -178,8 +178,12 @@ if ($verified) {
                       "  WHERE token='{$token}'";
 
     if( $db->query_bool(	$updateQuery ) ){
-        error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
+        //error_log("'It worked... SEND AN EMAIL!: '".$updateQuery);
         //SEND AN EMAIL
+        $email_address = $order['email'];
+        
+        send_lit_order_email( "'It worked... SEND AN EMAIL!: '".$updateQuery );
+        
       } else {
         error_log("'UPDATE QUERY FAILED: '".$updateQuery);
       }

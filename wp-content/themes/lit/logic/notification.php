@@ -5,7 +5,14 @@
   //log out the request
   $request = $_REQUEST;
   
-  error_log( print_r($_REQUEST, true) );
+  //error_log( print_r($_REQUEST, true) );
+
+  //send email function used in both pathways
+  function send_lit_order_email( $input ){
+    
+    error_log( 'SEND LIT ORDER EMAIL: '.print_r( $input, 10 ) );
+    
+  }
   
   
   if( isset($_REQUEST['serial-number'])){
