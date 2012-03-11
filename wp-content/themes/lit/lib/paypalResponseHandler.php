@@ -164,7 +164,7 @@ if ($verified) {
   	
   	//DO CHECKS FOR POSTERITY
   	if( intval( $order['order_total'], 10 ) != $order_total ){
-  	  error_log("Order values don\'t match: db='{intval( $order['order_total'], 10 )}', from request='{$order_total}'");
+  	  error_log('Order values don\'t match: db='.print_r(intval( $order['order_total'], 10 ), true).', from request='.print_r($order_total, true) );
   	  die;
 		}
 		
