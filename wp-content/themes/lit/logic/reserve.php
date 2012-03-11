@@ -89,7 +89,17 @@ if (isset($_POST["firstname"])) {
 		$orderid = $db->insert_id();
 		
 		header("Content-Type: application/json");
-		echo json_encode(array("status" => "ok", "message" => "ok", "proceed" => true, "token" => $token));
+
+    //CHECK IF THE ORDER TOTAL WAS 0, send a confirmation email to the admins( and potentially to the recipient )
+    if( $_POST['deposit'] == 0 ){
+      
+		  echo json_encode(array("status" => "ok", "message" => "promotional_deposit", "proceed" => false, "token" => $token));
+      
+    } else {
+
+		  echo json_encode(array("status" => "ok", "message" => "ok", "proceed" => true, "token" => $token));
+		
+		}
 		die;
 	}
 }

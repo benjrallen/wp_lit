@@ -516,6 +516,10 @@
 					token = data.token;
 					//move on to step 2
 					return chooseGateway();
+				} else if ( data.message == 'promotional_deposit' ){
+					
+					return popup.show( 'Thank you for your reservation!' );
+				
 				}
 				
 			};
