@@ -121,14 +121,13 @@ if ($verified) {
     error_log( 'VERIFIED:' );    
     error_log( print_r( $_POST, true) );
     
+  	//Everything is valid with the form.
+  	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
 
   	//Sanitize the post
   	foreach ($_POST as $k=>$v) {
   		$_POST[$k] = mysql_real_escape_string($v);
   	}
-
-  	//Everything is valid with the form.
-  	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
 		
 		$payment_status = $_POST['payment_status'];
 		$token =          $_POST['custom']; //this value is the same as the token
