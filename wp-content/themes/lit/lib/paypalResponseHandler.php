@@ -237,8 +237,11 @@ if ($verified) {
         $message = "A new reservation has come in through PayPal!" . "\r\n\r\n";
         
         $message .= lit_build_order_text( $order );
+        error_log( 'I should be sending an email and it should be this before report: '.$message);
         
         $message .= $listener->getTextReport();
+        
+        error_log( 'I should be sending an email and it should be this: '.$message);
         
         //send email to admins
         send_lit_order_email( "PayPal Reservation Confirmation", $message );
