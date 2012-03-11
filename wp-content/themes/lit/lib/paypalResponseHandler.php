@@ -163,9 +163,10 @@ if ($verified) {
   	$order = $theQuery->fetch_array();
   	
   	//DO CHECKS FOR POSTERITY
-  	if( intval( $order['order_total'], 10 ) != $order_total )
-  	  error_log('Order values don\'t match: db={intval( $order['order_total'], 10 )}, from request={$order_total}');
+  	if( intval( $order['order_total'], 10 ) != $order_total ){
+  	  error_log("Order values don\'t match: db='{intval( $order['order_total'], 10 )}', from request='{$order_total}'");
   	  die;
+		}
 		
   	//Save it to the db.
     $updateQuery = "UPDATE `lit_orders` SET ".
