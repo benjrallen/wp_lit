@@ -63,9 +63,12 @@ if (isset($_POST["firstname"])) {
 		$_POST[$k] = mysql_real_escape_string($v);
 	}
 	
+	//need a case for zero dollar deposit
+	$status = $_POST['deposit'] == 0 ? 'Completed' : 'awaiting gateway choice';
+	
 	//Save it to the db.
 	$insertQuery = "INSERT INTO `lit_orders` (`orderid`, `status`, `firstname`, `lastname`, `address`, `city`, `state`, `zip`, `country`, `email`, `phone`, `salutation`, `position`, `date_ordered`, `email_log`, `order_total`, `amount_paid`, `order_products`, `gateway_ref_id`, `gateway_used`, `gateway_ipn_info`, `date_created`, `token`) 
-	VALUES (NULL, 'awaiting gateway choice', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', NULL, '', '', '%s', '0', '', NULL, NULL, NULL, NOW(), '%s');";
+	VALUES (NULL, $status, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', NULL, '', '', '%s', '0', '', NULL, NULL, NULL, NOW(), '%s');";
 	
 	$token = md5($_POST["firstname"].$_POST["lastname"].$_POST["address"].$_POST["city"].$_POST["state"].$_POST["zip"].$_POST["country"].$_POST["email"].mt_rand().mt_rand().mt_rand());
 	
@@ -92,6 +95,27 @@ if (isset($_POST["firstname"])) {
 
     //CHECK IF THE ORDER TOTAL WAS 0, send a confirmation email to the admins( and potentially to the recipient )
     if( $_POST['deposit'] == 0 ){
+      
+    	$db = new dbconnect(DB_HOST, DB_USER, DB_PASS, DB_NAME, __FILE__, __LINE__);
+
+      //Get the entry from the database
+    	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
+
+    	if (!$theQuery->num_rows()) {
+    	  error_log( 'SELECT FAILED: '.$token );
+    		die;
+    	}
+
+    	$order = $theQuery->fetch_array();
+
+      //SEND AN EMAIL
+      $message = "A new promotional reservation has come in!" . "\r\n\r\n";
+      
+      $message .= lit_build_order_text( $order );
+            
+      //send email to admins
+      send_lit_order_email( "PayPal Reservation Confirmation", $message );
+      
       
 		  echo json_encode(array("status" => "ok", "message" => "promotional_deposit", "proceed" => false, "token" => $token));
       
