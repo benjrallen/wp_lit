@@ -174,23 +174,26 @@
                       ", date_updated='{$timestamp}'".
                       "  WHERE token='{$token}'";
 
-    if( $db->query_bool(	$updateQuery ) ){      
-      //update order fields
-      $order['status']            = $order_status;
-      $order['gateway_ref_id']    = $order_number;
-      $order['gateway_ipn_info']  = $serial_number;
-      $order['date_ordered']      = $purchase_date;
-      $order['amount_paid']       = $unit_price;
+    if( $db->query_bool(	$updateQuery ) ){
       
-      //SEND AN EMAIL
-      $message = "A new reservation has come in through PayPal!" . "\r\n\r\n";
+      if( $sendEmail ){   
+        //update order fields
+        $order['status']            = $order_status;
+        $order['gateway_ref_id']    = $order_number;
+        $order['gateway_ipn_info']  = $serial_number;
+        $order['date_ordered']      = $purchase_date;
+        $order['amount_paid']       = $unit_price;
       
-      $message .= lit_build_order_text( $order );
+        //SEND AN EMAIL
+        $message = "A new reservation has come in through Google!" . "\r\n\r\n";
       
-      //$message .= $listener->getTextReport();
+        $message .= lit_build_order_text( $order );
       
-      //send email to admins
-      send_lit_order_email( "PayPal Reservation Confirmation", $message );
+        //$message .= $listener->getTextReport();
+      
+        //send email to admins
+        send_lit_order_email( "PayPal Reservation Confirmation", $message );
+      }
       
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
