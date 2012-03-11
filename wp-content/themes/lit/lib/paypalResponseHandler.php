@@ -176,7 +176,8 @@ if ($verified) {
 		
 		$payment_status = $_POST['payment_status'];
 		$token =          $_POST['custom']; //this value is the same as the token
-		$ipn_track_id =   $_POST['ipn_track_id'];
+		//$ipn_track_id =   $_POST['ipn_track_id'];
+		$ipn_track_id =   $_POST['invoice'];
 		$txn_id =         $_POST['txn_id'];
 		
 		$order_total =    intval( $_POST['mc_gross'], 10 );
