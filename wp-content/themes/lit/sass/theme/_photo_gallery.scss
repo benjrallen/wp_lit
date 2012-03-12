@@ -76,12 +76,29 @@ $galleryHeight: 600px;
 		&.high{
 		}
 	}
+	
 	& #pInfo{
+		@include pie;
 		position: absolute;
-		background: rgba(0,0,0,0.2);
+		background: rgba(0,0,0,0.3);
+		-pie-background: rgba(0,0,0,0.3);
+		$bRad: 16px;
+		@include border-radius($bRad $bRad 0 0 );
 		bottom: 0;
 		z-index: 1;
 		left: 10%;
 		width: 80%;
+		min-height: $pTriW * 2;
+		@include padding-leader(0.75);
+		@include padding-trailer(0.75);
+		
+		& div{
+			@include adjust-font-size-to(13px, 1.25);
+			
+			&#pTitle{
+				@include adjust-font-size-to(14px, 1.25);
+			}
+			&#pDesc{}
+		}
 	}
 }
