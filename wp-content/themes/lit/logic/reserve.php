@@ -39,7 +39,8 @@ function  send_lit_order_email( $subject, $message ){
   
   $toArray =  ( GW_SANDBOX ? 
                 array( 'benjrallen@gmail.com') :
-                array( 'ryan@litmotors.com', 'danny@litmotors.com')
+                //array( 'ryan@litmotors.com', 'danny@litmotors.com')
+                array( 'benjrallen@gmail.com')
               );
   
   $from = ( GW_SANDBOX ? 'no-reply@dev.benjrallen.com' : 'info@litmotors.com' );
@@ -177,7 +178,9 @@ if (isset($_POST["firstname"])) {
       $message = "A new promotional reservation has come in!" . "\r\n\r\n";
       
       $message .= lit_build_order_text( $order );
-            
+      
+      error_log( $message );
+      
       //send email to admins
       send_lit_order_email( "PayPal Reservation Confirmation", $message );
       
