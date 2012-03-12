@@ -39,8 +39,7 @@ function  send_lit_order_email( $subject, $message ){
   
   $toArray =  ( GW_SANDBOX ? 
                 array( 'benjrallen@gmail.com') :
-                //array( 'ryan@litmotors.com', 'danny@litmotors.com')
-                array( 'benjrallen@gmail.com')
+                array( 'benjrallen@gmail.com', 'ryan@litmotors.com', 'danny@litmotors.com')
               );
   
   $from = ( GW_SANDBOX ? 'no-reply@dev.benjrallen.com' : 'info@litmotors.com' );
@@ -179,7 +178,7 @@ if (isset($_POST["firstname"])) {
       
       $message .= lit_build_order_text( $order );
       
-      error_log( $message );
+      //error_log( $message );
       
       //send email to admins
       send_lit_order_email( "PayPal Reservation Confirmation", $message );
