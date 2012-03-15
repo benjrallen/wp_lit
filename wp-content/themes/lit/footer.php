@@ -13,6 +13,10 @@
 		</section><!-- #main -->
 						
 		<footer id="footer" role="contentinfo">
+  		<?php 
+  		  if (is_front_page())
+  		    echo '<a class="homeLink" href="'.home_url( '/home/' ).'"></a>'
+  		?>
 			<div class="wrap">
   			<div id="fb-root"></div>
 

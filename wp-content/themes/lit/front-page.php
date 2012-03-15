@@ -34,8 +34,53 @@ get_header(); ?>
 
 <?php //endwhile; endif; ?>
 
-  <div class="wrap">
+<?php 
+  if (is_front_page())
+    echo '<a class="homeLink" href="'.home_url( '/home/' ).'"></a>'
+?>
 
+
+  <div class="wrap">
+		<?php 
+		  if (is_front_page())
+		    echo '<a class="homeLink" href="'.home_url( '/home/' ).'"></a>'
+		?>
+
+    <video id="splash" width="720" height="480" class="mejs-myskin" autoplay="autoplay" controls="controls" preload="auto" poster="<?php bloginfo('template_directory'); ?>/turntable/timelapse.jpg" >
+       <source src="<?php bloginfo('template_directory'); ?>/turntable/timelapse.mp4" type="video/mp4"></source>
+       <source src="<?php bloginfo('template_directory'); ?>/turntable/timelapse.webm" type="video/webm"></source>
+       <source src="<?php bloginfo('template_directory'); ?>/turntable/timelapse.ogv" type="video/ogg"></source>
+ 			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='720' height='480' id='single1' name='single1'>
+        <param name="movie" value="<?php bloginfo('template_directory'); ?>/turntable/player.swf" />
+ 				<param name='allowfullscreen' value='true'>
+ 				<param name='allowscriptaccess' value='always'>
+ 				<param name='wmode' value='transparent'>
+ 				<?php /* ?>
+ 				<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/turntable/timelapse.mov&controlbar=none&dock=false&autostart=true&icons=false&quality=false&repeat=always'>
+        <param name="flashvars" value="controls=true&file=<?php bloginfo('template_directory'); ?>/turntable/timelapse.mp4" />
+        <?php */ ?>
+				<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/turntable/timelapse.mp4&controls=true&dock=false&autostart=true&quality=false&repeat=none'>
+ 				<embed
+ 					type='application/x-shockwave-flash'
+ 					id='single2'
+ 					name='single2'
+ 					src="<?php bloginfo('template_directory'); ?>/turntable/player.swf"
+ 					width='720'
+ 					height='480'
+ 					bgcolor='undefined'
+ 					allowscriptaccess='always'
+ 					allowfullscreen='true'
+ 					wmode='transparent'
+ 					<?php /* >
+ 					flashvars="file=<?php bloginfo('template_directory'); ?>/turntable/timelapse.mov&controlbar=none&dock=false&autostart=true&icons=false&quality=false&repeat=always"
+          <?php */ ?>
+          flashvars="controls=true&file=<?php bloginfo('template_directory'); ?>/turntable/timelapse.mp4" 
+ 				/>
+      		<img alt="Lit Motors" src="<?php bloginfo('template_directory'); ?>/turntable/timelapse.jpg" width="640" height="360" title="Sorry, No video playback capabilities." />
+ 			</object>
+     </video>
+
+<?php /* ?>
 		<source src="<?php echo site_url("/vid/2_turntable-web.mp4"); ?>" type="video/mp4"  /> 
 		<source src="<?php echo site_url("/vid/2_turntable-web.webm"); ?>" type="video/webm" /> 
 		<source src="<?php echo site_url("/vid/2_turntable-web.ogv"); ?>" type="video/ogv" /> 
@@ -66,7 +111,7 @@ get_header(); ?>
 				/>
 			</object>
     </video>
-
+<?php */ ?>
   </div>
   <div class="clearfix"></div>
 

@@ -181,7 +181,7 @@ if (isset($_POST["firstname"])) {
       //error_log( $message );
       
       //send email to admins
-      send_lit_order_email( "PayPal Reservation Confirmation", $message );
+      send_lit_order_email( "Promotional Reservation Confirmation", $message );
       
       
 		  echo json_encode(array("status" => "ok", "message" => "promotional_deposit", "proceed" => false, "token" => $token));

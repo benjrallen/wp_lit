@@ -7,6 +7,7 @@ $inner-content-padding: 20px;
 body{
 	height:100%;
 	width:100%;
+	min-width: $base-width;
 	display:block;
 	//background: $base-bg url('../images/bg-diag.png');
 	background: $base-bg;
@@ -18,13 +19,13 @@ body{
 	//@include min-height( 2000px );
 }
 
-#homeLink{
-	position: fixed;
+.homeLink{
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	display: block;
 	background: none;
-	z-index: 100;
+	z-index: 3;
 	cursor: pointer;
 	cursor: hand;
 }
@@ -93,11 +94,18 @@ $sidebar-width: 180px;
 @import "theme/page_post";
 	//@import "theme/contact_form";
 	//@import "theme/mailchimp_subscribe";
-@import "theme/photo_gallery";
+	@import "theme/photo_gallery";
+	@import "theme/mediaplayer";
 
 
 /* End Parts */
 
+video{
+	&:focus{
+		outline: none;
+		border: none;
+	}
+}
 
 .wrap{
 	width:$base-width;

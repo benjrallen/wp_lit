@@ -1,6 +1,8 @@
 article#front-page-entry.hentry{
 	
-	background: #D9D8DA;
+	//background: #D9D8DA;
+	
+	background: #000;
 	
 	min-height: 100px;
 	
@@ -11,6 +13,17 @@ article#front-page-entry.hentry{
 		margin-top: 0;
 		margin-bottom:0;
 		line-height: inherit;
+	}
+	
+	& .wrap{
+		text-align: center;
+		position: relative;
+		z-index: 5;
+		
+		& video{
+			position: relative;
+			z-index: 4;
+		}
 	}
 	
 }
