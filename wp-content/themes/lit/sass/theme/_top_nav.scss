@@ -43,7 +43,7 @@ nav#access{
 				}
 			}
 
-			&.home{
+			&.home, &.menu-item-last{
 				& a{
 					@include main-sprite;
 					height: 22px;

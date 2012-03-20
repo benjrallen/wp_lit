@@ -14,15 +14,34 @@
   		  <option value="null">Deposit Amount*</option>
   		  <?php
   		    //$ amounts for normal reserve
-  		    $values = array( 250, 500, 1000 );
+  		    //$values = array( 250, 500, 1000 );
+  		    $values = array(
+  		      250 => '$250',
+  		      500 => '$500',
+  		      1000 => '$1,000 (#101-200)',
+  		      2000 => '$2,000 (#51-100)',
+  		      5000 => '$5,000 (#11-50)',
+  		      10000 => '$10,000 (#1-10)'
+  		    );
   		  
   		    if( $post->post_name == 'private' ){
   		      //$ amounts for private reserves
-  		      $values = array( 0, 50, 100, 250, 500, 1000 );
+  		      //$values = array( 0, 50, 100, 250, 500, 1000 );
+  		      $values = array( 
+  		        0 => '$0', 
+  		        50 => '$50', 
+  		        100 => '$100', 
+  		        250 => '$250', 
+  		        500 => '$500', 
+    		      1000 => '$1,000 (#101-200)',
+    		      2000 => '$2,000 (#51-100)',
+    		      5000 => '$5,000 (#11-50)',
+    		      10000 => '$10,000 (#1-10)'
+  		      );
   		    }
           
-          foreach( $values as $v )
-  		      echo '<option value="'.$v.'">$'.$v.'</option>';
+          foreach( $values as $k => $v )
+  		      echo '<option value="'.$k.'">'.$v.'</option>';
   		  ?>
   		</select>
 		</div>
