@@ -1,0 +1,413 @@
+@import 'partials/base';
+
+$base-red: red;
+$btn-width: 30px;
+$base-grees: #51A601;
+
+
+
+#survey-json{
+	display: none;
+	background: #bada55;
+}
+
+#question-types{
+	background: #badaff;
+	display: none;
+}
+
+#survey-controls, #survey-container{
+	@include inline-block;
+	vertical-align: top;
+}
+
+.object{
+	position: relative;
+	padding: 1em;
+}
+
+button{
+	$button-color: darken( #badaff, 40% );
+	$button-hover: darken( $button-color, 10% );
+	@include theme-hard-grad-button( $button-color );
+	@include theme-hard-grad-button-hover( $button-hover );
+
+	&.btn-delete{
+		$button-hover: darken( $base-red, 10% );
+		@include theme-hard-grad-button( $base-red );
+		@include theme-hard-grad-button-hover( $button-hover );
+		
+		position: absolute;
+		z-index: 5;
+
+		$button-color: lighten( $base-red, 20% );
+		$button-hover: darken( $button-color, 10% );
+		background: $button-color;
+		//border: 1px solid $button-hover-color;
+		top: 0;
+		right: 0;
+		margin: 0;
+		height: $input-height;
+		width: $btn-width;
+		//border: none;
+		@include padding-leader(0);
+		@include padding-trailer(0);
+		@include border-radius( 0 );
+
+		@include box-shadow(none);		
+		&:hover{
+			background: $button-hover;
+			& span{
+				color: darken( $base-white, 10% );
+			}
+		}
+
+		
+		& .text{
+			display: none;
+		}
+	}
+}
+
+.wrap{
+	position: relative;
+
+	& #ajaxMsg{
+		background: red;
+		position: fixed;
+		display: none;
+		width: 100%;
+		text-align: center;
+		top: 0;
+		left: 0;
+		z-index: 10000;
+		@include padding-leader(2);
+		@include padding-trailer(0.5);
+		@include adjust-font-size-to( 14px, 1 );
+		$button-color: lighten( $base-red, 30% );
+		$button-hover: darken( $button-color, 10% );
+		background: $button-color;
+		border: 1px solid $button-hover;
+	}
+
+	& h2{
+		&.cont-header{
+			@include margin-leader(0.75);
+			@include adjust-font-size-to( 14px, 1.25 );
+		}
+	}
+
+	& input{
+		height: $input-height;
+		line-height: $input-height;
+		padding: 0;
+	}
+
+	& input, & textarea{
+		font-size: $input-font-size;
+		margin: 0;
+		width: 100%;
+		padding-left: 2%;
+		padding-right: 2%;
+		@include border-radius( 0 );
+
+		&:focus{
+			background: lighten( desaturate( $base-header-color, 10% ), 60% );
+			outline: none;
+		}
+	}
+
+	& select{
+		height: $input-height;
+		line-height: $input-height;
+		padding: 0;
+	}
+
+	& .input-block{
+		position: relative;
+		
+		&.id, &.type_id, &.question_id, &.menu_order, &.section_id{
+			display: none;
+		}
+		& label, & textarea, & input, & select{
+			//@include inline-block;
+			display: block;
+		}
+		
+		$label-width: 90px;
+		$inp-pad: 6px;
+		& input, & textarea{
+			&[name="name"], &[name="description"], &[name="placeholder"]{
+				padding-left: $label-width + $inp-pad;
+			}
+			&[name="is_public"]{
+				position: relative;
+				z-index: 2;
+				margin-left: $label-width + $inp-pad;
+			}
+		}
+		& select{
+			&[name="question_type"]{
+				position: relative;
+				z-index: 2;
+				margin-left: $label-width + $inp-pad;
+			}
+		}
+		& textarea{
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+		& label{
+			
+			width: $label-width - 2 * $inp-pad;
+			height: $input-height - 2;
+			line-height: $input-height;
+			//font-size: 14px;
+			font-weight: bold;
+			padding-left: $inp-pad;
+			padding-right: $inp-pad;
+			
+			&[for="name"], &[for="description"], &[for="placeholder"], &[for="is_public"], &[for="question_type"]{
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				border: 1px solid lighten($base-grey, 25%);
+				background: lighten($base-grey, 35%);
+			}
+			&[for="description"]{
+				//height: 100%;
+				//border-top: none;
+				//border-bottom: none;
+			}
+		}
+	}
+
+
+}
+
+#survey-container{
+	//background: #badaff;
+	background: darken( $base-white, 2% );
+	width: 500px;
+	border: 1px solid $base-grey;
+	@include border-radius( $rad );
+
+	& #save-survey{
+		position: absolute;
+		left: -9999em;
+	}
+
+
+	& #sections{
+		padding-left: 0;
+		padding-right: 0;
+
+		&.sorting{
+			background: lighten( #badaff, 5% );
+		}
+	}
+
+	& .section{
+		background: darken( $base-white, 7% );
+		border: 1px solid $base-grey;
+		@include border-radius( $rad );
+		@include margin-trailer(0.5);
+	}
+
+	& .questions{
+		background: darken( $base-white, 2% );
+		min-height: 1em;
+		//@include margin-leader(0.75);
+		@include margin-trailer(0.25);
+		@include padding-leader(0.75);
+		@include padding-trailer(0.25);
+
+		padding-right: 0.75em;
+		padding-left: 0.75em;
+		border: 1px dotted $base-grey;
+
+		&.sorting{
+			min-height: 6em;
+			background: darken( #badaff, 0% );
+		}
+	}
+
+	& .question{
+		background: darken( $base-white, 7% );
+		border: 1px solid $base-grey;
+		@include border-radius( $rad );
+		@include margin-trailer(0.5);
+	}
+
+	& .options{
+		background: lighten( #badaff, 10% );
+		@include margin-leader(0.75);
+		@include margin-trailer(0.25);
+	}
+
+	& .option{
+		background: lighten( #badaff, 2% );
+		//border: 1px solid $base-grey;
+		//@include border-radius( $rad );
+		padding: 0;
+
+		//@include margin-trailer();
+		
+		& button.btn-delete{
+		}
+
+		& .input-block{
+			display: none;
+			&.name{
+				display: block;
+
+				$label-width: 20px;
+				$label-margin: 6px;
+				& label{
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: $input-height - 2;
+					width: $label-width;
+					@include padding-leader(0);
+					@include padding-trailer(0);
+					padding-left: 0;
+					padding-right: 0;
+					min-width: 0;
+					text-indent: -9999em;
+					$button-color: darken( #badaff, 20% );
+					$button-hover: darken( $button-color, 10% );
+					@include theme-hard-grad-button( $button-color );
+					@include theme-hard-grad-button-hover( $button-hover );
+					@include box-shadow(none);
+					@include border-radius(0);
+				}
+				& input{
+					&[name="name"]{
+					//border: none;
+						padding-left: $label-width + $label-margin;
+						padding-right: $btn-width + $label-margin;
+					}
+				}
+			}
+		}
+	}
+
+	& .dataCont{
+		position: relative;
+		
+		& .addOption{
+			//@include float-right;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			@include adjust-font-size-to( 12px, 1.25 );
+		}
+
+	}
+
+	& #survey{
+		position:relative;
+	}
+
+	& .dataCont, .options, #sections, .questions{
+		//padding-left: 1em;
+		//padding-right: 1em;
+		//@include margin-leader();
+		//@include margin-trailer();
+	}
+
+
+}
+#survey-controls{
+	//background: lighten( desaturate( #bad, 10% ), 10% );
+	background: darken( $base-white, 2% );
+	width: 250px;
+	border: 1px solid $base-grey;
+	@include border-radius( $rad );
+	padding: 0.75em;
+
+	& button{
+		@include adjust-font-size-to( 14px );
+		//@include float-right;
+		width: 100%;
+	}
+
+	& #controls-save-survey{
+		& button{
+			$button-color: darken( $base-green, 20% );
+			$button-hover: darken( $button-color, 10% );
+			
+			@include theme-hard-grad-button( $button-color );
+			@include theme-hard-grad-button-hover( $button-hover );
+			width: 99%;
+			@include adjust-font-size-to( 18px, 3 );
+		}
+	}
+
+	& #add-question, & #add-section{
+		width: 49%;
+		@include inline-block;
+		vertical-align: top;
+	}
+
+	& #add-question{
+		& button{
+			
+		}
+	}
+	
+	& #add-section{
+		& button{
+			$button-color: lighten( #9E4199, 0% );
+			$button-hover: darken( $button-color, 10% );
+			
+			@include theme-hard-grad-button( $button-color );
+			@include theme-hard-grad-button-hover( $button-hover );
+			width: 99%;
+		}
+	}
+
+}
+
+
+
+.head{
+	display: block;
+
+	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', sans-serif;
+	color: #464646;
+	@include text-shadow( $base-white 0px 1px 0px );
+	@include adjust-font-size-to( 14px );
+	font-weight: 400;
+	
+	$iconSize: 6px;
+	$iconColor: #222;
+	& .icon{
+		@include inline-block;
+		margin-right: 1em;
+		height: 0px;
+		width: 0px;
+		border: $iconSize solid transparent;
+		border-left: $iconSize solid $iconColor;
+	}
+	
+	&.active{
+		
+		& .icon{
+			border-left: $iconSize solid transparent;
+			border-top: $iconSize solid $iconColor;
+		}
+	}
+}
+
+
+
+
+
+.clearfix{
+	@include pie-clearfix;
+}
+

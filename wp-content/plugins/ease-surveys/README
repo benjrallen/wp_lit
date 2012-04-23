@@ -1,0 +1,8 @@
+A wordpress plugin for creating surveys with sections and different types of questions.  Built on Tom Benner's WP-MVC plugin framework.  At first push, this plugin is half way completed, and by that I mean the admin interface for creating and editing surveys is in place.
+
+
+Install and activate the wp-mvc first. For more info, go here: 
+http://wpmvc.org/
+
+
+Then install and activate the surveys plugin, and try it out!
