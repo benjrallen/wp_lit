@@ -3,6 +3,7 @@
 define("ABSPATH", dirname(__FILE__));
 
 require_once 'lib/general.php';
+//require_once 'lib/google_analytics/autoloader.php';
 //require_once 'lib/seo.php';
 
 //var_dump($_SERVER);die;
