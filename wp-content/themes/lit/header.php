@@ -47,7 +47,7 @@
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script>
 
 		<script type="text/javascript">
-      window._gaq = [['_setAccount','UA-25720006-1'],['_trackPageview'],['_trackPageLoadTime']];
+      window._gaq = [['_setAccount','UA-31250869-1'],['_trackPageview'],['_trackPageLoadTime']];
 
 			Modernizr.load([
 				{ load : ['//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'] },
