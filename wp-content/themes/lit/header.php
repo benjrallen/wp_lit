@@ -46,8 +46,16 @@
 
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script>
 
+    <?php
+      /* use a different UA code for dev server and for actual site */
+      $ga_ua = (  strpos($_SERVER["SERVER_NAME"], "localhost") !== false || 
+                  strpos($_SERVER["SERVER_NAME"], "dev.benjrallen.com") !== false ?
+                      'UA-31286635-1' :
+                      'UA-31250869-1' );      
+    ?>
+
 		<script type="text/javascript">
-      window._gaq = [['_setAccount','UA-31250869-1'],['_trackPageview'],['_trackPageLoadTime']];
+      window._gaq = [['_setAccount','<?php echo $ga_ua; ?>'],['_trackPageview'],['_trackPageLoadTime']];
 
 			Modernizr.load([
 				{ load : ['//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'] },
