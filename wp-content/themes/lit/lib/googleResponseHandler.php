@@ -194,13 +194,15 @@
         //send email to admins
         send_lit_order_email( "Google Reservation Confirmation", $message );
       }
-      
+
       //google analytics tracking
+      use UnitedPrototype\GoogleAnalytics;
+      
       $event->setAction($order_status);
       $event->setLabel( $token );
       $event->setValue( $unit_price );
       //set up a page
-      $page = new GoogleAnalytics\Page('/google_payment_notification_'.$order_status);
+      $page->setPath('/google_payment_notification_'.$order_status);
       $page->setTitle( 'Google Reserve Payment - '.$order_status.' - '.$unit_price );
 
       $tracker->trackEvent( $event, $session, $visitor );

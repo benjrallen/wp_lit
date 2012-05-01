@@ -246,7 +246,7 @@ if ($verified) {
         $event->setLabel( $token );
         $event->setValue( $order_total );
         //set up a page
-        $page = new GoogleAnalytics\Page('/paypal_payment_notification_'.$payment_status);
+        $page->setPath('/paypal_payment_notification_'.$payment_status);
         $page->setTitle( 'PayPal Reserve Payment - '.$payment_status.' - '.$order_total );
 
         $tracker->trackEvent( $event, $session, $visitor );

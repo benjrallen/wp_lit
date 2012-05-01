@@ -10,6 +10,7 @@
   $visitor->setIpAddress($_SERVER['REMOTE_ADDR']);
   $visitor->setUserAgent($_SERVER['HTTP_USER_AGENT']);
   $session = new GoogleAnalytics\Session();
+  $page = new GoogleAnalytics\Page();
   
   //set up the event
   $event = new GoogleAnalytics\Event();
