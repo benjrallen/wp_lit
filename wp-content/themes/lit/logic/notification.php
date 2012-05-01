@@ -1,4 +1,8 @@
 <?php
+    
+  //require the php-ga classes
+  //require_once 'lib/google_analytics/autoloader.php';
+  //use UnitedPrototype\GoogleAnalytics;
   
   if( isset($_REQUEST['serial-number'])){
     //assume it is google

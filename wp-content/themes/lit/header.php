@@ -51,7 +51,7 @@
       $ga_ua = (  strpos($_SERVER["SERVER_NAME"], "localhost") !== false || 
                   strpos($_SERVER["SERVER_NAME"], "dev.benjrallen.com") !== false ?
                       'UA-31286635-1' :
-                      'UA-31250869-1' );      
+                      'UA-25720006-1' );      
     ?>
 
 		<script type="text/javascript">
