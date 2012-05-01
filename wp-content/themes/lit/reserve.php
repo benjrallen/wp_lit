@@ -13,6 +13,7 @@ if (strpos($_SERVER["SERVER_NAME"], "localhost") !== false || strpos($_SERVER["S
 	define("DB_PASS", "bones");
 	define("GW_SANDBOX", true);
 	define("GA_UA", "UA-31286635-1");
+	define("GA_URL", "dev.benjrallen.com/wp_lit");
 } else {
 	define("DB_HOST", "dannykim8379.db.5219707.hostedresource.com");
 	define("DB_NAME", "dannykim8379");
@@ -20,6 +21,7 @@ if (strpos($_SERVER["SERVER_NAME"], "localhost") !== false || strpos($_SERVER["S
 	define("DB_PASS", "wxvubP79");
 	define("GW_SANDBOX", false);
 	define("GA_UA", "UA-25720006-1");
+	define("GA_URL", "www.litmotors.com");
 }
 
 $private = false;

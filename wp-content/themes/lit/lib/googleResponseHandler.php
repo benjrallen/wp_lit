@@ -160,7 +160,7 @@
   	//DO CHECKS FOR POSTERITY
   	if( intval( $order['order_total'], 10 ) != $unit_price ){
   	  error_log('Order values don\'t match: db='.print_r(intval( $order['order_total'], 10 ), true).', from request='.print_r($unit_price, true) );
-  	  die;
+  	  die();
 		}
 
 		
@@ -192,14 +192,21 @@
         //$message .= $listener->getTextReport();
       
         //send email to admins
-        send_lit_order_email( "PayPal Reservation Confirmation", $message );
+        send_lit_order_email( "Google Reservation Confirmation", $message );
       }
+      
+      //google analytics tracking
+      $event->setAction($order_status);
+      $event->setLabel( $token );
+      $event->setValue( $unit_price );
+      $tracker->trackEvent( $event, $session, $visitor );
+      error_log( 'Event tracked?' );
       
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
     }
     
-    die;
+    die();
   }
 
   /* In case the XML API contains multiple open tags
