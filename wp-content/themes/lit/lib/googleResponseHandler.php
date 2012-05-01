@@ -195,9 +195,7 @@
         send_lit_order_email( "Google Reservation Confirmation", $message );
       }
 
-      //google analytics tracking
-      use UnitedPrototype\GoogleAnalytics;
-      
+      //google analytics tracking      
       $event->setAction($order_status);
       $event->setLabel( $token );
       $event->setValue( $unit_price );
