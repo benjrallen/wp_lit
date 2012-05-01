@@ -21,7 +21,7 @@ if (strpos($_SERVER["SERVER_NAME"], "localhost") !== false || strpos($_SERVER["S
 	define("DB_PASS", "wxvubP79");
 	define("GW_SANDBOX", false);
 	define("GA_UA", "UA-25720006-1");
-	define("GA_URL", "www.litmotors.com");
+	define("GA_URL", "litmotors.com");
 }
 
 $private = false;
