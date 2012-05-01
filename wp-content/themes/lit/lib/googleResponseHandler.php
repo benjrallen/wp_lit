@@ -200,7 +200,7 @@
       $event->setLabel( $token );
       $event->setValue( $unit_price );
       //set up a page
-      $page = new GoogleAnalytics\Page('/google_payment_notification');
+      $page = new GoogleAnalytics\Page('/google_payment_notification_'.$order_status);
       $page->setTitle( 'Google Reserve Payment - '.$order_status.' - '.$unit_price );
 
       $tracker->trackEvent( $event, $session, $visitor );

@@ -241,6 +241,17 @@ if ($verified) {
         //send email to admins
         send_lit_order_email( "PayPal Reservation Confirmation", $message );
         
+        //google analytics tracking
+        $event->setAction($payment_status);
+        $event->setLabel( $token );
+        $event->setValue( $order_total );
+        //set up a page
+        $page = new GoogleAnalytics\Page('/paypal_payment_notification_'.$payment_status);
+        $page->setTitle( 'PayPal Reserve Payment - '.$payment_status.' - '.$order_total );
+
+        $tracker->trackEvent( $event, $session, $visitor );
+        $tracker->trackPageView( $page, $session, $visitor );
+        
       } else {
         error_log("'UPDATE QUERY FAILED: '".$updateQuery);
       }
