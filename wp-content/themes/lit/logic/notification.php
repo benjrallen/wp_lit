@@ -1,8 +1,9 @@
 <?php
     
   //require the php-ga classes for google analytics
-  require_once 'lib/google_analytics/autoloader.php';
+  require_once('lib/google_analytics/autoload.php');
   use UnitedPrototype\GoogleAnalytics;
+  
   //set up the tracker
   $tracker = new GoogleAnalytics\Tracker( GA_UA, GA_URL );
   $visitor = new GoogleAnalytics\Visitor();
