@@ -199,7 +199,10 @@
       $event->setAction($order_status);
       $event->setLabel( $token );
       $event->setValue( $unit_price );
+      $page->setTitle( 'Google Reserve Payment - '.$order_status.' - '.$unit_price );
+
       $tracker->trackEvent( $event, $session, $visitor );
+      $tracker->trackPageView( $page, $session, $visitor );
       error_log( 'Event tracked?' );
       
     } else {

@@ -10,6 +10,9 @@
   $visitor->setIpAddress($_SERVER['REMOTE_ADDR']);
   $visitor->setUserAgent($_SERVER['HTTP_USER_AGENT']);
   $session = new GoogleAnalytics\Session();
+  //set up a page
+  $page = new GoogleAnalytics\Page('/server_payment_notification');
+  
   //set up the event
   $event = new GoogleAnalytics\Event();
   $event->setCategory('Reserve');
