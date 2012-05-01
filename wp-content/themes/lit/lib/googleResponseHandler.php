@@ -197,8 +197,8 @@
 
       //google analytics tracking      
       $event->setAction($order_status);
-      $event->setLabel( $token );
-      $event->setValue( $unit_price );
+      $event->setLabel( $unit_price );
+      $event->setValue( $token );
       //set up a page
       $page->setPath('/google_payment_notification_'.$order_status);
       $page->setTitle( 'Google Reserve Payment - '.$order_status.' - '.$unit_price );

@@ -243,8 +243,8 @@ if ($verified) {
         
         //google analytics tracking
         $event->setAction($payment_status);
-        $event->setLabel( $token );
-        $event->setValue( $order_total );
+        $event->setLabel( $order_total );
+        $event->setValue( $token );
         //set up a page
         $page->setPath('/paypal_payment_notification_'.$payment_status);
         $page->setTitle( 'PayPal Reserve Payment - '.$payment_status.' - '.$order_total );
