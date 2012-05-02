@@ -666,11 +666,11 @@
 				contID: 'dentistRotate',
 				gidAtt: 'data-id', //attribute to look for on the controls
 				sliderClass: 'pic',
-				transitionTime: 1000,
+				//transitionTime: 1000,
 				useSlideTextInControls: true,
-				timeoutTime: 7500,
+				//timeoutTime: 7500,
 				showControls: true, //false, true, or 'binary'.  'binary' will print out the controls as prev/next only
-				autoRotate: true,
+				//autoRotate: true,
 				appendControlsTo: '#dControls'
 			});
 			

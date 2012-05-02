@@ -72,6 +72,25 @@
 			
 			& .pic{
 				background: url('../images/commute.jpg') no-repeat top left;
+			
+				&:hover{
+					
+					& .car{
+						
+						&.one{
+							background-position: -142px -400px;
+						}
+						&.two{
+							background-position: -147px -504px;
+						}
+						&.three{
+							background-position: -320px -408px;
+						}
+						&.four{
+							background-position: -1px -404px;
+						}
+					}
+				}
 			}
 			
 			& .car{
@@ -111,11 +130,11 @@
 				}					
 				
 				&.one{
-					width: 103px;
-					height: 71px;
-					background-position: 0 0;
-					bottom: 0;
-					left: 134px;
+					width: 93px;
+					height: 64px;
+					background-position: -142px -200px;
+					bottom: 4px;
+					left: 139px;
 					
 					& .modal{
 						top: -52px;
@@ -123,11 +142,11 @@
 					}
 				}
 				&.two{
-					width: 98px;
-					height: 56px;
-					background-position: 0 -80px;
-					bottom: 0;
-					right: 60px;
+					width: 83px;
+					height: 55px;
+					background-position: -147px -304px;
+					bottom: -1px;
+					right: 67px;
 					
 					& .modal{
 						top: -52px;
@@ -135,11 +154,11 @@
 					}
 				}
 				&.three{
-					width: 59px;
-					height: 54px;
-					background-position: 0 -146px;
-					top: 184px;
-					right: 107px;
+					width: 56px;
+					height: 48px;
+					background-position: -320px -208px;
+					top: 187px;
+					right: 109px;
 				
 					& .modal{
 						top: -52px;
@@ -147,11 +166,11 @@
 					}
 				}
 				&.four{
-					width: 69px;
-					height: 60px;
-					background-position: -131px 0;
-					bottom: 97px;
-					left: 224px;
+					width: 56px;
+					height: 55px;
+					background-position: -1px -204px;
+					bottom: 98px;
+					left: 230px;
 				
 					& .modal{
 						top: -84px;
