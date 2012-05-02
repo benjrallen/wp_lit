@@ -1,0 +1,161 @@
+.page-template-page-dentist-landing-php{
+	
+	& #content{
+
+		& .wrap{
+			width: 1250px;
+		}
+	}
+}
+
+#dentistLanding{
+	
+	& .box-wrap{
+		
+	}
+	& .two-col{
+		@include padding-leader( 2.5 );
+		@include margin-trailer( 1.5 );
+		
+		@include float-left;
+		@include inline-block();
+		vertical-align: middle;
+		width: 613px;
+		text-align: center;
+		
+		&.commute{
+			margin-right: 16px;
+			
+			& .pic{
+				background: url('../images/commute.jpg') no-repeat top left;
+			}
+			
+			& .car{
+				position: absolute;
+				display: block;
+				background: url('../images/car-overlay-sprite.png');
+				@include opacity(0.5);
+				
+				@include single-transition( opacity, 0.2s, ease-in-out );
+				&:hover{
+					@include opacity(1);
+				
+					& .modal{
+						@include opacity(1);
+					}
+				}
+				
+				& .modal{
+					@include pie;
+					display: block;
+					background: $base-bg;
+					color: $base-button-color;
+					position: absolute;
+					font-weight: normal;
+					font-variant: small-caps;
+					top: -64px;
+					left: -88px;
+					@include adjust-font-size-to( 18px, 1.25 );
+					@include padding-leader(0.5);
+					@include padding-trailer(0.5);
+					padding-left: 0.75em;
+					padding-right: 0.75em;
+					@include border-radius( 12px );
+					@include box-shadow( $base-color 3px 3px 15px 3px );
+					@include opacity(0);
+					@include single-transition( opacity, 0.4s, ease-in-out );
+				}					
+				
+				&.one{
+					width: 103px;
+					height: 71px;
+					background-position: 0 0;
+					bottom: 0;
+					left: 134px;
+					
+					& .modal{
+						top: -52px;
+						left: -100px;
+					}
+				}
+				&.two{
+					width: 98px;
+					height: 56px;
+					background-position: 0 -80px;
+					bottom: 0;
+					right: 60px;
+					
+					& .modal{
+						top: -52px;
+						left: -76;
+					}
+				}
+				&.three{
+					width: 59px;
+					height: 54px;
+					background-position: 0 -146px;
+					top: 184px;
+					right: 107px;
+				
+					& .modal{
+						top: -52px;
+						left: -90px;
+					}
+				}
+				&.four{
+					width: 69px;
+					height: 60px;
+					background-position: -131px 0;
+					bottom: 97px;
+					left: 224px;
+				
+					& .modal{
+						top: -84px;
+						left: -160px;
+					}
+				}
+			}
+		}
+		
+		&.solution{
+			
+			& .slide{
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				height: 100%;
+				width: 100%;
+				text-indent: -9999em;
+				
+				&.one{
+					z-index: 2;
+					background: url('../images/dentist1.jpg') no-repeat top left;
+				}
+				&.two{
+					background: url('../images/dentist2.jpg') no-repeat top left;
+				}
+				&.three{
+					background: url('../images/dentist3.jpg') no-repeat top left;
+				}
+				&.four{
+					background: url('../images/dentist4.jpg') no-repeat top left;
+				}
+				
+			}
+		}
+		
+		& .box-title{
+			font-weight: normal;
+		}
+		
+		& .pic{
+			display: block;
+			height: 388;
+			width: 100%;
+			background: #badaff;
+			position: relative;
+		}
+			
+	}
+}
