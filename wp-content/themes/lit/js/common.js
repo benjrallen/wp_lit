@@ -12,6 +12,7 @@
 		typeof WebKitPoint !== 'undefined' ? Ease.webkit = true : Ease.webkit = false;
 		
 		homePage();
+		dentistPage();
 		galleryPage();
 		reserveForm();
 		newsSlider();
@@ -653,6 +654,24 @@
 				showControls: 'binary', //false, true, or 'binary'.  'binary' will print out the controls as prev/next only
 				autoRotate: true,
 				appendControlsTo: '#controlWrap'
+			});
+			
+			//console.log( rotate );	
+		}
+	}
+
+	function dentistPage(){
+		if( $('#dentistRotate').length ){
+			var rotate = new EaseRotator({
+				contID: 'dentistRotate',
+				gidAtt: 'data-id', //attribute to look for on the controls
+				sliderClass: 'pic',
+				transitionTime: 1000,
+				useSlideTextInControls: true,
+				timeoutTime: 7500,
+				showControls: true, //false, true, or 'binary'.  'binary' will print out the controls as prev/next only
+				autoRotate: true,
+				appendControlsTo: '#dControls'
 			});
 			
 			//console.log( rotate );	

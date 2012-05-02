@@ -22,6 +22,50 @@
 		vertical-align: middle;
 		width: 613px;
 		text-align: center;
+		position: relative;
+		
+		& #dControls{
+			position: absolute;
+			bottom: -1.5em;
+			width: 100%;
+			z-index: 100000;
+			
+			& .controls{
+				
+				& div{
+					@include pie;
+					background: $base-bg;
+					color: $base-button-color;
+					font-weight: normal;
+					font-variant: small-caps;
+					width: 17%;
+					margin-right: 2%;
+					height: 2em;
+					@include adjust-font-size-to( 16px, 1 );
+					@include padding-leader(0.25);
+					@include padding-trailer(0.25);
+					padding-left: 2%;
+					padding-right: 2%;
+					@include opacity(1);
+					@include border-radius( 12px );
+					@include box-shadow( $base-color 3px 3px 15px 3px );
+					@include single-transition( opacity, 0.4s, ease-in-out );
+				
+					& span{
+						@include inline-block;
+						vertical-align: middle;
+						width: 100%;
+						height: auto;
+						
+						&.line{
+							height: 100%;
+							width: 1px;
+							margin-left: -1px;
+						}
+					}
+				}
+			}
+		}
 		
 		&.commute{
 			margin-right: 16px;
@@ -153,8 +197,8 @@
 			display: block;
 			height: 388;
 			width: 100%;
-			background: #badaff;
 			position: relative;
+			z-index: 1;
 		}
 			
 	}

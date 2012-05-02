@@ -42,14 +42,15 @@ get_header(); ?>
           </div>
         </div>
 
-        <div class="two-col solution">
+        <div class="two-col solution" id="dentistRotate">
           <h2 class="box-title">We have the solution.</h2>
           <div class="pic">
-            <h3 class="slide one" data-id="1">220-mile range</h3>
-            <h3 class="slide two" data-id="2">Split lanes</h3>
-            <h3 class="slide three" data-id="3">Convenient parking</h3>
             <h3 class="slide four" data-id="4">0 emissions, 0 fossil fuels</h3>
+            <h3 class="slide three" data-id="3">Convenient parking</h3>
+            <h3 class="slide two" data-id="2">Split lanes</h3>
+            <h3 class="slide one" data-id="1">220-mile range</h3>
           </div>
+          <div id="dControls"></div>
         </div>
       </div>
 	  </article>

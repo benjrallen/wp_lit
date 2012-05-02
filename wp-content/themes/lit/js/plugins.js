@@ -115,6 +115,7 @@ try{
 				timeoutTime: 7500,
 				showControls: false, //false, true, or 'binary'.  'binary' will print out the controls as prev/next only
 				linkTo: false,
+				useSlideTextInControls: false,
 				linkClickCallback: function(){},
 				autoRotate: false, //set to true to start the rotation automatically.  key if you just instantiate the rotator and not the controller
 				appendControlsTo: false //css selector.  if set, the controls get appended to a specific element
@@ -200,9 +201,15 @@ try{
 			
 			//make a selector for each slide
 			me.slides.each(function(i){
+				
 				var gid = $(this).attr(me.gidAtt);
+				//console.log( 'making ctrols', gid, this );
+
 				//var ctrl = $('<div />', { text: i+1 }).attr( me.gidAtt, gid ).click(me.ctrlClickHandle).appendTo( ctrls );
 				var ctrl = $('<div />', {}).attr( me.gidAtt, gid ).click(me.ctrlClickHandle).prependTo( ctrls );
+				
+				if( me.useSlideTextInControls )
+					ctrl.append( '<span class="line"></span><span>'+$(this).text()+'</span>' );
 				
 				if( $(this).attr('thumb') ){
 					var thumb = JSON.parse( $(this).attr('thumb') );
