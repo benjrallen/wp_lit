@@ -111,6 +111,7 @@ try{
 				prevText: '<<',
 				z: 1, //z-index set to 1 in css for the slides
 				transitionTime: 1000,
+				hoverControls: false,
 				gidAtt: 'gid', //attribute to look for on the controls
 				timeoutTime: 7500,
 				showControls: false, //false, true, or 'binary'.  'binary' will print out the controls as prev/next only
@@ -208,8 +209,12 @@ try{
 				//var ctrl = $('<div />', { text: i+1 }).attr( me.gidAtt, gid ).click(me.ctrlClickHandle).appendTo( ctrls );
 				var ctrl = $('<div />', {}).attr( me.gidAtt, gid ).click(me.ctrlClickHandle).prependTo( ctrls );
 				
+				if ( me.hoverControls ){
+					ctrl.mouseover( me.ctrlClickHandle );
+				}
+				
 				if( me.useSlideTextInControls )
-					ctrl.append( '<span class="line"></span><span>'+$(this).text()+'</span>' );
+					ctrl.append( '<span class="line"></span><span>'+$(this).html()+'</span>' );
 				
 				if( $(this).attr('thumb') ){
 					var thumb = JSON.parse( $(this).attr('thumb') );

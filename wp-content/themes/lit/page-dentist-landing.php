@@ -45,12 +45,26 @@ get_header(); ?>
         <div class="two-col solution" id="dentistRotate">
           <h2 class="box-title">We have the solution.</h2>
           <div class="pic">
-            <h3 class="slide four" data-id="4">0 emissions, 0 fossil fuels</h3>
+            <h3 class="slide four" data-id="4">0 emissions,<br /> 0 fossil fuels</h3>
             <h3 class="slide three" data-id="3">Convenient parking</h3>
             <h3 class="slide two" data-id="2">Split lanes</h3>
             <h3 class="slide one" data-id="1">220-mile range</h3>
           </div>
           <div id="dControls"></div>
+        </div>
+      </div>
+      
+      <div class="links-wrap clearfix">
+        <div class="two-col press clearfix">
+          <a href="http://money.cnn.com/video/technology/2011/10/11/ts_giro_car.cnnmoney/" target="_blank" class="cnn" title="Lit Motors on CNN">CNN</a>
+          <a href="http://gigaom.com/cleantech/green-overdrive-lit-motors-electric-folding-scooter/" target="_blank" class="gigaom" title="Lit Motors on GIGAOM">GIGAOM</a>
+          <a href="http://www.greenbiz.com/blog/2012/03/19/can-lit-motor-c-1-succeed-where-segway-failed" target="_blank" class="greenbiz" title="Lit Motors on GreenBiz">GreenBiz.com</a>
+          <a href="http://www.reuters.com/video/2012/02/12/c-1-motorcycle-car-seeks-traction-as-com?videoId=230043281" target="_blank" class="reuters" title="Lit Motors on Reuters">Reuters</a>
+        </div>
+        <div class="two-col call clearfix">
+          <a href="" target="_blank" class="speech" title="Daniel Kim speaking at Fortune Brainstorm Green">Daniel Kim speaking at Fortune Brainstorm Green</a>
+          <a href="http://litmotors.com/dentist-reserve/" class="reserve" title="Reserve your C-1 today.">Reserve a C-1 today.</a>
+          <span class="want">I want one!</span>
         </div>
       </div>
 	  </article>

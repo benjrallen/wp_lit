@@ -1,11 +1,23 @@
 .page-template-page-dentist-landing-php{
 	
+	//&body{
+		min-width: 1250px;
+	//}
+	
 	& #content{
 
 		& .wrap{
 			width: 1250px;
 		}
 	}
+
+	& #grad{
+		@include background(
+			linear-gradient( top, #cacaca 0%, #e1e1e1 80%, #e1e1e1 100% )
+		);
+	}
+
+
 }
 
 #dentistLanding{
@@ -206,6 +218,89 @@
 				}
 				
 			}
+		}
+		
+		&.press, &.call{
+			vertical-align: middle;
+			@include padding-leader(1);
+			@include margin-trailer(1);
+
+			& a, & span{
+				vertical-align: middle;
+				//@include float-left;
+				@include inline-block;
+				text-align: left;
+				background: url('../images/car-overlay-sprite.png');
+				text-indent: -9999em;
+				
+				&.cnn{
+					width: 67px;
+					height: 32px;
+					background-position: -720px -215px;
+					//margin-right: 4em;
+					margin-right: 3.5em;
+				}
+				&.gigaom{
+					width: 41px;
+					height: 52px;
+					background-position: -720px -280px;
+					//margin-right: 4em;
+					margin-right: 3.5em;
+				}
+				&.greenbiz{
+					width: 140px;
+					height: 46px;
+					background-position: -578px -418px;
+					margin-right: 3.5em;
+				}
+				&.reuters{
+					width: 218px;
+					height: 52px;
+					background-position: -578px -352px;
+					margin-right: 0em;
+				}
+				&.speech{
+					width: 240px;
+					height: 76px;
+					background-position: -560px -477px;
+					@include float-left;
+				}
+				&.reserve{
+					@include float-right;
+					width: 93px;
+					height: 89px;
+					background-position: -500px 0;
+					
+					&:hover{
+						background-position: -600px 6px;
+					}
+					&:active{
+						background-position: -700px 10px;
+					}
+				}
+				&.want{
+					@include float-right;
+					width: 249px;
+					height: 51px;
+					background-position: 0 -700px;
+					@include margin-leader();
+					margin-right: 1em;
+				}
+
+			}
+			
+		}
+		
+		&.press{
+			margin-right: 16px;
+			& a{
+				//@include margin-leader;
+			}
+		}
+		
+		&.call{
+			//text-align: right;
+			
 		}
 		
 		& .box-title{

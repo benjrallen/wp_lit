@@ -382,6 +382,9 @@
 
 						tooltip.position( x, y ).show();
 					}
+					
+					_gaq.push(['_trackEvent', 'Reserve', Ease.pageName, 'FAQ Click', $(this).text()]);
+					
 					/*
 					if( faqs[id] ){
 						var off = $(this).offset();
@@ -478,10 +481,14 @@
 				//console.log( form.serializeArray() );
 				//clear the messages
 				messages = [];
+				
+				var data = form.serializeArray();
+				
+				_gaq.push(['_trackEvent', 'Reserve', Ease.pageName, 'Form Submitted', data[0].value]);
 								
 				$.ajax({
 					url: Ease.TemplateUrl+'/reserve.php',
-					data: form.serializeArray(),
+					data: data,
 					type: 'post',
 					complete: function(){
 						//console.log('complete');
@@ -546,6 +553,10 @@
 				//show loading notice
 				//showPopup('<h2>In a moment you will be transferred to '+gateway+' to complete your reservation.</h2>');
 				popup.show('<h2>In a moment you will be transferred to '+gateway+' to complete your reservation.</h2>');
+				
+				//console.log('track this event here');
+				_gaq.push(['_trackEvent', 'Reserve', Ease.pageName, 'Gateway Selected', gateway]);
+				
 				
 				//make an ajax request to the gateway
 				$.ajax({
@@ -666,6 +677,7 @@
 				contID: 'dentistRotate',
 				gidAtt: 'data-id', //attribute to look for on the controls
 				sliderClass: 'pic',
+				hoverControls: true,
 				//transitionTime: 1000,
 				useSlideTextInControls: true,
 				//timeoutTime: 7500,

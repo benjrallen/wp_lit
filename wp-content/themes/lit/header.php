@@ -42,6 +42,10 @@
 			Ease.isFrontPage = <?php if(is_front_page()) { echo 'true'; }else{ echo 'false'; } ?>;
 			Ease.wpVersion = '<?php echo trim(get_bloginfo("version")); ?>';
 			Ease.postID = '<?php echo get_the_ID(); ?>';
+		  <?php
+		    if( isset($post->post_name) )
+		      echo 'Ease.pageName = "'.$post->post_name.'";';
+		  ?>
 		</script>
 
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/modernizr.js"></script>
@@ -67,7 +71,7 @@
 				//{ load : Ease.TemplateUrl+'/js/plugins.js' },
 				//{ load : Ease.TemplateUrl+'/js/common.js' },
 				/* concatenate and optimize seperate script files for deployment using google closure compiler (compiler.jar) in js folder */
-				{ load : Ease.TemplateUrl+'/js/theme.js' },
+				{ load : Ease.TemplateUrl+'/js/theme.js?v=012' },
         { load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' },
         { load: 'http://platform.twitter.com/widgets.js' },
         { load: "//connect.facebook.net/en_US/all.js#appId=266138276740381&xfbml=1" }
