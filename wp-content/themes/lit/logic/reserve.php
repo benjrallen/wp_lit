@@ -37,9 +37,10 @@ function lit_build_order_text( $order ){
 //send email function used in both pathways
 function  send_lit_order_email( $subject, $message ){
   
+  
   $toArray =  ( GW_SANDBOX ? 
                 array( 'benjrallen@gmail.com') :
-                array( 'benjrallen@gmail.com', 'ryan@litmotors.com', 'dan@litmotors.com', 'reserve@litmotors.com', 'website@litmotors.com')
+                array( 'reserve@litmotors.com', 'dan@litmotors.com', 'benjrallen@gmail.com',  'website@litmotors.com' )
               );
   
   $from = ( GW_SANDBOX ? 'no-reply@dev.benjrallen.com' : 'info@litmotors.com' );
@@ -57,7 +58,7 @@ function  send_lit_order_email( $subject, $message ){
     $to .= $toArray[$i];
   }
   
-  //error_log( $to );
+  error_log( $to );
   //error_log( $headers );
   
   mail( $to, $subject, $message, $headers );

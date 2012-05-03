@@ -28,16 +28,16 @@ get_header(); ?>
           <h2 class="box-title">Are you happy with your commute?</h2>
           <div class="pic">
             <div class="car one">
-              <span class="modal">Commute time</span>
+              <span class="modal">Traffic gridlock</span>
             </div>
             <div class="car two">
-              <span class="modal">Parking</span>
+              <span class="modal">Expensive, <br />scarce parking</span>
             </div>
             <div class="car three">
-              <span class="modal">Gas prices</span>
+              <span class="modal">Skyrocketing<br /> gas prices</span>
             </div>
             <div class="car four">
-              <span class="modal">Expensive<br /> alternative-fuel<br /> vehicles</span>
+              <span class="modal">Poor<br /> air quality</span>
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@ get_header(); ?>
         <div class="two-col solution" id="dentistRotate">
           <h2 class="box-title">We have the solution.</h2>
           <div class="pic">
-            <h3 class="slide four" data-id="4">0 emissions,<br /> 0 fossil fuels</h3>
-            <h3 class="slide three" data-id="3">Convenient parking</h3>
-            <h3 class="slide two" data-id="2">Split lanes</h3>
+            <h3 class="slide four" data-id="4">no emissions,<br /> no fossil fuels</h3>
+            <h3 class="slide three" data-id="3">Convenient<br /> parking</h3>
+            <h3 class="slide two" data-id="2">Move easily<br /> through traffic</h3>
             <h3 class="slide one" data-id="1">220-mile range</h3>
           </div>
           <div id="dControls"></div>

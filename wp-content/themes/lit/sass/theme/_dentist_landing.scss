@@ -50,14 +50,14 @@
 					color: $base-button-color;
 					font-weight: normal;
 					font-variant: small-caps;
-					width: 17%;
+					width: 19%;
 					margin-right: 2%;
 					height: 2em;
 					@include adjust-font-size-to( 16px, 1 );
 					@include padding-leader(0.25);
 					@include padding-trailer(0.25);
-					padding-left: 2%;
-					padding-right: 2%;
+					padding-left: 1%;
+					padding-right: 1%;
 					@include opacity(1);
 					@include border-radius( 12px );
 					@include box-shadow( $base-color 3px 3px 15px 3px );
@@ -202,6 +202,7 @@
 				height: 100%;
 				width: 100%;
 				text-indent: -9999em;
+				color: transparent;
 				
 				&.one{
 					z-index: 2;
@@ -211,7 +212,7 @@
 					background: url('../images/dentist2.jpg') no-repeat top left;
 				}
 				&.three{
-					background: url('../images/dentist3.jpg') no-repeat top left;
+					background: url('../images/parking.jpg') no-repeat top left;
 				}
 				&.four{
 					background: url('../images/dentist4.jpg') no-repeat top left;
@@ -260,9 +261,9 @@
 					margin-right: 0em;
 				}
 				&.speech{
-					width: 240px;
+					width: 255px;
 					height: 76px;
-					background-position: -560px -477px;
+					background-position: -540px -477px;
 					@include float-left;
 				}
 				&.reserve{
@@ -280,11 +281,11 @@
 				}
 				&.want{
 					@include float-right;
-					width: 249px;
-					height: 51px;
+					width: 250px;
+					height: 60px;
 					background-position: 0 -700px;
-					@include margin-leader();
-					margin-right: 1em;
+					@include margin-leader(0.5);
+					margin-right: 0.5em;
 				}
 
 			}
@@ -294,7 +295,7 @@
 		&.press{
 			margin-right: 16px;
 			& a{
-				//@include margin-leader;
+				@include margin-leader(0.75);
 			}
 		}
 		
