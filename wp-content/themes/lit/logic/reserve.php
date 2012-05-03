@@ -70,6 +70,12 @@ function  send_lit_order_email( $subject, $message ){
 /* LOOK TO SEE IF IT IS A NOTIFICATION */
 $action = ( isset($_REQUEST['action']) ? $_REQUEST['action'] : false );
 
+if( $action && $action == 'test_email' ){
+  send_lit_order_email( 'testing recipients', 'This is an email to test the recipients of the Lit Reserve Confirmation emails' );
+  die();
+}
+
+
 //error_log( 'What is my action?  '.$action );
 if( $action && $action == 'notify' )
   require_once(ABSPATH.'/logic/notification.php');
