@@ -8,6 +8,8 @@
  */
 
 get_header(); ?>	
+
+<meta name="robots" content="noindex,nofollow">
 	
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
   

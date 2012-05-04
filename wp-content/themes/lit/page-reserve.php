@@ -21,7 +21,7 @@ get_header();
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
   
   //noindex the private page
-  if( $post->post_name == 'private' )
+  if( $post->post_name == 'private' || $post->post_name == 'dentist-reserve' )
     echo '<meta name="robots" content="noindex,nofollow">';
   
   $bgImg = '';
