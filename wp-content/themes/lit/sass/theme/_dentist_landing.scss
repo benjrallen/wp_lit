@@ -223,7 +223,7 @@
 		
 		&.press, &.call{
 			vertical-align: middle;
-			@include padding-leader(1);
+			@include padding-leader(0.25);
 			@include margin-trailer(1);
 
 			& a, & span{
@@ -235,11 +235,12 @@
 				text-indent: -9999em;
 				
 				&.cnn{
+					//@include margin-leader(0.75);
 					width: 67px;
 					height: 32px;
 					background-position: -720px -215px;
 					//margin-right: 4em;
-					margin-right: 3.5em;
+					margin-right: 4.5em;
 				}
 				&.gigaom{
 					width: 41px;
@@ -249,15 +250,24 @@
 					margin-right: 3.5em;
 				}
 				&.greenbiz{
-					width: 140px;
+					@include margin-leader(0);
+					width: 130px;
 					height: 46px;
-					background-position: -578px -418px;
-					margin-right: 3.5em;
+					background-position: -588px -418px;
+					margin-right: 5em;
 				}
 				&.reuters{
+					@include margin-leader(-0.75);
 					width: 218px;
 					height: 52px;
 					background-position: -578px -352px;
+					margin-right: 0em;
+				}
+				&.wired{
+					@include margin-leader(0);
+					width: 144px;
+					height: 29px;
+					background-position: -640px -150px;
 					margin-right: 0em;
 				}
 				&.speech{
@@ -287,6 +297,13 @@
 					@include margin-leader(0.5);
 					margin-right: 0.5em;
 				}
+				&.watchhow{
+					@include float-right;
+					width: 196px;
+					height: 74px;
+					background-position: -600px -720px;
+					margin-right: 0em;
+				}
 
 			}
 			
@@ -295,7 +312,16 @@
 		&.press{
 			margin-right: 16px;
 			& a{
-				@include margin-leader(0.75);
+				@include margin-leader(-0.25);
+				cursor: pointer;
+				cursor: hand;
+				display: block;
+				@include float-left;
+				@include opacity( 0.8 );
+				
+				&:hover{
+					@include opacity( 1 );
+				}
 			}
 		}
 		
