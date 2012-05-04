@@ -151,7 +151,7 @@
   	$theQuery = $db->query("SELECT * FROM `lit_orders` WHERE token='{$token}'", __FILE__, __LINE__);
 
   	if (!$theQuery->num_rows()) {
-  	  error_log( 'SELECT FAILED: '.$token );
+  	  error_log( 'SELECT FAILED on status update: '.$token );
   		die;
   	}
 

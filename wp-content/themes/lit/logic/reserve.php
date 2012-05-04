@@ -175,7 +175,7 @@ if (isset($_POST["firstname"])) {
 
     	if (!$theQuery->num_rows()) {
     	  error_log( 'SELECT FAILED: '.$token );
-    		die;
+    		die();
     	}
 
     	$order = $theQuery->fetch_array();
@@ -198,7 +198,12 @@ if (isset($_POST["firstname"])) {
 		  echo json_encode(array("status" => "ok", "message" => "ok", "proceed" => true, "token" => $token));
 		
 		}
-		die;
+		die();
+	} else {
+	  
+	  error_log( 'SOMETHING WENT WRONG WITH THE QUERY: '.$token );
+		die();
+	  
 	}
 }
 /* END STEP 1 */
