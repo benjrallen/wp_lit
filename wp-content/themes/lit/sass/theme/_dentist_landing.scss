@@ -275,6 +275,11 @@
 					height: 76px;
 					background-position: -540px -477px;
 					@include float-left;
+					@include opacity( 0.8 );
+
+					&:hover{
+						@include opacity( 1 );
+					}
 				}
 				&.reserve{
 					@include float-right;
