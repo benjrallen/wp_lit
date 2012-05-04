@@ -67,7 +67,7 @@ get_header(); ?>
           <a href="" target="_blank" class="wired" title="Lit Motors on Wired">Wired.com</a>
         </div>
         <div class="two-col call clearfix">
-          <a href="" target="_blank" class="speech" title="Daniel Kim speaking at Fortune Brainstorm Green">Daniel Kim speaking at Fortune Brainstorm Green</a>
+          <a href="http://litmotors.com/danny-kim-fortune-brainstorm-green-2012/" target="_blank" class="speech" title="Daniel Kim speaking at Fortune Brainstorm Green">Daniel Kim speaking at Fortune Brainstorm Green</a>
           <a href="http://litmotors.com/dentist-reserve/" class="reserve" title="Reserve your C-1 today.">Reserve a C-1 today.</a>
           <span class="want">I want one!</span>
         </div>
