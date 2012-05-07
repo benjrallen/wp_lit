@@ -64,7 +64,9 @@ get_header(); ?>
           <?php /* ?><a href="http://gigaom.com/cleantech/green-overdrive-lit-motors-electric-folding-scooter/" target="_blank" class="gigaom" title="Lit Motors on GIGAOM">GIGAOM</a><?php */ ?>
           <a href="http://www.reuters.com/video/2012/02/12/c-1-motorcycle-car-seeks-traction-as-com?videoId=230043281" target="_blank" class="reuters" title="Lit Motors on Reuters">Reuters</a>
           <a href="http://www.greenbiz.com/blog/2012/03/19/can-lit-motor-c-1-succeed-where-segway-failed" target="_blank" class="greenbiz" title="Lit Motors on GreenBiz">GreenBiz.com</a>
+          <?php /* ?>
           <a href="" target="_blank" class="wired" title="Lit Motors on Wired">Wired.com</a>
+          <?php */ ?>
         </div>
         <div class="two-col call clearfix">
           <a href="http://litmotors.com/danny-kim-fortune-brainstorm-green-2012/" target="_blank" class="speech" title="Daniel Kim speaking at Fortune Brainstorm Green">Daniel Kim speaking at Fortune Brainstorm Green</a>
