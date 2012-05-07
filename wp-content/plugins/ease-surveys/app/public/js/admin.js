@@ -450,6 +450,8 @@ var Ease = Ease || {};
 		},
 		setupModel : function( controllerName, modelName, emptyModel, data ){
 			
+			//Ease.Surveys.setupModel.apply( this, [ 'admin_surveys', 'Survey', model, data ]);
+			
 			this.data = data || emptyModel;
 			this.data = Ease.Surveys.removePrivateKeys( this.data );
 			
