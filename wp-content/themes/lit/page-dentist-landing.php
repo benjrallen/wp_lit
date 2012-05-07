@@ -58,7 +58,7 @@ get_header(); ?>
       
       <div class="links-wrap clearfix">
         <div class="two-col press clearfix">
-          <a class="watchhow" href="" target="_blank" title="Watch how our technology works!">Watch how our technology works!</a>
+          <a class="watchhow" href="http://litmotors.com/lit-motors-technology-video/" target="_blank" title="Watch how our technology works!">Watch how our technology works!</a>
           
           <a href="http://money.cnn.com/video/technology/2011/10/11/ts_giro_car.cnnmoney/" target="_blank" class="cnn" title="Lit Motors on CNN">CNN</a>
           <?php /* ?><a href="http://gigaom.com/cleantech/green-overdrive-lit-motors-electric-folding-scooter/" target="_blank" class="gigaom" title="Lit Motors on GIGAOM">GIGAOM</a><?php */ ?>
