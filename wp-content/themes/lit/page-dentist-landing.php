@@ -9,6 +9,8 @@
 
 get_header(); ?>	
 
+<link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+
 <meta name="robots" content="noindex,nofollow">
 	
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
@@ -27,7 +29,8 @@ get_header(); ?>
   	<article id="dentistLanding" <?php post_class(); echo $bgImg; ?>>
       <div class="box-wrap clearfix">
         <div class="two-col commute">
-          <h2 class="box-title">Are you happy with your commute?</h2>
+          <h2 class="box-title"><span><span>Are you happy with your commute?</span></span></h2>
+          <div class="mask"></div>
           <div class="pic">
             <div class="car one">
               <span class="modal">Traffic gridlock</span>
@@ -45,7 +48,8 @@ get_header(); ?>
         </div>
 
         <div class="two-col solution" id="dentistRotate">
-          <h2 class="box-title">We have the solution.</h2>
+          <h2 class="box-title"><span><span>We have the solution.</span></span></h2>
+          <div class="mask"></div>
           <div class="pic">
             <h3 class="slide four" data-id="4">no emissions,<br /> no fossil fuels</h3>
             <h3 class="slide three" data-id="3">Convenient<br /> parking</h3>
@@ -57,6 +61,25 @@ get_header(); ?>
       </div>
       
       <div class="links-wrap clearfix">
+        <a href="http://litmotors.com/dentist-reserve/" class="reserve clearfix" title="Reserve your C-1 today.">
+          <span class="big">I want one!</span>
+          <span class="little">Pre-order your C-1 now</span>
+          <span class="btn-reserve">Reserve a C-1 today.</span>
+        </a>
+        
+        <div class="video">
+          <a class="tech" href="http://litmotors.com/lit-motors-technology-video/" target="_blank" title="How our technology works">
+            <span class="thumb"></span>
+            <span class="text">How our <br />technology <br />works</span>
+          </a>
+          <a class="fortune" href="http://litmotors.com/danny-kim-fortune-brainstorm-green-2012/" target="_blank" class="speech" title="Lit Motors Founder/CEO Danny Kim">
+            <span class="thumb"></span>
+            <span class="text">Lit Motors <br />Founder/CEO <br />Danny Kim</span>
+          </a>
+        </div>
+        
+        
+        
         <div class="two-col press clearfix">
           <a class="watchhow" href="http://litmotors.com/lit-motors-technology-video/" target="_blank" title="Watch how our technology works!">Watch how our technology works!</a>
           
@@ -71,7 +94,6 @@ get_header(); ?>
         <div class="two-col call clearfix">
           <a href="http://litmotors.com/danny-kim-fortune-brainstorm-green-2012/" target="_blank" class="speech" title="Daniel Kim speaking at Fortune Brainstorm Green">Daniel Kim speaking at Fortune Brainstorm Green</a>
           <a href="http://litmotors.com/dentist-reserve/" class="reserve" title="Reserve your C-1 today.">Reserve a C-1 today.</a>
-          <span class="want">I want one!</span>
         </div>
       </div>
 	  </article>

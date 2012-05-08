@@ -217,11 +217,17 @@
 }
 
 
+
+
 //FONT STACKS
 @mixin serif{
 	font-family: georgia, times, serif;
 }
 
+//<link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+@mixin gothic{
+	font-family: 'Didact Gothic', 'GothamRegular', Verdana, Arial, Helvetica, sans-serif;
+}
 
 @mixin body-font{
 	font-family: 'GothamRegular', Verdana, Arial, Helvetica, sans-serif;
