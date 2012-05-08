@@ -505,7 +505,7 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 .popup{
 
 	position: absolute;
-	z-index: 100000;
+	z-index: 0;
 	top: 0;
 	left: -9999em;
 	
@@ -516,6 +516,10 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 	@include box-shadow( $base-color 0 4px 16px 0px );
 	border: 1px solid darken( $d-bg, 30% );
 	background: $base-bg;
+	
+	& textarea{
+		display: none;
+	}
 }
 
 
