@@ -74,7 +74,8 @@ $action = ( isset($_REQUEST['action']) ? $_REQUEST['action'] : false );
 //   send_lit_order_email( 'testing recipients', 'This is an email to test the recipients of the Lit Reserve Confirmation emails' );
 //   die();
 // }
-
+error_log('action');
+error_log($action);
 
 //error_log( 'What is my action?  '.$action );
 if( $action && $action == 'notify' )
@@ -285,7 +286,7 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 			"hosted_button_id" => "ZHBKSR5KM42AL" //this means this transaction is a saved button in the dan@litmotors.com paypal account
 		);
 		
-		error_log($params['notify_url']);
+		//error_log($params['notify_url']);
 		
 		$buildLink .= "?".http_build_query($params);
 		
