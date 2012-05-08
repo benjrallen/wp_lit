@@ -285,6 +285,8 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 			"hosted_button_id" => "ZHBKSR5KM42AL" //this means this transaction is a saved button in the dan@litmotors.com paypal account
 		);
 		
+		error_log($params['notify_url']);
+		
 		$buildLink .= "?".http_build_query($params);
 		
 	} elseif ($_POST["gateway"] == "google") {	
