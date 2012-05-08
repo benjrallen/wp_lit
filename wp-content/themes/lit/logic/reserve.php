@@ -287,6 +287,7 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 		);
 		
 		error_log('paypal notify?');
+		error_log($lit_template);
 		error_log($params['notify_url']);
 		
 		$buildLink .= "?".http_build_query($params);
