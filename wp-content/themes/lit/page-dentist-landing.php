@@ -68,13 +68,13 @@ get_header(); ?>
         </a>
         
         <div class="video">
-          <a class="tech" href="http://litmotors.com/lit-motors-technology-video/" target="_blank" title="How our technology works">
-            <span class="thumb"></span>
-            <span class="text">How our <br />technology <br />works</span>
-          </a>
           <a class="story" href="http://litmotors.com/story-of-the-c-1/" target="_blank" class="speech" title="Story of the C-1">
             <span class="thumb"></span>
             <span class="text">Story of <br />the C-1</span>
+          </a>
+          <a class="tech" href="http://litmotors.com/lit-motors-technology-video/" target="_blank" title="How our technology works">
+            <span class="thumb"></span>
+            <span class="text">How our <br />technology <br />works</span>
           </a>
           <a class="fortune" href="http://litmotors.com/danny-kim-fortune-brainstorm-green-2012/" target="_blank" class="speech" title="Lit Motors Founder/CEO Danny Kim">
             <span class="thumb"></span>

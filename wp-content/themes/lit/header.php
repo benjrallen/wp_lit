@@ -32,7 +32,7 @@
 		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" /> 
     <?php */ ?>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/application.css?v=014" />
+		<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/application.css?v=015" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 		<script type="text/javascript">
@@ -72,7 +72,7 @@
 				//{ load : Ease.TemplateUrl+'/js/plugins.js' },
 				//{ load : Ease.TemplateUrl+'/js/common.js' },
 				/* concatenate and optimize seperate script files for deployment using google closure compiler (compiler.jar) in js folder */
-				{ load : Ease.TemplateUrl+'/js/theme.js?v=014' },
+				{ load : Ease.TemplateUrl+'/js/theme.js?v=015' },
         { load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' },
         { load: 'http://platform.twitter.com/widgets.js' },
         { load: "//connect.facebook.net/en_US/all.js#appId=266138276740381&xfbml=1" }

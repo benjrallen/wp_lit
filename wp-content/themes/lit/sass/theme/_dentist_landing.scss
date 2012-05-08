@@ -328,10 +328,10 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 
 	& .links-wrap{
 		text-align: center;
-		@include margin-leader( -1 );
+		@include margin-leader( -2.5 );
 
 		& .video{
-			@include margin-leader( 2.5 );
+			@include margin-leader( 3 );
 			@include padding-leader(2);
 			@include padding-trailer(2);
 			@include border-radius( $d-rad );
