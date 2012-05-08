@@ -675,19 +675,62 @@
 		if( $('#dentistRotate').length ){
 			var rotate = new EaseRotator({
 				contID: 'dentistRotate',
-				gidAtt: 'data-id', //attribute to look for on the controls
-				sliderClass: 'pic',
+				gidAtt: 'gid', //attribute to look for on the controls
+				sliderClass: 'slides',
 				//hoverControls: true,
 				transitionTime: 750,
-				useSlideTextInControls: true,
+				//useSlideTextInControls: true,
 				timeoutTime: 3000,
 				//showControls: true, //false, true, or 'binary'.  'binary' will print out the controls as prev/next only
-				showControls: false,
+				showControls: true,
 				autoRotate: true,
 				appendControlsTo: '#dControls'
 			});
 			
-			//console.log( rotate );	
+			//console.log( rotate );
+			var tech = new EasePopup( $('#litTechVideo') ),
+				fortune = new EasePopup( $('#fortuneVideo') ),
+				story = new EasePopup( $('#c1Story') );
+
+			//set the popups			
+			var vids = [
+				tech,
+				fortune,
+				story
+			];
+
+			//handle the show clicks for the respective videos
+			$('.links-wrap .tech').click(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				tech.show();
+			});
+			$('.links-wrap .fortune').click(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				fortune.show();
+			});
+			$('.links-wrap .story').click(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				story.show();
+			});
+			
+			
+			//body handler to hide them all
+			$('body').click(function(e){
+				$.each( vids, function(){
+					this.hide();
+				});
+			});
+
+			$(window).resize(function(e){
+				$.each( vids, function(){
+					this.position();
+				});
+				
+			});
+
 		}
 	}
 	

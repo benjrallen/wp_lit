@@ -1,7 +1,8 @@
 
 
 $d-rad: 40px;
-$d-width: 1010px;
+$d-width: 980px;
+//$d-width: 1010px;
 $d-bg: #e1e1e1;
 $d-bg-rgb-trans: rgba( 225,225,225,0 );
 
@@ -12,6 +13,10 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 	//&body{
 		min-width: $d-width;
 	//}
+	
+	& #header{
+		@include header-font
+	}
 	
 	& #content{
 
@@ -38,7 +43,7 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 	}
 	& .two-col{
 		//@include padding-leader( 1 );
-		@include margin-trailer( 1.5 );
+		@include padding-trailer( 1.5 );
 		
 		//@include float-left;
 		//@include inline-block();
@@ -50,9 +55,10 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 		& #dControls{
 			position: absolute;
 			bottom: -1.5em;
+			left: -9999em;
 			width: 100%;
 			z-index: 100000;
-			display: none;
+			//display: none;
 			
 			& .controls{
 				
@@ -93,6 +99,10 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 		
 		&.commute{
 			//margin-right: 16px;
+
+			& .box-title{
+				@include adjust-font-size-to( 22px );
+			}
 			
 			& .pic{
 				background: url('../images/d-problem-40.jpg') no-repeat top left;
@@ -102,16 +112,16 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 					& .car{
 						
 						&.one{
-							background-position: -142px -400px;
+							background-position: -118px -400px;
 						}
 						&.two{
-							background-position: -147px -504px;
+							background-position: -125px -515px;
 						}
 						&.three{
-							background-position: -320px -408px;
+							background-position: -314px -399px;
 						}
 						&.four{
-							background-position: -1px -404px;
+							background-position: -1px -399px;
 						}
 					}
 				}
@@ -128,12 +138,12 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 					@include opacity(1);
 				
 					& .modal{
-						@include opacity(1);
+						//@include opacity(1);
+						display: block;
 					}
 				}
 				
 				& .modal{
-					@include pie;
 					display: block;
 					background: $base-bg;
 					color: $base-button-color;
@@ -142,63 +152,64 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 					font-variant: small-caps;
 					top: -64px;
 					left: -88px;
-					@include adjust-font-size-to( 18px, 1.25 );
+					@include adjust-font-size-to( 24px, 1.5 );
 					@include padding-leader(0.5);
 					@include padding-trailer(0.5);
 					padding-left: 0.75em;
 					padding-right: 0.75em;
 					@include border-radius( 12px );
 					@include box-shadow( $base-color 3px 3px 15px 3px );
-					@include opacity(0);
-					@include single-transition( opacity, 0.4s, ease-in-out );
+					//@include opacity(0);
+					display: none;
+					@include single-transition( display, 0.4s, ease-in-out );
 				}					
 				
 				&.one{
-					width: 93px;
-					height: 64px;
-					background-position: -142px -200px;
+					width: 142px;
+					height: 97px;
+					background-position: -118 -200;
 					bottom: 4px;
-					left: 139px;
+					left: 212px;
 					
 					& .modal{
-						top: -52px;
-						left: -100px;
+						top: -56px;
+						left: -150px;
 					}
 				}
 				&.two{
-					width: 83px;
-					height: 55px;
-					background-position: -147px -304px;
-					bottom: -1px;
-					right: 67px;
+					width: 126px;
+					height: 84px;
+					background-position: -125px -312px;
+					bottom: -3px;
+					right: 104px;
 					
 					& .modal{
-						top: -52px;
-						left: -76;
+						top: -82px;
+						left: -156px;
 					}
 				}
 				&.three{
-					width: 56px;
-					height: 48px;
-					background-position: -320px -208px;
-					top: 187px;
-					right: 109px;
+					width: 86px;
+					height: 73px;
+					background-position: -314px -199px;
+					top: 286px;
+					right: 166px;
 				
 					& .modal{
-						top: -52px;
-						left: -90px;
+						top: -82px;
+						left: -150px;
 					}
 				}
 				&.four{
-					width: 56px;
-					height: 55px;
-					background-position: -1px -204px;
-					bottom: 98px;
-					left: 230px;
+					width: 86px;
+					height: 83px;
+					background-position: -1px -199px;
+					bottom: 150px;
+					left: 351px;
 				
 					& .modal{
-						top: -84px;
-						left: -160px;
+						top: -74px;
+						left: -120px;
 					}
 				}
 			}
@@ -208,7 +219,7 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 			
 			& .slide{
 				@include border-radius( $d-rad );
-				@include pie;
+				//@include pie;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -233,120 +244,6 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 				}
 				
 			}
-		}
-		
-		&.press, &.call{
-			vertical-align: middle;
-			@include padding-leader(0.25);
-			@include margin-trailer(1);
-
-			& a, & span{
-				vertical-align: middle;
-				//@include float-left;
-				@include inline-block;
-				text-align: left;
-				background: url('../images/car-overlay-sprite.png');
-				text-indent: -9999em;
-				
-				&.cnn{
-					//@include margin-leader(0.75);
-					width: 67px;
-					height: 32px;
-					background-position: -720px -215px;
-					//margin-right: 4em;
-					margin-right: 4.5em;
-				}
-				&.gigaom{
-					width: 41px;
-					height: 52px;
-					background-position: -720px -280px;
-					//margin-right: 4em;
-					margin-right: 3.5em;
-				}
-				&.greenbiz{
-					@include margin-leader(0);
-					width: 130px;
-					height: 46px;
-					background-position: -588px -418px;
-					margin-right: 5em;
-				}
-				&.reuters{
-					@include margin-leader(-0.75);
-					width: 218px;
-					height: 52px;
-					background-position: -578px -352px;
-					margin-right: 0em;
-				}
-				&.wired{
-					@include margin-leader(0);
-					width: 144px;
-					height: 29px;
-					background-position: -640px -150px;
-					margin-right: 0em;
-				}
-				&.speech{
-					width: 257px;
-					height: 76px;
-					background-position: -540px -477px;
-					@include float-left;
-					@include opacity( 0.8 );
-
-					&:hover{
-						@include opacity( 1 );
-					}
-				}
-				&.reserve{
-					@include float-right;
-					width: 93px;
-					height: 89px;
-					background-position: -500px 0;
-					
-					&:hover{
-						background-position: -600px 6px;
-					}
-					&:active{
-						background-position: -700px 10px;
-					}
-				}
-				&.want{
-					@include float-right;
-					width: 250px;
-					height: 60px;
-					background-position: 0 -700px;
-					@include margin-leader(0.5);
-					margin-right: 0.5em;
-				}
-				&.watchhow{
-					@include float-right;
-					width: 196px;
-					height: 74px;
-					background-position: -600px -720px;
-					margin-right: 0em;
-				}
-
-			}
-			
-		}
-		
-		&.press{
-			margin-right: 16px;
-			& a{
-				@include margin-leader(-0.25);
-				cursor: pointer;
-				cursor: hand;
-				display: block;
-				@include float-left;
-				@include opacity( 0.8 );
-				
-				&:hover{
-					@include opacity( 1 );
-				}
-			}
-		}
-		
-		&.call{
-			//text-align: right;
-			
 		}
 
 
@@ -421,7 +318,7 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 			z-index: 1;
 			
 			@include border-radius( $d-rad );
-			@include pie;
+			//@include pie;
 			
 			margin-left: auto;
 			margin-right: auto;
@@ -431,9 +328,23 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 
 	& .links-wrap{
 		text-align: center;
-		
+		@include margin-leader( -1 );
+
 		& .video{
-			@include padding-leader( 3 );
+			@include margin-leader( 2.5 );
+			@include padding-leader(2);
+			@include padding-trailer(2);
+			@include border-radius( $d-rad );
+			@include pie;
+			@include box-shadow( 
+				inset darken( $d-bg, 50% ) 0 0px 24px 6px
+				//inset darken( $d-bg, 20% ) 0 24px 24px -18px,
+				//inset darken( $d-bg, 20% ) 40px 0 24px -40px,
+				//inset darken( $d-bg, 20% ) -40px 0 24px -40px
+			); 
+			
+			background: $base-grey;
+			
 			& a{
 				@include inline-block;
 				vertical-align: middle;
@@ -449,13 +360,13 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 					
 					&.thumb{
 						background: url('../images/car-overlay-sprite.png');
-						width: 126px;
-						height: 126px;
+						width: 127px;
+						height: 128px;
 						@include border-radius( $d-rad );
 						@include pie;
 					}
 					&.text{
-						color: $base-color;
+						color: $base-bg;
 						@include adjust-font-size-to( 20px, 1.5 );
 						text-align: left;
 						margin-left: 1em;
@@ -465,17 +376,25 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 				}
 				
 				&.tech{
-					margin-right: 120px;
+					margin-right: 20px;
 					& span{
 						&.thumb{
-							background-position: -188px -668px;
+							background-position: -188px -667px;
+						}
+					}
+				}
+				&.story{
+					margin-right: 20px;
+					& span{
+						&.thumb{
+							background-position: -337px -668px;
 						}
 					}
 				}
 				&.fortune{
 					& span{
 						&.thumb{
-							background-position: -21px -668px;
+							background-position: -19px -669px;
 						}
 					}
 				}
@@ -535,21 +454,104 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 		}
 	}
 
-
+	& .press{
+		@include padding-leader(1);
+		@include padding-trailer(2);
+		
+		& a{
+			background: url('../images/car-overlay-sprite.png');
+			@include inline-block;
+			vertical-align: middle;
+			margin-right: 2em;
+			text-indent: -9999em;
+			@include opacity(0.85);
+			
+			&:hover{
+				@include opacity(1);
+			}
+				
+			&.cnn{
+				width: 88px;
+				height: 41px;
+				background-position: -696px -263px;
+			}
+			&.reuters{
+				width: 179px;
+				height: 43px;
+				background-position: -500px -515px;
+			}
+			&.greenbiz{
+				width: 149px;
+				height: 49px;
+				background-position: -500px -564px;
+				@include margin-leader(1);
+			}
+			&.autobloggreen{
+				width: 234px;
+				height: 62px;
+				background-position: -500px -448px;
+			}
+			&.gizmag{
+				width: 165px;
+				height: 82px;
+				background-position: -500px -345px;
+				margin-right: 0;
+				@include margin-leader(1);
+			}
+		}
+	}
 }
 
+.popup{
+
+	position: absolute;
+	z-index: 100000;
+	top: 0;
+	left: 0;
+	display: none;
+	
+	@include padding-leader(0.75);
+	@include padding-trailer(0.75);
+	padding-left: 1em;
+	padding-right: 1em;
+	@include box-shadow( $base-color 0 4px 16px 0px );
+	border: 1px solid darken( $d-bg, 30% );
+	background: $base-bg;
+}
+
+
 .lte8{
-	#dentistLanding{
+	& #dentistLanding{
 		text-align: center;
 
 		& .box-wrap{
 			@include padding-leader( 4.5 );
 		}
 		& .two-col{
+			&.commute{
+
+				& .car{
+
+					&:hover{
+
+						& .modal{
+							//@include pie;
+							//background: $base-bg;
+						}
+					}
+
+					& .modal{
+						@include box-shadow( none );
+						border: 1px solid darken($d-bg, 20%);
+						
+					}
+				}
+			}
+			
 			&.commute, &.solution{
 				border: 1px solid darken( $d-bg, 20% );
 				border-bottom: none;
-				@include pie;
+				//@include pie;
 				
 				& .mask{
 					height: 80%;
@@ -576,7 +578,14 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 				}
 			}
 		}
+
+		& .links-wrap{
+			& .video{
+				border: 1px solid darken( $d-bg, 50% );
+			}
+		}
 	}
+
 	
 	& .page-template-page-dentist-landing-php{
 
@@ -589,6 +598,36 @@ $d-bg-rgb-trans: rgba( 225,225,225,0 );
 		
 		& #content{
 			background: $d-bg;
+		}
+	}
+}
+
+.lte7{
+	
+	& #dentistLanding{
+
+		& .press{
+			margin-left: 2em;		
+			& a{
+				@include float-left;
+				display: block;
+				
+				&.cnn{
+					@include margin-leader(1);
+				}
+				&.reuters{
+					@include margin-leader(1);
+				}
+				&.greenbiz{
+					@include margin-leader(1);
+				}
+				&.autobloggreen{
+					//@include margin-leader(1);
+				}
+				&.gizmag{
+					@include margin-leader(0);
+				}
+			}
 		}
 	}
 }

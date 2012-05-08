@@ -106,6 +106,7 @@ try{
 			defaults = {
 				contID: 'rotator',
 				sliderClass: 'slides',
+				slideClass: 'slide',
 				controlsClass: 'controls',
 				nextText: '>>',
 				prevText: '<<',
@@ -151,7 +152,8 @@ try{
 				//initialize variables
 				me.container = $('#'+me.contID);
 				me.slider = me.container.find('.'+me.sliderClass);
-				me.slides = me.slider.children(); 
+				//me.slides = me.slider.children(); 
+				me.slides = me.slider.find('.'+me.slideClass); 
 																
 				//print controls
 				me.controls = me.makeControls();
@@ -161,7 +163,7 @@ try{
 				me.controls.children().first().addClass('active');
 				me.slides.last().addClass('active');
 				
-				me.currentSlide = me.slides.last().fadeTo( me.transitionTime, 1);;
+				me.currentSlide = me.slides.last().fadeTo( me.transitionTime, 1);
 				
 				//so set all the others to 0 opacity
 				me.slides.not('.active').fadeOut(0);
@@ -199,13 +201,13 @@ try{
 		
 		me.makeControls = function(){
 			var ctrls = $('<div />').addClass( me.controlsClass+' norm' );
-			
+						
 			//make a selector for each slide
 			me.slides.each(function(i){
 				
 				var gid = $(this).attr(me.gidAtt);
 				//console.log( 'making ctrols', gid, this );
-
+				
 				//var ctrl = $('<div />', { text: i+1 }).attr( me.gidAtt, gid ).click(me.ctrlClickHandle).appendTo( ctrls );
 				var ctrl = $('<div />', {}).attr( me.gidAtt, gid ).click(me.ctrlClickHandle).prependTo( ctrls );
 				
@@ -227,7 +229,7 @@ try{
 			//do we want to only show binary controls?
 			//if ( !me.showControls || me.showControls === 'binary' )
 			if ( !me.showControls ){
-				//ctrls.hide();
+				ctrls.hide();
 			}
 			
 			if ( me.showControls === 'binary' )
@@ -285,7 +287,7 @@ try{
 			return me.linkClickCallback( gid, me.linkTo );
 		};
 
-		me.getNextSlide = function(){
+		me.getNextSlide = function(){			
 			return ( me.currentSlide.next().length ? 
 							me.currentSlide.next() : 
 							me.currentSlide.parent().children().first() );
@@ -371,7 +373,7 @@ try{
 		};
 
 		me.getSlideByID = function( gid ){
-			if ( !gid ) return false;
+			if ( !gid ) return false;			
 			return me.slider.find('['+me.gidAtt+'="'+gid+'"]');	
 		};
 
@@ -724,17 +726,6 @@ try{
 			//console.log( 'me.loadPhotoInFrame', this, e, me.frame );
 			
 		};
-
-/*
-me.frameCont = $('<div />', { id: 'gallery-frame' });
-me.frame = $('<img />', { 
-	src: data.full.src,
-	thisI: 0,
-	alt: data.full.title
-}).attr( me.dataAttr, JSON.stringify( data.full ) )
-.appendTo( me.frameCont );
-*/
-
 		
 		me.loadPhoto = function(e){
 			e.stopPropagation();
@@ -927,3 +918,62 @@ me.frame = $('<img />', {
 })(jQuery);
 
 
+(function($){
+		
+	function EasePopup( $el ){
+		
+		if( !$el || !$el.length )
+			return false;
+		
+		var me = this;
+		
+		me.$self = $el;
+
+		me.init = function(){
+			me.$self.appendTo( 'body' );
+			
+			//stop propagation on $self clicks
+			me.$self.click(function(e){
+				e.stopPropagation();
+				
+			});
+			
+		};
+		
+		me.show = function(){
+			me.position();
+			me.$self.show(0);
+			
+		};
+		
+		me.hide = function(){
+			me.$self.hide(0);
+		};
+		
+		me.position = function(){
+			
+			var oW = me.$self.outerWidth(),
+				oH = me.$self.outerHeight()
+
+			var left = Math.floor( ($(window).width() - oW) / 2 );
+
+			if( left < 0 )
+				left = 0;
+
+			var top = Math.floor( ($(window).height() - oH) / 2 + $(window).scrollTop());
+			if( top < 0 )
+				top = 0;
+
+			me.$self.css({
+				top: top,
+				left: left
+			});
+
+		};
+		
+		me.init();
+	}
+
+	window['EasePopup'] = EasePopup;
+	
+})(jQuery);
