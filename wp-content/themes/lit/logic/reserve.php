@@ -1,5 +1,8 @@
 <?php
 
+error_log( 'REQUEST:' );
+error_log( print_r( $_REQUEST, true ));
+
 /* STEP 0 */
 /* DEFINE FUNCTIONS USED IN ALL PATHS */
 //used in both paths
@@ -285,11 +288,7 @@ if (isset($_POST["token"]) && isset($_POST["gateway"])) {
 			"business" => $business,
 			"hosted_button_id" => "ZHBKSR5KM42AL" //this means this transaction is a saved button in the dan@litmotors.com paypal account
 		);
-		
-		error_log('paypal notify?');
-		error_log($lit_template);
-		error_log($params['notify_url']);
-		
+				
 		$buildLink .= "?".http_build_query($params);
 		
 	} elseif ($_POST["gateway"] == "google") {	
