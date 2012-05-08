@@ -11,7 +11,7 @@
 		  <span class="plus">+</span>
 		  <a id="faq2">If I change my mind, do I get a refund?</a>
 		  <div class="tip">
-        <strong>Answer:</strong> Absolutely!  We will give you a full refund, minus a $30US processing fee.  Expect the refund in 10-15 business days.
+        <strong>Answer:</strong> Absolutely!  We will give you a full refund, minus a 15% processing fee.  Expect the refund in 10-15 business days.
 		  </div>
 		</li>
 		<li>

@@ -942,12 +942,13 @@ try{
 		
 		me.show = function(){
 			me.position();
-			me.$self.show(0);
 			
 		};
 		
 		me.hide = function(){
-			me.$self.hide(0);
+			me.$self.css({
+				left: '-9999em'
+			});
 		};
 		
 		me.position = function(){
