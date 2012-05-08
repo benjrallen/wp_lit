@@ -1,8 +1,5 @@
 <?php
 
-error_log( 'REQUEST:' );
-error_log( print_r( $_REQUEST, true ));
-
 /* STEP 0 */
 /* DEFINE FUNCTIONS USED IN ALL PATHS */
 //used in both paths
