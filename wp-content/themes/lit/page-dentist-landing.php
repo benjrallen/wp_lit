@@ -120,7 +120,7 @@ get_header(); ?>
   <![endif]-->
 
   <!--[if (gt IE 9)|!(IE)]><!-->
-  <video width="864" height="480" class="mejs-myskin" controls="controls" preload="auto" poster="http://litmotors.com/wp-content/themes/lit/techvideo/littech.jpg" >
+  <video width="864" height="480" class="mejs-myskin" controls="controls" preload="false" poster="http://litmotors.com/wp-content/themes/lit/techvideo/littech.jpg" >
      <source src="http://litmotors.com/wp-content/themes/lit/techvideo/littech.mp4" type="video/mp4"></source>
      <source src="http://litmotors.com/wp-content/themes/lit/techvideo/littech.webm" type="video/webm"></source>
      <source src="http://litmotors.com/wp-content/themes/lit/techvideo/littech.ogv" type="video/ogg"></source>
@@ -175,7 +175,7 @@ get_header(); ?>
   <![endif]-->
 
   <!--[if (gt IE 9)|!(IE)]><!-->
-  <video width="864" height="480" class="mejs-myskin" controls="controls" preload="auto" poster="http://litmotors.com/wp-content/themes/lit/fortune/fortune2012.jpg" >
+  <video width="864" height="480" class="mejs-myskin" controls="controls" preload="false" poster="http://litmotors.com/wp-content/themes/lit/fortune/fortune2012.jpg" >
      <source src="http://litmotors.com/wp-content/themes/lit/fortune/fortune2012.mp4" type="video/mp4"></source>
      <source src="http://litmotors.com/wp-content/themes/lit/fortune/fortune2012.webm" type="video/webm"></source>
      <source src="http://litmotors.com/wp-content/themes/lit/fortune/fortune2012.ogv" type="video/ogg"></source>
@@ -230,7 +230,7 @@ get_header(); ?>
   <![endif]-->
 
   <!--[if (gt IE 9)|!(IE)]><!-->
-  <video width="864" height="480" class="mejs-myskin" controls="controls" preload="auto" poster="http://litmotors.com/wp-content/themes/lit/c1-story/c1-story.jpg" >
+  <video width="864" height="480" class="mejs-myskin" controls="controls" preload="false" poster="http://litmotors.com/wp-content/themes/lit/c1-story/c1-story.jpg" >
      <source src="http://litmotors.com/wp-content/themes/lit/c1-story/c1-story.mp4" type="video/mp4"></source>
      <source src="http://litmotors.com/wp-content/themes/lit/c1-story/c1-story.webm" type="video/webm"></source>
      <source src="http://litmotors.com/wp-content/themes/lit/c1-story/c1-story.ogv" type="video/ogg"></source>
