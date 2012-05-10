@@ -1,0 +1,33 @@
+@import "compass_twitter_bootstrap";
+
+$base-width: 980px;
+
+html, body{
+	height: 100%;
+	width: 100%;
+	min-width: base-width;
+}
+
+section{
+	height: 100%;
+}
+
+.wrap{
+	height: 100%;
+	width: $base-width;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.line, .content{
+	@include inline-block;
+	vertical-align: middle;
+}
+
+.line{
+	height: 100%;
+	width: 1px;
+	margin-left: -1px;
+}
+
+.content{}
