@@ -10,16 +10,14 @@
 		me.$self = $el;
 		me.id = $el.children().attr('id');
 		me.path = '/'+$el.attr('data-path');
-		//me.markup = me.$self.find('textarea').val();
-		//me.$embed = null;
 
 		me.init = function(){
-			//me.$self.appendTo( 'body' );
 			
 		    jwplayer( me.id ).setup({
 		        //flashplayer: Ease.TemplateUrl+"/js/player.swf",
 		        height: 480,
 		        width: 864,
+			    skin: Ease.TemplateUrl + '/js/glow/glow.zip',
 		        image: Ease.TemplateUrl + me.path + ".jpg",
 				 modes: [
 		            { type: "html5" },
@@ -31,26 +29,24 @@
 		            { file: Ease.TemplateUrl + me.path + ".webm" },    // WebM version
 		            { file: Ease.TemplateUrl + me.path + ".ogg" }     // Ogg Theora version
 		        ]
-		    });
+		    }).onComplete(function(event){
+				_gaq.push(['_trackEvent', 'Video', Ease.pageTitle, 'Complete', event.duration ]);
+			}).onPlay(function(event){
+				//console.log('play', event, this.getPosition() );
+				_gaq.push(['_trackEvent', 'Video', Ease.pageTitle, 'Play', this.getPosition() ]);
+			});
 			
-			//console.log(me.markup);
-			//me.hide();
-			
-			//stop propagation on $self clicks
-			//me.$self.click(function(e){
-			//	e.stopPropagation();
-			//});
-			
+						
 		};
 		
 		me.init();
 	}
 
-	window['EaseVideo'] = EaseVideo;
+
+	$(document).ready(function(){
+		new EaseVideo( $('#video') );
+	});
+
 	
 })(jQuery);
-
-$(document).ready(function(){
-	new EaseVideo( $('#video') );
-});
 

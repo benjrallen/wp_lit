@@ -34,8 +34,11 @@
 			Ease.isFrontPage = <?php if(is_front_page()) { echo 'true'; }else{ echo 'false'; } ?>;
 			Ease.wpVersion = '<?php echo trim(get_bloginfo("version")); ?>';
 		  <?php
-		    if( isset($post->post_name) )
+		    if( isset($post->post_name) ){
 		      echo 'Ease.pageName = "'.$post->post_name.'";';
+		      echo 'Ease.pageTitle = "'.get_the_title( $post->ID ).'";';
+          
+        }
 		  ?>
 		</script>
 
