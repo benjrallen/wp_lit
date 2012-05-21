@@ -15,10 +15,15 @@ if (strpos($_SERVER["SERVER_NAME"], "localhost") !== false || strpos($_SERVER["S
 	define("GA_UA", "UA-31286635-1");
 	define("GA_URL", "dev.benjrallen.com/wp_lit");
 } else {
-	define("DB_HOST", "dannykim8379.db.5219707.hostedresource.com");
-	define("DB_NAME", "dannykim8379");
-	define("DB_USER", "dannykim8379");
-	define("DB_PASS", "wxvubP79");
+  // following 4 commented lines were for godaddy hosting
+  // define("DB_HOST", "dannykim8379.db.5219707.hostedresource.com");
+  // define("DB_NAME", "dannykim8379");
+  // define("DB_USER", "dannykim8379");
+	// define("DB_PASS", "wxvubP79");
+	define("DB_HOST", "localhost");
+	define("DB_NAME", "litmotor_data");
+	define("DB_USER", "litmotor_db");
+	define("DB_PASS", "Qwer!234");
 	define("GW_SANDBOX", false);
 	define("GA_UA", "UA-25720006-1");
 	define("GA_URL", "litmotors.com");
