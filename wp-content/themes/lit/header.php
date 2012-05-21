@@ -34,7 +34,7 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/application.css?v=015" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
+    <!-- hello site5 -->
 		<script type="text/javascript">
 			Ease = new Object();
 			Ease.Url = '<?php bloginfo( 'url' ); ?>';
