@@ -17,6 +17,12 @@ sitemap.xml
 sitemap.xml.gz
 
 #
+# Site5
+#
+moving.page/*
+suspended.page/*
+
+#
 # Max OSX
 #
 
