@@ -1,6 +1,6 @@
 <?php
   
-  /* 
+  
   //require the php-ga classes for google analytics
   require_once('lib/google_analytics/autoload.php');
   use UnitedPrototype\GoogleAnalytics;
@@ -17,7 +17,7 @@
   $event = new GoogleAnalytics\Event();
   $event->setCategory('Reserve');
   $event->setNoninteraction('true');
-  */
+  
   
   if( isset($_REQUEST['serial-number'])){
     //assume it is google

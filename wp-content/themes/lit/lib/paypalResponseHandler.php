@@ -241,7 +241,7 @@ if ($verified) {
         //send email to admins
         send_lit_order_email( "PayPal Reservation Confirmation", $message );
         
-        /*
+        
         //google analytics tracking
         $event->setAction($payment_status);
         $event->setLabel( $order_total );
@@ -252,7 +252,7 @@ if ($verified) {
 
         $tracker->trackEvent( $event, $session, $visitor );
         $tracker->trackPageView( $page, $session, $visitor );
-        */
+        
         
       } else {
         error_log("'UPDATE QUERY FAILED: '".$updateQuery);

@@ -195,7 +195,7 @@
         send_lit_order_email( "Google Reservation Confirmation", $message );
       }
 
-      /*
+      
       //google analytics tracking      
       $event->setAction($order_status);
       $event->setLabel( $unit_price );
@@ -206,7 +206,7 @@
 
       $tracker->trackEvent( $event, $session, $visitor );
       $tracker->trackPageView( $page, $session, $visitor );
-      */
+      
     } else {
       error_log("'UPDATE QUERY FAILED: '".$updateQuery);
     }
