@@ -17,9 +17,7 @@
   $event = new GoogleAnalytics\Event();
   $event->setCategory('Reserve');
   $event->setNoninteraction('true');
-  
-  error_log('testing');
-  
+    
   if( isset($_REQUEST['serial-number'])){
     //assume it is google
     
