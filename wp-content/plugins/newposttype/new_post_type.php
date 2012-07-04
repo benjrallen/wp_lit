@@ -155,7 +155,7 @@ class NewPostType{
 		//print_r($taxonomies);
 		
 		// find out if its a taxonomy
-		if( array_key_exists( $column, $taxonomies ) ){
+		if( is_array($taxonomies) && array_key_exists( $column, $taxonomies ) ){
 			//echo 'column is tax!';
 			$tax_slug = $column;
 			$column = 'taxonomy';
