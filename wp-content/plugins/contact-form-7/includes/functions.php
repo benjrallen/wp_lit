@@ -5,19 +5,23 @@ function wpcf7_plugin_path( $path = '' ) {
 }
 
 function wpcf7_plugin_url( $path = '' ) {
-	return plugins_url( $path, WPCF7_PLUGIN_BASENAME );
+	$url = untrailingslashit( WPCF7_PLUGIN_URL );
+
+	if ( ! empty( $path ) && is_string( $path ) && false === strpos( $path, '..' ) )
+		$url .= '/' . ltrim( $path, '/' );
+
+	return $url;
 }
 
-function wpcf7_admin_url( $args = array() ) {
-	$defaults = array( 'page' => 'wpcf7' );
-	$args = wp_parse_args( $args, $defaults );
+function wpcf7_deprecated_function( $function, $version, $replacement = null ) {
+	do_action( 'wpcf7_deprecated_function_run', $function, $replacement, $version );
 
-	$url = menu_page_url( $args['page'], false );
-	unset( $args['page'] );
-
-	$url = add_query_arg( $args, $url );
-
-	return esc_url_raw( $url );
+	if ( WP_DEBUG && apply_filters( 'wpcf7_deprecated_function_trigger_error', true ) ) {
+		if ( ! is_null( $replacement ) )
+			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead.', 'wpcf7' ), $function, $version, $replacement ) );
+		else
+			trigger_error( sprintf( __( '%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available.', 'wpcf7' ), $function, $version ) );
+	}
 }
 
 function wpcf7_messages() {
@@ -186,6 +190,7 @@ function wpcf7_l10n() {
 		'sq' => __( 'Albanian', 'wpcf7' ),
 		'ar' => __( 'Arabic', 'wpcf7' ),
 		'hy_AM' => __( 'Armenian', 'wpcf7' ),
+		'az_AZ' => __( 'Azerbaijani', 'wpcf7' ),
 		'bn_BD' => __( 'Bangla', 'wpcf7' ),
 		'be_BY' => __( 'Belarusian', 'wpcf7' ),
 		'bs' => __( 'Bosnian', 'wpcf7' ),
@@ -248,6 +253,40 @@ function wpcf7_is_rtl() {
 		return is_rtl();
 
 	return false;
+}
+
+function wpcf7_ajax_loader() {
+	$url = wpcf7_plugin_url( 'images/ajax-loader.gif' );
+
+	return apply_filters( 'wpcf7_ajax_loader', $url );
+}
+
+/* Nonce functions: wpcf7_verify_nonce() and wpcf7_create_nonce()
+ * For front-end use only.
+ * Almost the same as wp_verify_nonce() and wp_create_nonce() except that $uid is always 0.
+*/
+
+function wpcf7_verify_nonce( $nonce, $action = -1 ) {
+	$i = wp_nonce_tick();
+	$uid = 0;
+
+	// Nonce generated 0-12 hours ago
+	if ( substr( wp_hash( $i . $action . $uid, 'nonce' ), -12, 10 ) == $nonce )
+		return 1;
+
+	// Nonce generated 12-24 hours ago
+	if ( substr( wp_hash( ( $i - 1 ) . $action . $uid, 'nonce' ), -12, 10 ) == $nonce )
+		return 2;
+
+	// Invalid nonce
+	return false;
+}
+
+function wpcf7_create_nonce( $action = -1 ) {
+	$i = wp_nonce_tick();
+	$uid = 0;
+
+	return substr( wp_hash( $i . $action . $uid, 'nonce' ), -12, 10 );
 }
 
 ?>

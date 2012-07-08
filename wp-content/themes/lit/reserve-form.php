@@ -4,8 +4,8 @@
     <h2>- Fall In Love All Over Again -</h2>
   </div>
 	<div id="reserveSlide1">
-		<h3>Pre-order your C-1 with a deposit of $250US.</h3>
-		<h4>Reserve one of the first 200 with a deposit of $1000 USD,</h4><h4>or one of the next 300 with a deposit of $500 USD.</h4>
+		<h3>Reserve your C-1 for as little as $250 USD.</h3>
+		<h4>The 2014 C-1 is estimated to cost as low as $19,900 USD after tax incentives. Details will be released as we near production.</h4>
 		<h5>Please fill out the information below:</h5>
 
     <div class="form-block">
@@ -17,11 +17,11 @@
   		    //$values = array( 250, 500, 1000 );
   		    $values = array(
   		      250 => '$250',
-  		      500 => '$500',
-  		      1000 => '$1,000 (#101-200)',
-  		      2000 => '$2,000 (#51-100)',
-  		      5000 => '$5,000 (#11-50)',
-  		      10000 => '$10,000 (#1-10)'
+  		      500 => '$500 (#0201+)',
+  		      1000 => '$1,000 (#0101 - #0200)',
+  		      2000 => '$2,000 (#0051 - #0100)',
+  		      5000 => '$5,000 (#0011 - #0050)',
+  		      10000 => '$10,000 (#0001 - #0010)'
   		    );
   		  
   		    if( $post->post_name == 'private' ){
