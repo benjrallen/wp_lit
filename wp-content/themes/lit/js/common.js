@@ -309,8 +309,8 @@
 				var size = theSize.val();
 				var color = theColor.val();
 
-				$("[name=\"os0\"]").val(color);
-				$("[name=\"os1\"]").val(theSize.val());
+				$("[name=\"os1\"]").val(color);
+				$("[name=\"os2\"]").val(theSize.val());
 				//$("[name=\"os1\"]").val($("#theSize option:selected").html());
 
 				$("[name=\"item_selection_1\"]").val(gMatch[color][size]);				
