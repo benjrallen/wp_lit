@@ -60,9 +60,9 @@
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypalForm">
     <input type="hidden" name="on0" value="Shipping">
-    <input type="hidden" name="on0" value="North America">
-    <input type="hidden" name="on0" value="Color">
-    <input type="hidden" name="os0" value="Black">
+    <input type="hidden" name="os0" value="North America">
+    <input type="hidden" name="on2" value="Color">
+    <input type="hidden" name="os2" value="Black">
     <input type="hidden" name="on1" value="Size">
     <input type="hidden" name="os1" value="Small">
     <input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="H4RFZ69HK7VJN">
