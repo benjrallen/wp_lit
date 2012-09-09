@@ -98,7 +98,7 @@ function boilerplate_setup() {
 	) );
 
 	// This theme allows users to set a custom background
-	add_custom_background();
+	//add_custom_background();
 
 	// Your changeable header business starts here
 	define( 'HEADER_TEXTCOLOR', '' );
@@ -120,7 +120,7 @@ function boilerplate_setup() {
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See boilerplate_admin_header_style(), below.
-	add_custom_image_header( '', 'boilerplate_admin_header_style' );
+	//add_custom_image_header( '', 'boilerplate_admin_header_style' );
 
 	// ... and thus ends the changeable header business.
 
