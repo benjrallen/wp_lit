@@ -36,6 +36,9 @@
 					  <div class="tw">
 					    <a href="http://twitter.com/LitMotors" class="twitter-follow-button" data-show-count="false">@LitMotors</a>
 					  </div>
+					  <div class="pint">
+					  	<a href="http://pinterest.com/litmotors/" target="_blank" title="Lit Motors on Pinterest"><img src="<?php bloginfo('template_directory'); ?>/images/pinterest-20.png" /></a>
+					  </div>
 					    
 					</span>
 				<?php

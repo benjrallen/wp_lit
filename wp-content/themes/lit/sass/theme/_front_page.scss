@@ -2,12 +2,21 @@ article#front-page-entry.hentry{
 	
 	//background: #D9D8DA;
 	
-	background: #000;
+	//background: #000;
 	
 	min-height: 100px;
 	
+	text-align: center;
+
 	margin:0;
 	font-weight: 300;	
+
+	& img{
+		display: inline;
+		max-width: 90%;
+		height: auto;
+		@include margin-trailer( 1.5 );
+	}
 
 	& p{
 		margin-top: 0;

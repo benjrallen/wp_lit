@@ -17,6 +17,75 @@ body{
 
 	//position:relative;	
 	//@include min-height( 2000px );
+
+	&.home{
+		min-width: 320px;
+
+		& .wrap{
+			min-width: 320px;
+			width: 90%;
+			max-width: $base-width;
+		}
+
+		& #content{
+			min-height: 100px;
+			@include padding-trailer( 4 );
+		}
+
+		.button{
+			color: #fff;
+			font-weight: bold;
+			//background: $base-button-color;
+			//border: none;
+			padding-left: 0.75em;
+			padding-right: 0.75em;
+			//@include pie;
+			@include theme-button();
+			//@include border-radius( 3px );
+		}
+
+		& .foot-mid{
+			@include float-left();
+			@include inline-block();
+			vertical-align: middle;
+			padding-right: 2em;
+
+		}
+
+		& .fp-reserve{
+			@include adjust-font-size-to(13px, 1.7);
+			@include padding-leader(0.15);		
+			@include padding-trailer(0.15);	
+			display: block;	
+		}
+
+		& #footer{
+			text-align: center;
+
+			& .foot-right, & .foot-mid, & .foot-left {
+				@include padding-trailer( 1.5 );
+			}
+
+			& .foot-right{
+				@include float-right;
+				position: relative;
+				//z-index: 1;
+				//top: 0;
+				//right: 0;
+				@include padding-leader(0);
+				
+			}
+
+			& .foot-left{
+				@include padding-leader(0.5);
+
+				& div{
+					@include inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
 }
 
 .homeLink{
@@ -135,14 +204,65 @@ video{
 
 
 /* --- less than main size --- */
-@media screen and (max-width: 979px) {
+@media screen and (min-width: 980px) {
+
+	body{
+		&.home{
+
+			#content{
+				@include padding-trailer( 6 );
+			}
+
+		}
+	}
+
+
+	article#front-page-entry.hentry{
+
+		& img{
+
+			@include margin-trailer( 2 );
+		}
+		
+	}
 }
 
 /* --- iPad Portrait --- */
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 660px) {
+	body{
+		&.home{
+
+			& .foot-mid{
+				float: none;
+			}
+
+			& #footer{
+
+			}
+		}
+	}
 }
 
 /* --- Smartphones and small Tablet PCs --- */
-@media screen and (max-width : 620px) {
+@media screen and (max-width : 420px) {
 
+	body{
+		&.home{
+
+			#content{
+				//padding-bottom: 1em;
+			}
+
+		}
+	}
+
+
+	article#front-page-entry.hentry{
+
+		& img{
+
+			@include margin-trailer( 1 );
+		}
+		
+	}
 }

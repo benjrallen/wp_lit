@@ -15,6 +15,10 @@
 <!--[if IE 9 ]><html <?php language_attributes(); ?> class="no-js ie ie9 lte9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	<head>
+		<script type="text/javascript">
+			window.location.href="<?php bloginfo('url'); ?>";
+		</script>
+		<meta http-equiv="refresh" content="0;url=<?php bloginfo('url'); ?>">
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<title><?php
 			/*
