@@ -74,3 +74,4 @@
 [06-Sep-2012 14:11:41] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
 [07-Sep-2012 15:40:09] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
 [08-Sep-2012 16:21:41] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[09-Sep-2012 16:59:55] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
