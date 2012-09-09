@@ -5,7 +5,7 @@
   </div>
 	<div id="reserveSlide1">
 		<h3>Reserve your C-1 for as little as $250 USD.</h3>
-		<h4>The 2014 C-1 is estimated to cost as low as $19,900 USD after tax incentives. Details will be released as we near production.</h4>
+		<h4>The 2014 C-1 is estimated to cost as low as $19,900 USD after federal tax incentives. Your price may be lower depending on state incentives; details will be released as we near production.</h4>
 		<h5>Please fill out the information below:</h5>
 
     <div class="form-block">
@@ -50,6 +50,7 @@
   		<label>Salutation</label>
   		<select name="salutation" id="salutation">
   			<option value="0">---</option>
+  			<option value="dr">Dr.</option>
   			<option value="mr">Mr.</option>
   			<option value="mrs">Mrs.</option>
   			<option value="ms">Ms.</option>

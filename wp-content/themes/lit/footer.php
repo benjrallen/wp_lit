@@ -10,6 +10,8 @@
  * @since Boilerplate 1.0
  */
 ?>
+
+
 		</section><!-- #main -->
 						
 		<footer id="footer" role="contentinfo">
@@ -34,6 +36,7 @@
 					  <div class="tw">
 					    <a href="http://twitter.com/LitMotors" class="twitter-follow-button" data-show-count="false">@LitMotors</a>
 					  </div>
+					    
 					</span>
 				<?php
 				  } else {
