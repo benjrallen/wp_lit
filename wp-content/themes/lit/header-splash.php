@@ -32,7 +32,7 @@
 		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" /> 
     <?php */ ?>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/splash.css?v=015" />
+		<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/splash-ie.css?v=015" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <!-- hello site5 -->
 		<script type="text/javascript">
