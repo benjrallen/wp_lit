@@ -5,7 +5,7 @@
   </div>
 	<div id="reserveSlide1">
 		<h3>Reserve your C-1 for as little as $250 USD.</h3>
-		<h4>The 2014 C-1 is estimated to cost as low as $19,900 USD after federal tax incentives. Your price may be lower depending on state incentives; details will be released as we near production.</h4>
+		<h4>Higher pre-order pricing tiers move you up in the queue. See the drop-down box below for more details.</h4>
 		<h5>Please fill out the information below:</h5>
 
     <div class="form-block">

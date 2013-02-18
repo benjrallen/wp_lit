@@ -36,7 +36,7 @@ get_header(); ?>
 
 <?php 
   if (is_front_page())
-    echo '<a class="homeLink" href="'.home_url( '/home/' ).'"></a>'
+    echo '<a class="homeLink" href="'.home_url( '/home/' ).'" style="background: #FFFFFF;"></a>'
 ?>
 
 
@@ -46,178 +46,12 @@ get_header(); ?>
 		    echo '<a class="homeLink" href="'.home_url( '/home/' ).'"></a>'
 		?>
 
-    <!--[if lte IE 9 ]>
-    <object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='848' height='480' id='single1' name='single1'>
-      <param name="movie" value="http://litmotors.com/wp-content/themes/lit/turntable/player.swf" />
-    	<param name='allowfullscreen' value='true'>
-    	<param name='allowscriptaccess' value='always'>
-    	<param name='wmode' value='transparent'>
-    	<param name='flashvars' value='file=http://litmotors.com/wp-content/themes/lit/driving/driving.mp4&image=http://litmotors.com/wp-content/themes/lit/driving/driving.jpg&controls=true&dock=false&autostart=false&quality=false&repeat=none'>
-    	<embed
-    		type='application/x-shockwave-flash'
-    		id='single2'
-    		name='single2'
-    		src="http://litmotors.com/wp-content/themes/lit/turntable/player.swf"
-    		width='848'
-    		height='480'
-    		bgcolor='undefined'
-    		allowscriptaccess='always'
-    		allowfullscreen='true'
-    		wmode='transparent'
-    		flashvars="controls=true&file=http://litmotors.com/wp-content/themes/lit/driving/driving.mp4&image=http://litmotors.com/wp-content/themes/lit/driving/driving.jpg" 
-    	/>
-    		<img alt="Lit Motors" src="http://litmotors.com/wp-content/themes/lit/driving/driving.jpg" width="640" height="360" title="Sorry, No video playback capabilities." />
-    </object>
-    <![endif]-->
-
-    <!--[if (gt IE 9)|!(IE)]><!-->
-    <video width="848" height="480" class="mejs-myskin" controls="controls" preload="auto" poster="http://litmotors.com/wp-content/themes/lit/driving/driving.jpg" >
-       <source src="http://litmotors.com/wp-content/themes/lit/driving/driving.mp4" type="video/mp4"></source>
-       <source src="http://litmotors.com/wp-content/themes/lit/driving/driving.webm" type="video/webm"></source>
-       <source src="http://litmotors.com/wp-content/themes/lit/driving/driving.ogv" type="video/ogg"></source>
-       <object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='848' height='480' id='single1' name='single1'>
-         <param name="movie" value="http://litmotors.com/wp-content/themes/lit/turntable/player.swf" />
-       	<param name='allowfullscreen' value='true'>
-       	<param name='allowscriptaccess' value='always'>
-       	<param name='wmode' value='transparent'>
-       	<param name='flashvars' value='file=http://litmotors.com/wp-content/themes/lit/driving/driving.mp4&image=http://litmotors.com/wp-content/themes/lit/driving/driving.jpg&controls=true&dock=false&autostart=false&quality=false&repeat=none'>
-       	<embed
-       		type='application/x-shockwave-flash'
-       		id='single2'
-       		name='single2'
-       		src="http://litmotors.com/wp-content/themes/lit/turntable/player.swf"
-       		width='848'
-       		height='480'
-       		bgcolor='undefined'
-       		allowscriptaccess='always'
-       		allowfullscreen='true'
-       		wmode='transparent'
-       		flashvars="controls=true&file=http://litmotors.com/wp-content/themes/lit/driving/driving.mp4&image=http://litmotors.com/wp-content/themes/lit/driving/driving.jpg" 
-       	/>
-       		<img alt="Lit Motors" src="http://litmotors.com/wp-content/themes/lit/driving/driving.jpg" width="640" height="360" title="Sorry, No video playback capabilities." />
-       </object>
-    </video>
-    <!--<![endif]-->
-
-<?php /* ?>
-<!--[if lte IE 9 ]>
-		<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='720' height='480' id='single1' name='single1'>
-      <param name="movie" value="<?php bloginfo('template_directory'); ?>/turntable/player.swf" />
-			<param name='allowfullscreen' value='true'>
-			<param name='allowscriptaccess' value='always'>
-			<param name='wmode' value='transparent'>
-			<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4&image=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg&controls=true&dock=false&autostart=false&quality=false&repeat=none'>
-			<embed
-				type='application/x-shockwave-flash'
-				id='single2'
-				name='single2'
-				src="<?php bloginfo('template_directory'); ?>/turntable/player.swf"
-				width='864'
-				height='480'
-				bgcolor='undefined'
-				allowscriptaccess='always'
-				allowfullscreen='true'
-				wmode='transparent'
-        flashvars="controls=true&image=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg&file=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4" 
-			/>
-    		<img alt="Lit Motors" src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg" width="864" height="480" title="Sorry, No video playback capabilities." />
-		</object>
-<![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<video id="splash" width="864" height="480" class="mejs-myskin" controls="controls" preload="auto" poster="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg" >
-   <source src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4" type="video/mp4"></source>
-   <source src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.webm" type="video/webm"></source>
-   <source src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.ogv" type="video/ogg"></source>
-
-		<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='864' height='480' id='single1' name='single1'>
-     <param name="movie" value="<?php bloginfo('template_directory'); ?>/turntable/player.swf" />
-			<param name='allowfullscreen' value='true'>
-			<param name='allowscriptaccess' value='always'>
-			<param name='wmode' value='transparent'>
-			<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4&image=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg&controls=true&dock=false&autostart=false&quality=false&repeat=none'>
-			<embed
-				type='application/x-shockwave-flash'
-				id='single2'
-				name='single2'
-				src="<?php bloginfo('template_directory'); ?>/turntable/player.swf"
-				width='864'
-				height='480'
-				bgcolor='undefined'
-				allowscriptaccess='always'
-				allowfullscreen='true'
-				wmode='transparent'
-       flashvars="controls=true&image=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg&file=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4" 
-			/>
-   		<img alt="Lit Motors" src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg" width="864" height="480" title="Sorry, No video playback capabilities." />
-		</object>
-</video>
-<!--<![endif]-->
-<?php */ ?>
-
-<?php /* ?>
-    <video id="splash" width="720" height="480" class="mejs-myskin" autoplay="autoplay" controls="controls" preload="auto" poster="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg" >
-       <source src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4" type="video/mp4"></source>
-       <source src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.webm" type="video/webm"></source>
-       <source src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.ogv" type="video/ogg"></source>
- 			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='720' height='480' id='single1' name='single1'>
-        <param name="movie" value="<?php bloginfo('template_directory'); ?>/turntable/player.swf" />
- 				<param name='allowfullscreen' value='true'>
- 				<param name='allowscriptaccess' value='always'>
- 				<param name='wmode' value='transparent'>
-				<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4&controls=true&dock=false&autostart=true&quality=false&repeat=none'>
- 				<embed
- 					type='application/x-shockwave-flash'
- 					id='single2'
- 					name='single2'
- 					src="<?php bloginfo('template_directory'); ?>/turntable/player.swf"
- 					width='720'
- 					height='480'
- 					bgcolor='undefined'
- 					allowscriptaccess='always'
- 					allowfullscreen='true'
- 					wmode='transparent'
-          flashvars="controls=true&file=<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.mp4" 
- 				/>
-      		<img alt="Lit Motors" src="<?php bloginfo('template_directory'); ?>/streetdrive/streetdrive.jpg" width="640" height="360" title="Sorry, No video playback capabilities." />
- 			</object>
-     </video>
-<?php */ ?>
-
-<?php /* ?>
-		<source src="<?php echo site_url("/vid/2_turntable-web.mp4"); ?>" type="video/mp4"  /> 
-		<source src="<?php echo site_url("/vid/2_turntable-web.webm"); ?>" type="video/webm" /> 
-		<source src="<?php echo site_url("/vid/2_turntable-web.ogv"); ?>" type="video/ogv" /> 
 
 
-   <video id="splash" width="960" height="500" loop="loop" autoplay="autoplay">
-      <source src="<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.mp4" type="video/mp4"></source>
-      <source src="<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.webm" type="video/webm"></source>
-      <source src="<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.ogv" type="video/ogg"></source>
-			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='960' height='500' id='single1' name='single1'>
-				<param name='movie' value="<?php bloginfo('template_directory'); ?>/turntable/player.swf">
-				<param name='allowfullscreen' value='true'>
-				<param name='allowscriptaccess' value='always'>
-				<param name='wmode' value='transparent'>
-				<param name='flashvars' value='file=<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.mp4&controlbar=none&dock=false&autostart=true&icons=false&quality=false&repeat=always'>
-				<embed
-					type='application/x-shockwave-flash'
-					id='single2'
-					name='single2'
-					src="<?php bloginfo('template_directory'); ?>/turntable/player.swf"
-					width='960'
-					height='500'
-					bgcolor='undefined'
-					allowscriptaccess='always'
-					allowfullscreen='true'
-					wmode='transparent'
-					flashvars="file=<?php bloginfo('template_directory'); ?>/turntable/2_turntable-web.mp4&controlbar=none&dock=false&autostart=true&icons=false&quality=false&repeat=always"
-				/>
-			</object>
-    </video>
-<?php */ ?>
-  </div>
-  <div class="clearfix"></div>
+<img src="http://litmotors.com/wp-content/uploads/2012/10/SplashPage.gif" alt="Lit Motors - The Future of Personal Transportation" width="1000" height="466" >
+
 
 </article>
+
 
 <?php get_footer(); ?>

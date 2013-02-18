@@ -5,7 +5,7 @@
   </div>
 	<div id="reserveSlide1">
 		<h3>Get your Lit Motors T-Shirt for $30 USD.</h3>
-		<h4>North American shipping included. All others please add $10.</h4>
+		<h4>Shipping included!</h4>
 
     <div class="form-block">
       <label>Size</label>

@@ -75,3 +75,136 @@
 [07-Sep-2012 15:40:09] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
 [08-Sep-2012 16:21:41] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
 [09-Sep-2012 16:59:55] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[13-Sep-2012 16:06:44] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[13-Sep-2012 16:48:10] SELECT FAILED on status update: 
+[14-Sep-2012 14:17:19] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[14-Sep-2012 17:06:09] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[15-Sep-2012 12:44:23] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[15-Sep-2012 13:00:40] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[16-Sep-2012 00:30:25] SELECT FAILED on status update: 
+[16-Sep-2012 00:45:32] SELECT FAILED on status update: 
+[16-Sep-2012 03:15:12] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[16-Sep-2012 10:00:16] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[16-Sep-2012 10:01:20] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[16-Sep-2012 13:48:37] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Sep-2012 10:57:54] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Sep-2012 10:57:54] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Sep-2012 10:57:56] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Sep-2012 10:57:56] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Sep-2012 12:33:52] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[18-Sep-2012 13:48:23] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[19-Sep-2012 11:27:42] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[19-Sep-2012 16:58:00] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[20-Sep-2012 12:51:16] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[20-Sep-2012 15:46:24] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[21-Sep-2012 13:41:33] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[22-Sep-2012 12:36:37] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[23-Sep-2012 07:48:08] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[23-Sep-2012 12:44:35] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[24-Sep-2012 13:42:30] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[24-Sep-2012 22:38:27] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[25-Sep-2012 20:31:23] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Sep-2012 12:51:58] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Sep-2012 15:20:32] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Sep-2012 15:58:43] SELECT FAILED on status update: 
+[26-Sep-2012 16:13:48] SELECT FAILED on status update: 
+[27-Sep-2012 16:41:29] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[28-Sep-2012 11:33:57] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[29-Sep-2012 11:34:53] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[30-Sep-2012 11:36:56] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Oct-2012 12:08:54] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Oct-2012 12:46:05] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Oct-2012 12:39:03] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[03-Oct-2012 07:25:53] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[03-Oct-2012 13:49:18] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[03-Oct-2012 23:25:26] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[04-Oct-2012 12:38:13] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[05-Oct-2012 12:45:01] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[06-Oct-2012 11:35:04] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[07-Oct-2012 11:35:11] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[07-Oct-2012 15:12:33] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[07-Oct-2012 23:06:52] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[08-Oct-2012 12:42:44] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[09-Oct-2012 11:32:31] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[09-Oct-2012 12:46:53] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[10-Oct-2012 09:29:46] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[10-Oct-2012 14:38:15] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[11-Oct-2012 04:23:19] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[11-Oct-2012 12:42:34] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[12-Oct-2012 12:47:27] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[13-Oct-2012 12:42:53] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[13-Oct-2012 22:55:05] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[14-Oct-2012 06:31:59] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[14-Oct-2012 13:57:10] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[15-Oct-2012 12:48:25] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[16-Oct-2012 14:05:39] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Oct-2012 14:07:04] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[18-Oct-2012 13:55:35] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[19-Oct-2012 13:54:55] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[20-Oct-2012 11:35:26] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[21-Oct-2012 11:44:13] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[22-Oct-2012 14:43:38] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[23-Oct-2012 11:38:36] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[23-Oct-2012 14:00:43] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[24-Oct-2012 14:07:54] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[24-Oct-2012 17:48:44] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[25-Oct-2012 14:48:06] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Oct-2012 13:56:30] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[27-Oct-2012 12:55:23] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[28-Oct-2012 15:00:47] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[29-Oct-2012 15:08:37] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[30-Oct-2012 13:53:55] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[31-Oct-2012 13:28:50] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[31-Oct-2012 14:51:53] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Nov-2012 12:42:16] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Nov-2012 13:57:06] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Nov-2012 18:04:13] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[03-Nov-2012 11:44:25] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[03-Nov-2012 14:50:15] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[04-Nov-2012 16:14:53] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[11-Nov-2012 04:13:28] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[12-Nov-2012 14:35:07] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[13-Nov-2012 12:08:54] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[15-Nov-2012 11:00:37] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[15-Nov-2012 23:06:20] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Nov-2012 01:36:03] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[18-Nov-2012 23:53:13] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Nov-2012 10:49:47] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[03-Dec-2012 14:41:25] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[06-Dec-2012 00:39:56] SELECT FAILED on status update: 
+[06-Dec-2012 07:40:48] SELECT FAILED on status update: 
+[07-Dec-2012 23:51:25] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[10-Dec-2012 13:54:39] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[11-Dec-2012 04:44:07] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[11-Dec-2012 07:54:55] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[11-Dec-2012 20:53:36] SELECT FAILED on status update: 
+[11-Dec-2012 21:08:43] SELECT FAILED on status update: 
+[11-Dec-2012 23:36:48] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Dec-2012 13:30:24] SELECT FAILED on status update: 
+[17-Dec-2012 13:34:43] SELECT FAILED on status update: 
+[17-Dec-2012 13:45:26] SELECT FAILED on status update: 
+[17-Dec-2012 13:49:47] SELECT FAILED on status update: 
+[21-Dec-2012 10:45:21] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[21-Dec-2012 12:34:05] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Dec-2012 13:31:40] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[27-Dec-2012 01:37:04] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[27-Dec-2012 05:54:17] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[31-Dec-2012 04:36:02] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[09-Jan-2013 20:55:04] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[14-Jan-2013 21:04:27] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[15-Jan-2013 10:49:07] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[17-Jan-2013 13:12:07] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[18-Jan-2013 02:04:24] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[24-Jan-2013 02:01:59] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[26-Jan-2013 13:19:34] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Feb-2013 01:05:04] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Feb-2013 09:23:59] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Feb-2013 09:33:33] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[01-Feb-2013 23:26:06] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 00:24:23] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 00:24:24] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 00:29:28] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 00:29:30] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 00:44:02] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 05:12:51] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16
+[02-Feb-2013 05:13:23] PHP Fatal error:  Call to undefined function get_header() in /home/litmotor/public_html/wp-content/themes/lit/index.php on line 16

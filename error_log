@@ -6,3 +6,10 @@
 [15-Jun-2012 02:34:11] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query DELETE FROM wp_options WHERE option_name = 'rewrite_rules' made by require, require_once, require_once, require_once, do_action, call_user_func_array, MvcPublicLoader->flush_rewrite_rules, WP_Rewrite->flush_rules, delete_option
 [15-Jun-2012 03:54:01] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query DELETE FROM wp_options WHERE option_name = 'rewrite_rules' made by require, require_once, require_once, require_once, do_action, call_user_func_array, MvcPublicLoader->flush_rewrite_rules, WP_Rewrite->flush_rules, delete_option
 [16-Jun-2012 00:22:43] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query DELETE FROM wp_options WHERE option_name = 'rewrite_rules' made by require, require_once, require_once, require_once, do_action, call_user_func_array, MvcPublicLoader->flush_rewrite_rules, WP_Rewrite->flush_rules, delete_option
+[10-Oct-2012 00:33:16] PHP Parse error:  syntax error, unexpected '<' in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 15
+[10-Oct-2012 01:11:19] PHP Parse error:  syntax error, unexpected T_STRING in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 39
+[10-Oct-2012 01:12:09] PHP Parse error:  syntax error, unexpected T_STRING in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 39
+[10-Oct-2012 01:12:26] PHP Parse error:  syntax error, unexpected T_STRING in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 39
+[10-Oct-2012 01:13:11] PHP Parse error:  syntax error, unexpected T_STRING in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 39
+[10-Oct-2012 01:13:13] PHP Parse error:  syntax error, unexpected T_STRING in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 39
+[10-Oct-2012 01:13:21] PHP Parse error:  syntax error, unexpected T_STRING in /home/litmotor/public_html/wp-content/themes/lit/front-page.php on line 39
